@@ -1,0 +1,37 @@
+---
+layout: modern
+---
+
+<div id="header" class="row">
+  <div class="sixteen columns">
+    <h1 id="header-name">
+      <a href="/{{ page.workshop_slug }}/">{{ page.workshop_name }}</a>
+    </h1>
+    <hr />
+  </div>
+</div>
+
+<div id="content" class="twelve columns">
+  <h2>{{ page.title }}</h2>
+  <p class="meta">
+    By <span class="author">{{ page.author }}</span>&nbsp;—&nbsp;
+    <time datetime="{{ page.date }}">{{ page.date | date: "%b %d, %Y" }}</time>
+  </p>
+  {{ content }}
+
+  <div class="post-assets">
+      {% for asset in page.assets %}
+      <div class="thumb">
+  <a href="/static/media/{{ page.workshop_slug }}/{{ asset.filename }}">
+        <img
+          src="/static/media/{{ page.workshop_slug }}/{{ asset.filename }}"
+          width="220"
+          height="220"
+          alt=""
+        />
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>

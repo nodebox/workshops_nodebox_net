@@ -1,0 +1,15 @@
+permalink: /:categories/:year/:month/:day/:title/
+highlighter: rouge
+multiviews: true
+collections:
+  workshops:
+    output: true
+    permalink: /:name
+exclude:
+  - README.md
+  - Rakefile
+plugins:
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-redirect-from
+
