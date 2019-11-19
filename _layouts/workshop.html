@@ -30,25 +30,19 @@ layout: modern
       <a href="{{ post.url }}">
         {% if asset %}
         <img
-          src="/static/media/{{ post.workshop_slug }}/{{ asset.filename }}"
+          src="{{ site.static_url }}{{ post.workshop_slug }}/{{ asset.filename }}"
           width="220"
           height="220"
           alt="{{ post.title }}"
         />
         {% else %}
-        <img
-          src="/static/g/blank.png"
-          width="220"
-          height="220"
-          alt="{{ post.title }}"
-        />
+        <img src="/static/g/blank.png" width="220" height="220" alt="{{ post.title }}" />
         {% endif %}
         <h5>{{ post.title }}</h5>
         <p class="meta">
-          <span class="author">{{ post.author }}</span>&nbsp;—&nbsp;
-          <time datetime="{{ post.date }}"
-            >{{ post.date | date: "%b %d, %Y" }}</time
-          >
+          <span class="author">{{ post.author }}</span
+          >&nbsp;—&nbsp;
+          <time datetime="{{ post.date }}">{{ post.date | date: "%b %d, %Y" }}</time>
         </p>
       </a>
     </div>

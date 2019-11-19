@@ -1,4 +1,5 @@
 permalink: /:categories/:year/:month/:day/:title/
+static_url: https://nodebox-workshops.s3.amazonaws.com/media/
 highlighter: rouge
 multiviews: true
 collections:
@@ -12,4 +13,3 @@ plugins:
   - jekyll-redirect-from
 whitelist:
   - jekyll-redirect-from
-

@@ -14,17 +14,18 @@ layout: modern
 <div id="content" class="twelve columns">
   <h2>{{ page.title }}</h2>
   <p class="meta">
-    By <span class="author">{{ page.author }}</span>&nbsp;—&nbsp;
+    By <span class="author">{{ page.author }}</span
+    >&nbsp;—&nbsp;
     <time datetime="{{ page.date }}">{{ page.date | date: "%b %d, %Y" }}</time>
   </p>
   {{ content }}
 
   <div class="post-assets">
-      {% for asset in page.assets %}
-      <div class="thumb">
-  <a href="/static/media/{{ page.workshop_slug }}/{{ asset.filename }}">
+    {% for asset in page.assets %}
+    <div class="thumb">
+      <a href="{{ site.static_url }}{{ page.workshop_slug }}/{{ asset.filename }}">
         <img
-          src="/static/media/{{ page.workshop_slug }}/{{ asset.filename }}"
+          src="{{ site.static_url }}{{ page.workshop_slug }}/{{ asset.filename }}"
           width="220"
           height="220"
           alt=""
@@ -33,5 +34,4 @@ layout: modern
     </div>
     {% endfor %}
   </div>
-
 </div>
