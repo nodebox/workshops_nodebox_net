@@ -6,6 +6,10 @@ users = json.load(open('users.json'))
 blogs = json.load(open('blogs.json'))
 
 for blog in blogs:
+    if blog['slug'] == '2016-antwerp':
+        continue
+    if blog['slug'] == '2014-helsinki':
+        continue
     blog_posts = [post for post in posts if post['blog_id'] == blog['id']]
     blog_posts.reverse()
     for post in blog_posts:
@@ -27,7 +31,7 @@ for blog in blogs:
     filename = '../_workshops/{}.md'.format(blog['slug'])
     open(filename, 'w').write(page)
 
-for post in posts[:10]:
+for post in posts:
     user = [user for user in users if user['id'] == post['user_id']][0]
     blog = [blog for blog in blogs if blog['id'] == post['blog_id']][0]
     post_assets = []
@@ -37,11 +41,11 @@ for post in posts[:10]:
 
     if len(post['body'].strip()) == 0 and len(post_assets) == 0:
         continue
-
+    post_title = post['title'].replace('"', '')
     page = ''
     page += '---\n'
     page += 'layout: post\n'
-    page += 'title: "{}"\n'.format(post['title'])
+    page += 'title: "{}"\n'.format(post_title)
     page += 'workshop_name: {}\n'.format(blog['name'])
     page += 'workshop_slug: {}\n'.format(blog['slug'])
     page += 'categories: [{}]\n'.format(blog['slug'])

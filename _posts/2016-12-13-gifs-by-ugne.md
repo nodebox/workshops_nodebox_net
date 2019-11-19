@@ -1,0 +1,16 @@
+---
+layout: post
+title: "gifs by Ugn?"
+workshop_name: 2016 Vilnius
+workshop_slug: 2016-vilnius
+categories: [2016-vilnius]
+author: Ugne and Diana 
+assets:
+  -
+    filename: Ugne.gif
+    type: image
+  -
+    filename: Ugne2.gif
+    type: image
+---
+***

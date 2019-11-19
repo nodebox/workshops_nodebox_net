@@ -1,1 +1,218 @@
-[{"id": 1, "name": "2008 Helsinki ", "slug": "2008-helsinki", "description": "Semantic Networks and Graphic Design, 8-17 January 2008.", "about": "<p>This is a live report site on a design workshop, with the theme \"Semantic Networks and Graphic Design\". The workshop is held at the University of Art and Design Helsinki, <a href=\"http://www.taik.fi/\">TAIK</a>, School of Visual Culture, Degree Programme in Graphic Design. It runs from Tuesday 8 until Thursday 17 January 2008.</p>\r\n\r\n<p>The workshop is held by three teachers/researches from Sint Lucas in Antwerp: Lucas Nijs, Frederik De Bleser and Tom De Smedt and assisted by Vincent Van Asch, \u00a0PhD Student in Linguistics at the University of Antwerp.</p>\r\n\r\n<p>Throughout the workshop, we\u0092ll be using mainly\u00a0<a href=\"http://nodebox.net/\">NodeBox</a>\u00a0to work out ideas.</p>\r\n", "position": 1}, {"id": 2, "name": "2011 Lahti", "slug": "2011-lahti", "description": "Data Visualization, Lahti, Finland May 30 - June 10 2011.", "about": "<p>This website is a liveblog of a NodeBox 2 workshop on Data Visualization taking place in Lahti, Finland from May 30 - June 10 2011.</p>\r\n\r\n<p>Each SMS we receive, each Facebook event we attend and every web search we do is captured for eternity. It's as if our existence can be reduced to an endless stream of numbers. What if we could visualize this data and discover patterns in the chaos?</p>\r\n\r\n<p>During this workshop, we'll use a new tool well suited for visualizing data. Through a visual, node-based approach, we'll create interesting and unique visualizations that evolve and react on varying input. We'll learn how to capture, prepare, visualize and refine data. The end result will be a poster with a visualization around a self-chosen theme. Enterprising students can even create data animations (\"datamations\").</p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization. We will learn to look at data differently, and gain insight in how to create new and interesting designs.</p>\r\n\r\n<p>Data is taking over your life. It's time to take control.</p>\r\n", "position": 7}, {"id": 3, "name": "2011 Mad Faculty", "slug": "2011-mad-fac", "description": "19-23 September, MAD-faculty Genk.", "about": "<p>This website is a liveblog of a <a href=\"http://nodebox.net/\">NodeBox 2</a> workshop on Generative Design at MAD Faculty - Genk / Belgium from September 19 - September 23, 2011. The end result will be a poster showcasing computationally generated creatures.</p>\r\n\r\n<p>Students have to use the blog to upload their (interim) results. </p>", "position": 8}, {"id": 4, "name": "2011 Vilnius", "slug": "2011-vilnius", "description": "\"Faces of Data\", 21-26 November 2011, Vilnius Academy of Arts.", "about": "<p>A large part of the human brain is concerned with recognizing faces. It is so good at it that we sometimes see faces when they are not there (like Jesus in a jar of peanut butter). We can immediately recognize friends and family, and can spot celebrities from meters away.</p>\r\n\r\n<p>Data, also has many faces. It can be represented as a boring table of facts or as a beautiful, interactive visualization. It can be irrelevant and abstract or very personal, such as a timeline of your actions on Facebook.</p>\r\n\r\n<p>This workshop relates the human face to a data set of your choice. We will learn techniques that allow extracting information from pixel data and mapping data on top of faces (but also the other way around!). We'll use old-school and generative techniques.</p>\r\n\r\n<p>We will use a new tool that is ideally suited for this type of work. The <a href=\"http://www.emrg.be/\">EMRG</a> in Antwerp have been developing NodeBox for a while, and we'll use the latest version, <a href=\"http://nodebox.net/\">NodeBox 2</a>, to create this project.</p>\r\n\r\n<p>The end result will be a portrait cabinet: a collection of portraits, each created using your own custom \"filter\". Enterprising students can also create data animations.</p>", "position": 9}, {"id": 5, "name": "2011 Torino", "slug": "2011-torino", "description": "Dataviz: Visual Repesentation of Complex Phenomena, 12-17 December 2011, Torino.", "about": "<p>An in-depth workshop on the visual representation of large datasets. Study how to capture, prepare, visualize and refine data. Gain insight in dataviz theories and start to look at data in a different way. Learn about the history of data visualization and how to create your own new and interesting designs for the future.</p>\r\n\r\n<p>We use <a href=\"http://nodebox.net/\">NodeBox 2</a> to visualize the data.</p>\r\n\r\n<p>The workshop is run by the <a href=\"http://www.emrg.be/\">Experimental Media Research Group</a> and <a href=\"http://www.densitydesign.org/\">Density Design</a>. Organization by <a href=\"http://www.betternouveau.it/\">Better Nouveau</a>.</p>\r\n\r\n<p><a href=\"http://www.betternouveau.it/workshop/data_visualization_workshop.php\">Better Nouveau Workshop page</a></p>\r\n", "position": 10}, {"id": 6, "name": "2012 Antwerp", "slug": "2012-antwerp", "description": "Data Visualization Workshop in Antwerp, 13 - 17 February 2012.", "about": "<p>This website is a liveblog of a <a href=\"http://nodebox.net/\">NodeBox</a> workshop on Data Visualization taking place in Antwerp, Belgium, 13 - 17 February 2012. We'll learn how to capture, prepare, visualize and refine data. The end result will be a poster with a visualization around a self-chosen theme.</p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization. We will learn to look at data differently, and gain insight in how to create new and interesting designs.</p>\r\n", "position": 11}, {"id": 7, "name": "2012 The Hague", "slug": "2012-the-hague", "description": "Data Visualization Workshop in The Hague, 5 - 9 November 2012.", "about": "<p>This website is a liveblog of a <a href=\"http://nodebox.net/node/\">NodeBox 3</a> workshop on Data Visualization taking place in The Hague, The Netherlands, 5 - 9 November 2012. We'll learn how to capture, prepare, visualize and refine data. The end result will be a poster with a visualization around a self-chosen theme. </p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization. We will learn to look at data differently, and gain insight in how to create new and interesting designs. </p>", "position": 13}, {"id": 8, "name": "2013 Antwerp", "slug": "2013-antwerp", "description": "Data Visualization Workshop in Antwerp, 4-8 February 2013.", "about": "<p>As more and more data is being generated all around us, generative art, physical computing and data visualization are becoming increasingly relevant. Learning to work with hardware inputs such as the Kinect or visualizing streams from Twitter appears appealing, but the possibilities for creating them seem out of reach for all but the most technical students that know how to write code.</p>\r\n\r\n<p>No longer! <a href=\"http://nodebox.net/node\">NodeBox 3</a> makes it easy and even fun to visualize external inputs. Using a node-based user interface you get fast access to the capabilities of physical devices and external sources like Twitter or live news feeds.</p>\r\n\r\n<p>In this master class you'll learn how to acquire data from external streams and visualize it in a relevant way. You'll learn the value of a good data visualization and how to choose an appropriate representation of your data. You can pick your own data or work with data we provide. You'll create a movie or interactive installation that can get data from external inputs.</p>\r\n\r\n<p>Learning this program also opens the road for learning more advanced software such as <a href=\"http://processing.org/\">Processing</a>, <a href=\"http://en.wikipedia.org/wiki/Quartz_Composer\">Quartz Composer</a> or <a href=\"http://vvvv.org/\">VVVV</a>.</p>", "position": 14}, {"id": 9, "name": "2013 Lahti", "slug": "2013-lahti", "description": "Generative Design Workshop in Lahti (Finland), 25 February - 1 March 2013.", "about": "<p>This website is a liveblog of a <a href=\"http://www.nodebox.net/\">NodeBox 3</a> workshop on Generative Design taking place in Lahti, Finland from February 25 to March 1 2013. In this workshop we use NodeBox 3, a new software tool that can be used to quickly create \"recipes\" that generate 2D visuals. Using handles and control widgets it becomes very easy to manipulate the output produced. The data that serves as input of the visuals can be created by the users themselves or it can come from an external source, like data gathered from the internet, or from external input devices like OSC (Open Sound Control) or Kinect. The purpose of the workshop is to keep a sketch book in which the students show what they have created.</p>\r\n", "position": 15}, {"id": 10, "name": "2013 Helsinki", "slug": "2013-helsinki", "description": "Workshop NodeBox at Aalto University.", "about": "<p>During this workshop, we'll use a new tool well suited for visualizing data. Through a visual, node-based approach, we'll create interesting and unique visualizations that evolve and react on varying input. We'll learn how to capture, prepare, visualize and refine data.</p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization. We will learn to look at data differently, and gain insight in how to create new and interesting designs.</p>\r\n\r\n<pData is taking over your life. It's time to take control.</p>\r\n\r\n<p>This workshop takes place in the <a href=\"http://www.aalto.fi/en/\">Aalto University</a> in Helsinki, Finland.</p>", "position": 16}, {"id": 11, "name": "2013 Vilnius", "slug": "2013-vilnius", "description": "Data Visualization Workshop in Vilnius, 12-16 March 2013.", "about": "<p>This website is a liveblog of a <a href=\"http://nodebox.net/\">NodeBox 3</a> workshop on Data Visualization taking place in Vilnius, Lithuania from 12-16 Mar 2013.<p>\r\n\r\n<p>Each SMS we receive, each Facebook event we attend and every web search we do is captured for eternity. It's as if our existence can be reduced to an endless stream of numbers. What if we could visualize this data and discover patterns in the chaos? </p>\r\n\r\n<p> During this workshop, we'll use a new tool well suited for visualizing data. Through a visual, node-based approach, we'll create interesting and unique visualizations that evolve and react on varying input. We'll learn how to capture, prepare, visualize and refine data. The end result will be a poster with a visualization around a self-chosen theme. </p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization. We will learn to look at data differently, and gain insight in how to create new and interesting designs. <strong>Data is taking over your life. It's time to take control.</strong></p>", "position": 17}, {"id": 12, "name": "2009 Lahti", "slug": "2009-lahti", "description": "\"Coincidence\"", "about": "<p>Welcome to the NodeBox Lahti Workshop 2009 site! Whew! What a mouthful:</p>\r\n<ul>\r\n\t<li><strong>NodeBox</strong>: This workshop is held by the Experimental Media Group, also known as \"The NodeBox Team\". Currently, Lucas and Frederik are here. Tom will arrive next week.</li>\r\n\t<li><strong>Lahti</strong>: The workshop is held in <a href=\"http://www.lahti.fi/www/cms.nsf/pages/indexeng\">Lahti, Finland</a>, at the <a href=\"http://www.lamk.fi/engl/mi\">Lahti University of Applied Sciences, Institute of Design</a>.</li>\r\n\t<li><strong>Workshop</strong>: Well, much work and little shopping. This workshop is held with a number of students (we don't know yet how many).</li>\r\n\t<li><strong>2009</strong>: We do one each year.</li>\r\n</ul>", "position": 2}, {"id": 13, "name": "2010 Lahti", "slug": "2010-lahti", "description": "NodeBox 2 workshop, Lahti Polytechnic, 11 - 22 January 2010.", "about": "Liveblog of the NodeBox 2 workshop at the Lahti Polytechnic in Finland from 11 to 22 January 2010.\r\n", "position": 3}, {"id": 14, "name": "2010 Antwerp", "slug": "2010-antwerp", "description": "Patterns of Data, Antwerp, 22-26 Feb 2010.", "about": "<p>This workshop runs from 22-26 February and will result in a number of posters.</p>\r\n\r\n<p>Liveblog of the February 2010 Workshop in Antwerp, Belgium. This workshop runs from 22 February - 26 February under the theme \"patterns of data\".</p>\r\n\r\nStudents will use <a href=\"http://nodebox.net/\">NodeBox 2</a> to create their work.", "position": 4}, {"id": 15, "name": "2011 Helsinki", "slug": "2011-helsinki", "description": "Patterns of Data, Helsinki, 16-27 May 2011.", "about": "<p>Each SMS we receive, each Facebook event we attend and every web\u00a0search we do is captured for eternity. It's as if our existence can be\u00a0reduced to an endless stream of numbers. What if we could visualize\u00a0this data and discover patterns in the chaos?</p>\r\n\r\n<p>During this workshop, we'll use a new tool well suited for visualizing\u00a0data. Through a visual, node-based approach, we'll create interesting\u00a0and unique visualizations that evolve and react on varying input.\u00a0We'll learn how to capture, prepare, visualize and refine data. The\u00a0end result will be a poster with a visualization around a self-chosen\u00a0theme. Enterprising students can even create data animations\u00a0(\"datamations\").</p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization.\u00a0We will learn to look at data differently, and gain insight in how to\u00a0create new and interesting designs.</p>\r\n\r\n<p>Data is taking over your life. It's time to take control.</p>\r\n\r\n<p>This workshop takes place in the\u00a0<a href=\"http://www.aalto.fi/en/\">Aalto University</a> in Helsinki, Finland from 16 to 27 May.</p>\r\n\r\n&nbsp;", "position": 6}, {"id": 16, "name": "2011 Antwerp", "slug": "2011-antwerp", "description": "Patterns of Data, Antwerp, 28 Feb - 4 Mar 2011.", "about": "<p>Welcome to Patterns of Data, a\u00a0workshop held from Monday 28 February - Friday 4 March 2011  in <a href=\"http://www.sintlucasantwerpen.be/\">Sint Lucas Antwerpen</a> and\u00a0presented by Lieven Menschaert and Frederik De Bleser.</p>\r\n\r\n<p>This workshop is for designers new to NodeBox. We will learn to look at data differently, and gain insight into how to create new and interesting visualizations.\u00a0We will use <a href=\"http://nodebox.net/\">NodeBox 2</a> to produce a data visualization around a self-chosen theme.</p>", "position": 5}, {"id": 17, "name": "2013 Montr\u00e9al", "slug": "2013-montreal", "description": "Data Visualization Workshop in Montr\u00e9al, 28/4-4/5 2013.", "about": "<p>During this workshop, we'll use a new tool well suited for visualizing data. Through a visual, node-based approach, we'll create interesting and unique visualizations that evolve and react on varying input. We'll learn how to capture, prepare, visualize and refine data.</p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization. We will learn to look at data differently, and gain insight in how to create new and interesting designs.</p>\r\n\r\n<p>This workshop takes place during the <a href=\"http://designinternational2013.blogspot.ca/\">Design International 2013 week</a> in the <a href=\"http://www.designuqam.com/\">\u00c9cole de design</a> in Montr\u00e9al, Canada.</p>", "position": 18}, {"id": 18, "name": "2013 Valence", "slug": "2013-valence", "description": "Data Visualization Workshop in Valence, 6-8 November 2013.", "about": "<p>During this workshop, we'll use NodeBox to visualize large sets of data. Through a visual, node-based approach, we'll create interesting and unique visualizations that evolve and react on varying input. We'll learn how to capture, prepare, visualize and refine data.</p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization. We will learn to look at data differently, and gain insight in how to create new and interesting designs.</p>\r\n\r\n<p>This workshop takes place at the <a href=\"http://esad-gv.fr/\">\u00c9cole Sup\u00e9rieure d'Art et Design </a> in Valence, France.</p>\r\n\r\n<img src=\"http://workshops.nodebox.net/media/2013-valence/group.jpg\" alt=\"The workshop teachers and students\" style=\"max-width: 100%\" />", "position": 19}, {"id": 19, "name": "2014 Helsinki", "slug": "2014-helsinki", "description": "Data Viz and Generative Design", "about": "<p>During this workshop, we'll use a new tool well suited for visualizing data. Through a visual, node-based approach, we'll create interesting and unique visualizations that evolve and react on varying input.</p>\r\n\r\n<p>This workshop is for designers new to NodeBox, data visualization and generative design. We will learn to look at data differently, and gain insight in how to create new and interesting designs.</p>\r\n\r\n<p>A workshop held from January 27 till January 31 at <a href=\"http://www.aalto.fi/en/\">Aalto University</a> in Helsinki, Finland.</p>", "position": 20}, {"id": 20, "name": "2014 Antwerp", "slug": "2014-antwerp", "description": "Data Visualization Workshop in Antwerp, 24-28 March 2014.", "about": "<h3>The Quantified Self: Visualizing your Life</h3>\r\n\r\n<p>Each sms we receive, each Facebook post we like and every web search\r\nwe do is captured for eternity. It\u0092s as if our existence can be reduced to\r\nan endless stream of numbers. What if we could visualize this data and discover patterns in the chaos? Can we learn something new by quantifying ourselves?</p>\r\n\r\n<p>In this master class we\u0092ll look at ways to collect all this information and then visualize it. We\u0092ll use NodeBox 3, a visual, node-based tool that does not require programming experience. We\u0092ll learn how to capture, prepare, visualize and refine your data. The end result will be a poster representing \u0091you\u0092.</p>\r\n\r\n<p>Visualizing your own data can give you new insights into your life and your habits. In addition, it is a great exercise to learn about data visualization in general.</p>\r\n\r\n<p>To participate, we require you to carefully log what happens during a period of 5 months. This registration can happen using a custom-built smartphone app or on paper.</p>\r\n", "position": 21}, {"id": 21, "name": "2014 Vilnius", "slug": "2014-vilnius", "description": "Data Visualization Workshop in Vilnius, 14-18 April 2014.", "about": ".", "position": 22}, {"id": 22, "name": "2015 Antwerp", "slug": "2015-antwerp", "description": "Self-documenting visualisations, 16-20 March 2015.", "about": "<p>On a morning of May of 2010, Iepe Rubingh and his crew dropped buckets of coloured paint on a busy intersection in Berlin. All of a sudden every car became a brush in a live painting showing the delicate dance of acceleration, braking and swerving across the road. A visceral, physical data visualisation emerged from that.</p>\r\n\r\n<p>Data visualisation turns abstract information into a concrete graphical representation, thereby showing patterns, trends and outliers in the information. We see visualisations usually as clean geometric designs that present data in a formal way, but they don't have to be.</p>\r\n\r\n<p>In this workshop we ask the question if we can make this transformation from data to graphics more explicit and self-documenting. A self-documenting visualisation shows the hidden patterns made explicit through a deliberate intervention, a specific registration setup, a data procedure...</p>\r\n\r\n<p>Data registration can happen through a multitude of interfaces and devices. Visualisation happens in NodeBox Live, a visual node-based tool written by EMRG and thought all over the world.</p>\r\n", "position": 23}, {"id": 23, "name": "2015 Vilnius", "slug": "2015-vilnius", "description": "Everything is Data", "about": ".", "position": 24}, {"id": 24, "name": "2015 Warsaw", "slug": "2015-warsaw", "description": "Generative Data, 25-29 May 2015.", "about": "More content coming soon....", "position": 25}, {"id": 25, "name": "2015 Liege", "slug": "2015-liege", "description": "Workshop Visualisation de data a Liege, 15-20 Octobre 2015", "about": "More content coming soon....", "position": 26}, {"id": 26, "name": "NodeBox Workshop 2016 Antwerp", "slug": "2016-antwerp", "description": "Actually Useful", "about": "(Data is stored as a static folder)", "position": 27}, {"id": 27, "name": "2016 Vilnius", "slug": "2016-vilnius", "description": "Responsive Typography", "about": " ", "position": 28}]
+[
+  {
+    "id": 1,
+    "name": "2008 Helsinki ",
+    "slug": "2008-helsinki",
+    "description": "Semantic Networks and Graphic Design, 8-17 January 2008.",
+    "about": "<p>This is a live report site on a design workshop, with the theme \"Semantic Networks and Graphic Design\". The workshop is held at the University of Art and Design Helsinki, <a href=\"http://www.taik.fi/\">TAIK</a>, School of Visual Culture, Degree Programme in Graphic Design. It runs from Tuesday 8 until Thursday 17 January 2008.</p>\r\n\r\n<p>The workshop is held by three teachers/researches from Sint Lucas in Antwerp: Lucas Nijs, Frederik De Bleser and Tom De Smedt and assisted by Vincent Van Asch, \u00a0PhD Student in Linguistics at the University of Antwerp.</p>\r\n\r\n<p>Throughout the workshop, we\u0092ll be using mainly\u00a0<a href=\"http://nodebox.net/\">NodeBox</a>\u00a0to work out ideas.</p>\r\n",
+    "position": 1
+  },
+  {
+    "id": 2,
+    "name": "2011 Lahti",
+    "slug": "2011-lahti",
+    "description": "Data Visualization, Lahti, Finland May 30 - June 10 2011.",
+    "about": "<p>This website is a liveblog of a NodeBox 2 workshop on Data Visualization taking place in Lahti, Finland from May 30 - June 10 2011.</p>\r\n\r\n<p>Each SMS we receive, each Facebook event we attend and every web search we do is captured for eternity. It's as if our existence can be reduced to an endless stream of numbers. What if we could visualize this data and discover patterns in the chaos?</p>\r\n\r\n<p>During this workshop, we'll use a new tool well suited for visualizing data. Through a visual, node-based approach, we'll create interesting and unique visualizations that evolve and react on varying input. We'll learn how to capture, prepare, visualize and refine data. The end result will be a poster with a visualization around a self-chosen theme. Enterprising students can even create data animations (\"datamations\").</p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization. We will learn to look at data differently, and gain insight in how to create new and interesting designs.</p>\r\n\r\n<p>Data is taking over your life. It's time to take control.</p>\r\n",
+    "position": 7
+  },
+  {
+    "id": 3,
+    "name": "2011 Mad Faculty",
+    "slug": "2011-mad-fac",
+    "description": "19-23 September, MAD-faculty Genk.",
+    "about": "<p>This website is a liveblog of a <a href=\"http://nodebox.net/\">NodeBox 2</a> workshop on Generative Design at MAD Faculty - Genk / Belgium from September 19 - September 23, 2011. The end result will be a poster showcasing computationally generated creatures.</p>\r\n\r\n<p>Students have to use the blog to upload their (interim) results. </p>",
+    "position": 8
+  },
+  {
+    "id": 4,
+    "name": "2011 Vilnius",
+    "slug": "2011-vilnius",
+    "description": "\"Faces of Data\", 21-26 November 2011, Vilnius Academy of Arts.",
+    "about": "<p>A large part of the human brain is concerned with recognizing faces. It is so good at it that we sometimes see faces when they are not there (like Jesus in a jar of peanut butter). We can immediately recognize friends and family, and can spot celebrities from meters away.</p>\r\n\r\n<p>Data, also has many faces. It can be represented as a boring table of facts or as a beautiful, interactive visualization. It can be irrelevant and abstract or very personal, such as a timeline of your actions on Facebook.</p>\r\n\r\n<p>This workshop relates the human face to a data set of your choice. We will learn techniques that allow extracting information from pixel data and mapping data on top of faces (but also the other way around!). We'll use old-school and generative techniques.</p>\r\n\r\n<p>We will use a new tool that is ideally suited for this type of work. The <a href=\"http://www.emrg.be/\">EMRG</a> in Antwerp have been developing NodeBox for a while, and we'll use the latest version, <a href=\"http://nodebox.net/\">NodeBox 2</a>, to create this project.</p>\r\n\r\n<p>The end result will be a portrait cabinet: a collection of portraits, each created using your own custom \"filter\". Enterprising students can also create data animations.</p>",
+    "position": 9
+  },
+  {
+    "id": 5,
+    "name": "2011 Torino",
+    "slug": "2011-torino",
+    "description": "Dataviz: Visual Repesentation of Complex Phenomena, 12-17 December 2011, Torino.",
+    "about": "<p>An in-depth workshop on the visual representation of large datasets. Study how to capture, prepare, visualize and refine data. Gain insight in dataviz theories and start to look at data in a different way. Learn about the history of data visualization and how to create your own new and interesting designs for the future.</p>\r\n\r\n<p>We use <a href=\"http://nodebox.net/\">NodeBox 2</a> to visualize the data.</p>\r\n\r\n<p>The workshop is run by the <a href=\"http://www.emrg.be/\">Experimental Media Research Group</a> and <a href=\"http://www.densitydesign.org/\">Density Design</a>. Organization by <a href=\"http://www.betternouveau.it/\">Better Nouveau</a>.</p>\r\n\r\n<p><a href=\"http://www.betternouveau.it/workshop/data_visualization_workshop.php\">Better Nouveau Workshop page</a></p>\r\n",
+    "position": 10
+  },
+  {
+    "id": 6,
+    "name": "2012 Antwerp",
+    "slug": "2012-antwerp",
+    "description": "Data Visualization Workshop in Antwerp, 13 - 17 February 2012.",
+    "about": "<p>This website is a liveblog of a <a href=\"http://nodebox.net/\">NodeBox</a> workshop on Data Visualization taking place in Antwerp, Belgium, 13 - 17 February 2012. We'll learn how to capture, prepare, visualize and refine data. The end result will be a poster with a visualization around a self-chosen theme.</p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization. We will learn to look at data differently, and gain insight in how to create new and interesting designs.</p>\r\n",
+    "position": 11
+  },
+  {
+    "id": 7,
+    "name": "2012 The Hague",
+    "slug": "2012-the-hague",
+    "description": "Data Visualization Workshop in The Hague, 5 - 9 November 2012.",
+    "about": "<p>This website is a liveblog of a <a href=\"http://nodebox.net/node/\">NodeBox 3</a> workshop on Data Visualization taking place in The Hague, The Netherlands, 5 - 9 November 2012. We'll learn how to capture, prepare, visualize and refine data. The end result will be a poster with a visualization around a self-chosen theme. </p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization. We will learn to look at data differently, and gain insight in how to create new and interesting designs. </p>",
+    "position": 13
+  },
+  {
+    "id": 8,
+    "name": "2013 Antwerp",
+    "slug": "2013-antwerp",
+    "description": "Data Visualization Workshop in Antwerp, 4-8 February 2013.",
+    "about": "<p>As more and more data is being generated all around us, generative art, physical computing and data visualization are becoming increasingly relevant. Learning to work with hardware inputs such as the Kinect or visualizing streams from Twitter appears appealing, but the possibilities for creating them seem out of reach for all but the most technical students that know how to write code.</p>\r\n\r\n<p>No longer! <a href=\"http://nodebox.net/node\">NodeBox 3</a> makes it easy and even fun to visualize external inputs. Using a node-based user interface you get fast access to the capabilities of physical devices and external sources like Twitter or live news feeds.</p>\r\n\r\n<p>In this master class you'll learn how to acquire data from external streams and visualize it in a relevant way. You'll learn the value of a good data visualization and how to choose an appropriate representation of your data. You can pick your own data or work with data we provide. You'll create a movie or interactive installation that can get data from external inputs.</p>\r\n\r\n<p>Learning this program also opens the road for learning more advanced software such as <a href=\"http://processing.org/\">Processing</a>, <a href=\"http://en.wikipedia.org/wiki/Quartz_Composer\">Quartz Composer</a> or <a href=\"http://vvvv.org/\">VVVV</a>.</p>",
+    "position": 14
+  },
+  {
+    "id": 9,
+    "name": "2013 Lahti",
+    "slug": "2013-lahti",
+    "description": "Generative Design Workshop in Lahti (Finland), 25 February - 1 March 2013.",
+    "about": "<p>This website is a liveblog of a <a href=\"http://www.nodebox.net/\">NodeBox 3</a> workshop on Generative Design taking place in Lahti, Finland from February 25 to March 1 2013. In this workshop we use NodeBox 3, a new software tool that can be used to quickly create \"recipes\" that generate 2D visuals. Using handles and control widgets it becomes very easy to manipulate the output produced. The data that serves as input of the visuals can be created by the users themselves or it can come from an external source, like data gathered from the internet, or from external input devices like OSC (Open Sound Control) or Kinect. The purpose of the workshop is to keep a sketch book in which the students show what they have created.</p>\r\n",
+    "position": 15
+  },
+  {
+    "id": 10,
+    "name": "2013 Helsinki",
+    "slug": "2013-helsinki",
+    "description": "Workshop NodeBox at Aalto University.",
+    "about": "<p>During this workshop, we'll use a new tool well suited for visualizing data. Through a visual, node-based approach, we'll create interesting and unique visualizations that evolve and react on varying input. We'll learn how to capture, prepare, visualize and refine data.</p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization. We will learn to look at data differently, and gain insight in how to create new and interesting designs.</p>\r\n\r\n<pData is taking over your life. It's time to take control.</p>\r\n\r\n<p>This workshop takes place in the <a href=\"http://www.aalto.fi/en/\">Aalto University</a> in Helsinki, Finland.</p>",
+    "position": 16
+  },
+  {
+    "id": 11,
+    "name": "2013 Vilnius",
+    "slug": "2013-vilnius",
+    "description": "Data Visualization Workshop in Vilnius, 12-16 March 2013.",
+    "about": "<p>This website is a liveblog of a <a href=\"http://nodebox.net/\">NodeBox 3</a> workshop on Data Visualization taking place in Vilnius, Lithuania from 12-16 Mar 2013.<p>\r\n\r\n<p>Each SMS we receive, each Facebook event we attend and every web search we do is captured for eternity. It's as if our existence can be reduced to an endless stream of numbers. What if we could visualize this data and discover patterns in the chaos? </p>\r\n\r\n<p> During this workshop, we'll use a new tool well suited for visualizing data. Through a visual, node-based approach, we'll create interesting and unique visualizations that evolve and react on varying input. We'll learn how to capture, prepare, visualize and refine data. The end result will be a poster with a visualization around a self-chosen theme. </p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization. We will learn to look at data differently, and gain insight in how to create new and interesting designs. <strong>Data is taking over your life. It's time to take control.</strong></p>",
+    "position": 17
+  },
+  {
+    "id": 12,
+    "name": "2009 Lahti",
+    "slug": "2009-lahti",
+    "description": "\"Coincidence\"",
+    "about": "<p>Welcome to the NodeBox Lahti Workshop 2009 site! Whew! What a mouthful:</p>\r\n<ul>\r\n\t<li><strong>NodeBox</strong>: This workshop is held by the Experimental Media Group, also known as \"The NodeBox Team\". Currently, Lucas and Frederik are here. Tom will arrive next week.</li>\r\n\t<li><strong>Lahti</strong>: The workshop is held in <a href=\"http://www.lahti.fi/www/cms.nsf/pages/indexeng\">Lahti, Finland</a>, at the <a href=\"http://www.lamk.fi/engl/mi\">Lahti University of Applied Sciences, Institute of Design</a>.</li>\r\n\t<li><strong>Workshop</strong>: Well, much work and little shopping. This workshop is held with a number of students (we don't know yet how many).</li>\r\n\t<li><strong>2009</strong>: We do one each year.</li>\r\n</ul>",
+    "position": 2
+  },
+  {
+    "id": 13,
+    "name": "2010 Lahti",
+    "slug": "2010-lahti",
+    "description": "NodeBox 2 workshop, Lahti Polytechnic, 11 - 22 January 2010.",
+    "about": "Liveblog of the NodeBox 2 workshop at the Lahti Polytechnic in Finland from 11 to 22 January 2010.\r\n",
+    "position": 3
+  },
+  {
+    "id": 14,
+    "name": "2010 Antwerp",
+    "slug": "2010-antwerp",
+    "description": "Patterns of Data, Antwerp, 22-26 Feb 2010.",
+    "about": "<p>This workshop runs from 22-26 February and will result in a number of posters.</p>\r\n\r\n<p>Liveblog of the February 2010 Workshop in Antwerp, Belgium. This workshop runs from 22 February - 26 February under the theme \"patterns of data\".</p>\r\n\r\nStudents will use <a href=\"http://nodebox.net/\">NodeBox 2</a> to create their work.",
+    "position": 4
+  },
+  {
+    "id": 15,
+    "name": "2011 Helsinki",
+    "slug": "2011-helsinki",
+    "description": "Patterns of Data, Helsinki, 16-27 May 2011.",
+    "about": "<p>Each SMS we receive, each Facebook event we attend and every web\u00a0search we do is captured for eternity. It's as if our existence can be\u00a0reduced to an endless stream of numbers. What if we could visualize\u00a0this data and discover patterns in the chaos?</p>\r\n\r\n<p>During this workshop, we'll use a new tool well suited for visualizing\u00a0data. Through a visual, node-based approach, we'll create interesting\u00a0and unique visualizations that evolve and react on varying input.\u00a0We'll learn how to capture, prepare, visualize and refine data. The\u00a0end result will be a poster with a visualization around a self-chosen\u00a0theme. Enterprising students can even create data animations\u00a0(\"datamations\").</p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization.\u00a0We will learn to look at data differently, and gain insight in how to\u00a0create new and interesting designs.</p>\r\n\r\n<p>Data is taking over your life. It's time to take control.</p>\r\n\r\n<p>This workshop takes place in the\u00a0<a href=\"http://www.aalto.fi/en/\">Aalto University</a> in Helsinki, Finland from 16 to 27 May.</p>\r\n\r\n&nbsp;",
+    "position": 6
+  },
+  {
+    "id": 16,
+    "name": "2011 Antwerp",
+    "slug": "2011-antwerp",
+    "description": "Patterns of Data, Antwerp, 28 Feb - 4 Mar 2011.",
+    "about": "<p>Welcome to Patterns of Data, a\u00a0workshop held from Monday 28 February - Friday 4 March 2011  in <a href=\"http://www.sintlucasantwerpen.be/\">Sint Lucas Antwerpen</a> and\u00a0presented by Lieven Menschaert and Frederik De Bleser.</p>\r\n\r\n<p>This workshop is for designers new to NodeBox. We will learn to look at data differently, and gain insight into how to create new and interesting visualizations.\u00a0We will use <a href=\"http://nodebox.net/\">NodeBox 2</a> to produce a data visualization around a self-chosen theme.</p>",
+    "position": 5
+  },
+  {
+    "id": 17,
+    "name": "2013 Montr\u00e9al",
+    "slug": "2013-montreal",
+    "description": "Data Visualization Workshop in Montr\u00e9al, 28/4-4/5 2013.",
+    "about": "<p>During this workshop, we'll use a new tool well suited for visualizing data. Through a visual, node-based approach, we'll create interesting and unique visualizations that evolve and react on varying input. We'll learn how to capture, prepare, visualize and refine data.</p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization. We will learn to look at data differently, and gain insight in how to create new and interesting designs.</p>\r\n\r\n<p>This workshop takes place during the <a href=\"http://designinternational2013.blogspot.ca/\">Design International 2013 week</a> in the <a href=\"http://www.designuqam.com/\">\u00c9cole de design</a> in Montr\u00e9al, Canada.</p>",
+    "position": 18
+  },
+  {
+    "id": 18,
+    "name": "2013 Valence",
+    "slug": "2013-valence",
+    "description": "Data Visualization Workshop in Valence, 6-8 November 2013.",
+    "about": "<p>During this workshop, we'll use NodeBox to visualize large sets of data. Through a visual, node-based approach, we'll create interesting and unique visualizations that evolve and react on varying input. We'll learn how to capture, prepare, visualize and refine data.</p>\r\n\r\n<p>This workshop is for designers new to NodeBox and data visualization. We will learn to look at data differently, and gain insight in how to create new and interesting designs.</p>\r\n\r\n<p>This workshop takes place at the <a href=\"http://esad-gv.fr/\">\u00c9cole Sup\u00e9rieure d'Art et Design </a> in Valence, France.</p>\r\n\r\n<img src=\"http://workshops.nodebox.net/media/2013-valence/group.jpg\" alt=\"The workshop teachers and students\" style=\"max-width: 100%\" />",
+    "position": 19
+  },
+  {
+    "id": 19,
+    "name": "2014 Helsinki",
+    "slug": "2014-helsinki",
+    "description": "Data Viz and Generative Design",
+    "about": "<p>During this workshop, we'll use a new tool well suited for visualizing data. Through a visual, node-based approach, we'll create interesting and unique visualizations that evolve and react on varying input.</p>\r\n\r\n<p>This workshop is for designers new to NodeBox, data visualization and generative design. We will learn to look at data differently, and gain insight in how to create new and interesting designs.</p>\r\n\r\n<p>A workshop held from January 27 till January 31 at <a href=\"http://www.aalto.fi/en/\">Aalto University</a> in Helsinki, Finland.</p>",
+    "position": 20
+  },
+  {
+    "id": 20,
+    "name": "2014 Antwerp",
+    "slug": "2014-antwerp",
+    "description": "Data Visualization Workshop in Antwerp, 24-28 March 2014.",
+    "about": "<h3>The Quantified Self: Visualizing your Life</h3>\r\n\r\n<p>Each sms we receive, each Facebook post we like and every web search\r\nwe do is captured for eternity. It\u0092s as if our existence can be reduced to\r\nan endless stream of numbers. What if we could visualize this data and discover patterns in the chaos? Can we learn something new by quantifying ourselves?</p>\r\n\r\n<p>In this master class we\u0092ll look at ways to collect all this information and then visualize it. We\u0092ll use NodeBox 3, a visual, node-based tool that does not require programming experience. We\u0092ll learn how to capture, prepare, visualize and refine your data. The end result will be a poster representing \u0091you\u0092.</p>\r\n\r\n<p>Visualizing your own data can give you new insights into your life and your habits. In addition, it is a great exercise to learn about data visualization in general.</p>\r\n\r\n<p>To participate, we require you to carefully log what happens during a period of 5 months. This registration can happen using a custom-built smartphone app or on paper.</p>\r\n",
+    "position": 21
+  },
+  {
+    "id": 21,
+    "name": "2014 Vilnius",
+    "slug": "2014-vilnius",
+    "description": "Data Visualization Workshop in Vilnius, 14-18 April 2014.",
+    "about": ".",
+    "position": 22
+  },
+  {
+    "id": 22,
+    "name": "2015 Antwerp",
+    "slug": "2015-antwerp",
+    "description": "Self-documenting visualisations, 16-20 March 2015.",
+    "about": "<p>On a morning of May of 2010, Iepe Rubingh and his crew dropped buckets of coloured paint on a busy intersection in Berlin. All of a sudden every car became a brush in a live painting showing the delicate dance of acceleration, braking and swerving across the road. A visceral, physical data visualisation emerged from that.</p>\r\n\r\n<p>Data visualisation turns abstract information into a concrete graphical representation, thereby showing patterns, trends and outliers in the information. We see visualisations usually as clean geometric designs that present data in a formal way, but they don't have to be.</p>\r\n\r\n<p>In this workshop we ask the question if we can make this transformation from data to graphics more explicit and self-documenting. A self-documenting visualisation shows the hidden patterns made explicit through a deliberate intervention, a specific registration setup, a data procedure...</p>\r\n\r\n<p>Data registration can happen through a multitude of interfaces and devices. Visualisation happens in NodeBox Live, a visual node-based tool written by EMRG and thought all over the world.</p>\r\n",
+    "position": 23
+  },
+  {
+    "id": 23,
+    "name": "2015 Vilnius",
+    "slug": "2015-vilnius",
+    "description": "Everything is Data",
+    "about": ".",
+    "position": 24
+  },
+  {
+    "id": 24,
+    "name": "2015 Warsaw",
+    "slug": "2015-warsaw",
+    "description": "Generative Data, 25-29 May 2015.",
+    "about": "More content coming soon....",
+    "position": 25
+  },
+  {
+    "id": 25,
+    "name": "2015 Liege",
+    "slug": "2015-liege",
+    "description": "Workshop Visualisation de data a Liege, 15-20 Octobre 2015",
+    "about": "More content coming soon....",
+    "position": 26
+  },
+  {
+    "id": 26,
+    "name": "NodeBox Workshop 2016 Antwerp",
+    "slug": "2016-antwerp",
+    "description": "Actually Useful",
+    "about": "(Data is stored as a static folder)",
+    "position": 27
+  },
+  {
+    "id": 27,
+    "name": "2016 Vilnius",
+    "slug": "2016-vilnius",
+    "description": "Responsive Typography",
+    "about": " ",
+    "position": 28
+  }
+]
