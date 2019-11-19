@@ -9,6 +9,7 @@ collections:
 exclude:
   - README.md
   - Rakefile
+  - _convert/
 plugins:
   - jekyll-redirect-from
 whitelist:

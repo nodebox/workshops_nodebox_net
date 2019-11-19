@@ -19,9 +19,9 @@ layout: modern
 <div id="content" class="sixteen columns">
   <div class="workshop-grid">
     {% assign workshops = site.workshops | reverse %} {% for workshop in workshops %}
-    <a href="{{ workshop.url }}">
+    <a href="{{ workshop.url }}" class="workshop-grid__post">
       <img src="{{ site.static_url }}{{ workshop.thumb }}" alt="{{ workshop.name }}" />
-      <h2>{{ workshop.name }}</h2>
+      <h5>{{ workshop.name }}</h5>
     </a>
     {% endfor %}
   </div>
