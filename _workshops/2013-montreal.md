@@ -3,7 +3,7 @@ layout: workshop
 name: 2013 Montréal
 slug: 2013-montreal
 description: "Data Visualization Workshop in Montréal, 28/4-4/5 2013."
-thumb: 2013-montreal/CANADA_GOV_BORIS-GUILLAUME-HUGO.pdf
+thumb: 2013-montreal/Screen Shot 2013-05-07 at 10.16.32 AM.png
 ---
 <p>During this workshop, we'll use a new tool well suited for visualizing data. Through a visual, node-based approach, we'll create interesting and unique visualizations that evolve and react on varying input. We'll learn how to capture, prepare, visualize and refine data.</p>
 

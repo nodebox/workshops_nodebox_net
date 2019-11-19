@@ -25,7 +25,8 @@ layout: modern
   </div>
 
   <div class="workshop-posts">
-    {% for post in site.posts %} {% assign asset = post.assets[0] %}
+    {% for post in site.posts %} {% if post.workshop_slug == page.slug %} {% assign asset =
+    post.assets[0] %}
     <div class="thumb">
       <a href="{{ post.url }}">
         {% if asset %}
@@ -46,7 +47,7 @@ layout: modern
         </p>
       </a>
     </div>
-    {% endfor %}
+    {% endif %} {% endfor %}
   </div>
 </div>
 <!-- #content -->

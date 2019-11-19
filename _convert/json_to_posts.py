@@ -1,7 +1,7 @@
 import json
 
 posts = json.load(open('posts.json'))
-assets = list(json.load(open('assets.json')))
+assets = json.load(open('assets.json'))
 users = json.load(open('users.json'))
 blogs = json.load(open('blogs.json'))
 
@@ -10,7 +10,8 @@ for blog in blogs:
     blog_posts.reverse()
     for post in blog_posts:
         try:
-            first_asset = [asset for asset in assets if asset['post_id'] == post['id']][0]
+            first_asset = [asset for asset in assets if asset['post_id']
+                           == post['id'] and asset['type'] == 'image'][0]
             break
         except IndexError:
             pass
@@ -30,10 +31,12 @@ for post in posts[:10]:
     user = [user for user in users if user['id'] == post['user_id']][0]
     blog = [blog for blog in blogs if blog['id'] == post['blog_id']][0]
     post_assets = []
-    post_assets = list([asset for asset in assets if asset['post_id'] == post['id']])
-    post_assets.sort(key=lambda x:x['position'])
+    post_assets = list(
+        [asset for asset in assets if asset['post_id'] == post['id']])
+    post_assets.sort(key=lambda x: x['position'])
 
-    if len(post['body'].strip()) == 0 and len(post_assets) == 0: continue
+    if len(post['body'].strip()) == 0 and len(post_assets) == 0:
+        continue
 
     page = ''
     page += '---\n'
@@ -57,4 +60,3 @@ for post in posts[:10]:
 
     filename = '../_posts/{}-{}.md'.format(post['pub_date'], post['slug'])
     open(filename, 'w').write(page)
-    
