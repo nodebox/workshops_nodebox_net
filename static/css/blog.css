@@ -73,6 +73,7 @@ body {
 }
 
 .thumb img {
+  max-width: 100%;
   border-bottom: 3px solid #669;
 }
 
