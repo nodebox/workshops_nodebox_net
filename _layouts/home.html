@@ -3,22 +3,26 @@ layout: modern
 ---
 
 <div id="header" class="row">
-    <div class="sixteen columns">
-      <h1 id="header-name">
-        NodeBox Workshops
-      </h1>
-      <hr />
-      <p><a href="https://www.emrg.be/">EMRG</a> has organized design workshops internationally since 2004. A workshop usually spans a 1-2 week period involving both theory, art & design practice, and hands-on programming sessions.  Here you will find the raw, unfinished work of our workshop participants.</p>
-    </div>
+  <div class="sixteen columns">
+    <h1 id="header-name">
+      NodeBox Workshops
+    </h1>
+    <hr />
+    <p>
+      <a href="https://www.emrg.be/">EMRG</a> has organized design workshops internationally since
+      2004. A workshop usually spans a 1-2 week period involving both theory, art & design practice,
+      and hands-on programming sessions. Here you will find the raw, unfinished work of our workshop
+      participants.
+    </p>
   </div>
-  <div id="content" class="sixteen columns">
-<div class="workshop-grid">
-{% assign workshops = site.workshops | reverse %}
-{% for workshop in workshops %}
-<a href="{{ workshop.url }}">
-  <img src="/static/media/{{ workshop.thumb }}" alt="{{ workshop.name }}"/>
-  <h2>{{ workshop.name }}</h2>
-</a>
-{% endfor %}
 </div>
+<div id="content" class="sixteen columns">
+  <div class="workshop-grid">
+    {% assign workshops = site.workshops | reverse %} {% for workshop in workshops %}
+    <a href="{{ workshop.url }}">
+      <img src="{{ site.static_url }}{{ workshop.thumb }}" alt="{{ workshop.name }}" />
+      <h2>{{ workshop.name }}</h2>
+    </a>
+    {% endfor %}
+  </div>
 </div>
