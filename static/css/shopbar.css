@@ -1,0 +1,97 @@
+#shopbar {
+  background-color: #777;
+  color: #ddd;
+  font: normal 12px/28px Arial, Helvetica, sans-serif;
+  height: 28px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  min-width: 960px;
+}
+
+#shopbar * {
+  height: auto;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  position: static;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1;
+}
+
+#shopbar ul,
+#shopbar ul li {
+  background: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 9999;
+}
+
+#shopbar ul li {
+  float: left;
+}
+
+#shopbar .popup a > span {
+  display: inline;
+  padding-right: 0.8em;
+}
+
+#shopbar .popup ul {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.97);
+  display: none;
+  position: absolute;
+  border: 1px solid #dfdfdf;
+  border-top: none;
+  float: none;
+  width: 200px;
+}
+
+#shopbar .popup:hover ul {
+  display: block;
+}
+
+#shopbar .popup:hover ul li {
+  display: block;
+}
+
+#shopbar .popup li:hover > a {
+  color: white;
+  text-shadow: #666 0 -1p 0;
+}
+#shopbar .popup ul li {
+  float: none;
+}
+
+#shopbar .popup li:hover {
+  background: #888;
+}
+
+#shopbar .popup li a {
+  color: #555;
+  text-shadow: none;
+  white-space: nowrap;
+  min-width: 140px;
+}
+#shopbar a {
+  outline: none;
+  border: none;
+  text-decoration: none;
+  background: none;
+  color: #ddd;
+  height: 28px;
+  text-shadow: #555 0 -1px 0;
+  display: block;
+  font: normal 13px/28px Arial, Helvetica, sans-serif;
+  padding: 0 0.85em;
+  margin: 0;
+}
+
+#shopbar a > span {
+  line-height: 28px;
+}
