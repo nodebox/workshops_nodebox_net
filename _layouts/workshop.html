@@ -31,7 +31,8 @@ layout: modern
       <a href="{{ post.url }}">
         {% if asset %}
         <img
-          src="{{ site.static_url }}{{ post.workshop_slug }}/{{ asset.filename }}"
+          class="thumb__image"
+          src="{{ site.thumb_url }}{{ post.workshop_slug }}/{{ asset.filename }}"
           width="220"
           height="220"
           alt="{{ post.title }}"
