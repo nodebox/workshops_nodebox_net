@@ -1,5 +1,9 @@
 /* Shared workshop styles. */
 
+img {
+  max-width: 100%
+}
+
 b {
   font-weight: bold;
 }
@@ -25,9 +29,16 @@ b {
   display: inline-block;
   vertical-align: top;
   width: 220px;
-  overflow: hidden;
   margin-right: 10px;
   margin-bottom: 2em;
+}
+
+.thumb__image {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .thumb a {
@@ -72,11 +83,6 @@ body {
   color: #669;
 }
 
-.thumb img {
-  max-width: 100%;
-  border-bottom: 3px solid #669;
-}
-
 h5 {
   font: 12px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #669;
@@ -112,11 +118,4 @@ h5 {
 .workshop-grid a {
   text-align: center;
   text-decoration: none;
-}
-
-.workshop-grid img {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
