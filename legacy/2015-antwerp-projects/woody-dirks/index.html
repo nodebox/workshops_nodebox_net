@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type='text/javascript' src='http://www.midijs.net/lib/midi.js'></script>
+    <script src="http://live.nodebox.net/static/js/bundle.js"> </script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+   <h1> Royal Blood Visualized </h1>
+    <a href="#" onClick="onPlay()">Play</a>
+    <a href="#" onClick="onStop()">Stop</a>
+
+<br>
+<div id="wrapper">
+        <canvas id="c" width="4100" height="500" ></canvas>
+    <canvas id="cc" width="4100" height="500" ></canvas>
+</div>
+<small>Hint: scroll to the right!</small>
+
+    <script>
+        var player = app.embed({userId:'Woodsel', projectId:'soundscript', functionId: 'csv', canvasId: 'c'});
+        var player2 = app.embed({userId:'Woodsel', projectId:'liner', canvasId: 'cc'});
+        function onPlay() {
+            MIDIjs.play('blood.mid');
+            setTimeout(player2.start.bind(player2), 1000);
+            //player2.start();
+        }
+
+        function onStop() {
+            MIDIjs.stop();
+            player2.stop();
+            player2.ndbx._currentFrame = 1;
+            player2.draw();
+        }
+    </script>
+</body>
+</html>

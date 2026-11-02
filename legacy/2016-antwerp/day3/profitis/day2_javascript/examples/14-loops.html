@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loops</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  </style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script src="canvas-utils.js"></script>
+<script>
+  var canvas = document.querySelector('#c');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var ctx = canvas.getContext('2d');
+
+  ctx.strokeStyle = 'black';
+  ctx.strokeWidth = 0.2;
+
+
+  var segmentLength = 50;
+  var randomSize = 0;
+
+  function draw() {
+    Math.seedrandom(42);
+
+    // Gelijdelijk uitwissen
+    // ctx.fillStyle = 'rgba(255, 255, 255, 0.01)';
+    // ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.beginPath();
+    ctx.moveTo(0, mouseY);
+    for (var x = segmentLength; x < canvas.width + segmentLength; x += segmentLength) {
+      var lx = x;
+      var ly = mouseY + random(-randomSize, randomSize);
+      ctx.lineTo(lx, ly);
+    }
+    ctx.stroke();
+    randomSize += 0.1;
+  }
+
+  window.addEventListener('mousemove', draw);
+</script>
+</body>
+</html>

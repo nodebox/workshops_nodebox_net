@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: monospace;
+            color: white;
+            transform: translate(1400px, 200px) scale(2.5);
+            overflow: hidden;
+        }
+        
+        .center {
+            align-items: center;
+        }
+        
+        .panic {
+            position: absolute;
+            left: 100px;
+            display: none;
+        }
+        
+        .center:hover .panic {
+            display: block;
+        }
+        
+        #container1 {
+            position: absolute;
+            top: 35px;
+            left: 50px;
+            animation-name: ventje1;
+            animation-duration: 15s;
+            animation-iteration-count: infinite;
+            transition: all 1s;
+        }
+        
+        .center:hover #container1,
+        .center:hover #container2,
+        .center:hover #container3 {
+            animation-duration: 1.5s;
+            animation-direction: reverse;
+            animation-delay: 0s;
+            xanimation-iteration-count: 0;
+            xanimation: none;
+        }
+        
+        #container2 {
+            position: absolute;
+            top: 110px;
+            left: 80px;
+            animation-name: ventje2;
+            animation-duration: 15s;
+            animation-iteration-count: infinite;
+            animation-delay: 5s;
+        }
+        
+        #container3 {
+            position: absolute;
+            top: 180px;
+            left: 40px;
+            animation-name: ventje3;
+            animation-duration: 15s;
+            animation-iteration-count: infinite;
+            animation-delay: 7s;
+            animation-direction: alternate;
+        }
+        
+        .townhouse {
+            transform: translateY(-220px);
+            z-index: 0;
+            position: absolute;
+        }
+        
+        .roads {
+            z-index: 100;
+        }
+        
+        #ventje {
+            z-index: 0;
+        }
+        
+        @keyframes ventje1 {
+            0% {
+                transform: translate(0px)
+            }
+            25% {
+                transform: translate(120px, 50px);
+            }
+            75% {
+                transform: translate(120px, 50px);
+            }
+            100% {
+                transform: translate(0px);
+            }
+        }
+        
+        @keyframes ventje2 {
+            0% {
+                transform: translate(0px)
+            }
+            25% {
+                transform: translate(100px, 70px);
+            }
+            75% {
+                transform: translate(100px, 70px);
+            }
+            100% {
+                transform: translate(0px);
+            }
+        }
+        
+        @keyframes ventje3 {
+            0% {
+                transform: translate(0px)
+            }
+            25% {
+                transform: translate(140px, 0px);
+            }
+            75% {
+                transform: translate(140px, 0px);
+            }
+            100% {
+                transform: translate(140px, -100px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <div class="roads">
+            <img src="townroads.svg" alt="">
+        </div>
+        <div id="container1">
+            <img src="sad%20person.svg" alt="" id="ventje">
+        </div>
+        <div id="container2">
+            <img src="sad%20person.svg" alt="" id="ventje">
+        </div>
+        <div id="container3">
+            <img src="sad%20person.svg" alt="" id="ventje">
+        </div>
+        <div class="townhouse">
+            <img src="townhouses.svg" alt="">
+        </div>
+        <div class="panic">
+            <p>panic!</p>
+        </div>
+    </div>
+</body>
+
+</html>

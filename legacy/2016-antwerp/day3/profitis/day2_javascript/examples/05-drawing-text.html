@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drawing Text</title>
+</head>
+<body>
+<canvas id="c" style="border: 1px solid black"></canvas>
+<script>
+  var canvas = document.querySelector('#c');
+  var ctx = canvas.getContext('2d');
+
+  var baseline = 100;
+
+  ctx.fillStyle = 'blue';
+  ctx.font = '72px arial';
+  ctx.fillText('Hello', 10, baseline);
+
+  ctx.strokeStyle = 'red';
+  ctx.lineWidth = 3;
+  ctx.strokeText('Hello', 10, baseline);
+
+  ctx.fillRect(0, baseline, 1000, 2);
+</script>
+
+</body>
+</html>

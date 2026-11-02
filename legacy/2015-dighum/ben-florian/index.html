@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>#DHBenelux tweep interaction</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://dighum.herokuapp.com/static/js/bundle.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>#DHBenelux tweep interaction</h1>
+            <h2>By Ben Verhoeven &amp; Florian Kunneman</h2>
+            <h3>
+            This visualization is our result of the 2015 Antwerp Spring Aca­demy in Digi­tal Humani­ties: Data Visualization. We have visualized the interactions on Twitter in relation to the DHBenelux conference, and compared the edition in The Hague in 2014 to the edition in Antwerp in 2015. 
+            </h3>
+            <h3>
+            We collected all tweets with the #DHBenelux hashtag, and were posted during either of the two conferences (not before or after them). This resulted in about 1000 tweets per edition after which retweets were removed. To measure the interaction, we distinguished tweets that contain a user mention (e.g. @verhoevenben or @fkunneman) from tweets that do not. The tweet frequencies per user account are displayed by the height of their bar. The unique number of users that one interacts with are indicated by the color intensity. The graph enables you to play around with the ordering of the data, and to zoom in on specific details. Enjoy!
+            </h3>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="container" style="display: flex">
+                <div style="width: 300px; margin: 10px;">
+                    <h2>Sort by</h2>
+                    <input type="radio" name="radio" value="total_interactions" checked onchange="sort(this)">
+                    <label for="total_interactions">All interactions</label> <br>
+                    <input type="radio" name="radio" value="2014_interactions" onchange="sort(this)">
+                    <label for="2014_interactions">Interactions 2014</label> <br>
+                    <input type="radio" name="radio" value="2015_interactions" onchange="sort(this)">
+                    <label for="2014_interactions">Interactions 2015</label> <br>
+                    <input type="radio" name="radio" value="2014_tweets" onchange="sort(this)">
+                    <label for="total_interactions">All tweets 2014</label> <br>
+                    <input type="radio" name="radio" value="2015_tweets" onchange="sort(this)">
+                    <label for="total_interactions">All tweets 2015</label> <br>
+                    <input type="radio" name="radio" value="2014_mentions" onchange="sort(this)">
+                    <label for="2014_interactions">Mentions 2014</label> <br>
+                    <input type="radio" name="radio" value="2015_mentions" onchange="sort(this)">
+                    <label for="2014_interactions">Mentions 2015</label> <br>
+                    <h2>Zoom</h2>
+                    <input id="zoomSlider" type="range" min="1" max="80" oninput="zoom(this)">
+                </div>
+                <div style=" margin: 10px;">
+                    <canvas width="3840" height="2000" id="c" style="width:960px; height:500px"></canvas>
+                </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2015</p>
+        </div>
+    </div>
+</body>
+</html>

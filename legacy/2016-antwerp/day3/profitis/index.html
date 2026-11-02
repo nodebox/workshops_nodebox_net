@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+    <script src="utils.js"></script>
+    <script>
+        var canvas = document.querySelector('#c');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var ctx = canvas.getContext('2d');
+
+        var bcim = document.createElement("img");
+        bcim.src = "the-dump-2.png";
+        //var counter = 0;
+
+        var im = document.createElement("img");
+        im.id = "beethoven";
+        im.src = "beethovenHead.png";
+
+        function makeBG() {
+            ctx.drawImage(bcim, 0, 0, canvas.width, canvas.height);
+        }
+
+
+        var audioContext;
+        var canvas;
+        var context;
+        var audiobuff;
+        var bufferLoader;
+
+        function init() {
+            audioContext = new AudioContext();
+            var currentBuffer = null;
+            canvas = document.querySelector('#c');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            context = canvas.getContext('2d');
+
+            bufferLoader = new BufferLoader(
+                audioContext, ["Beethoven_Symphony_No_9.mp3", "Beethoven_Symphony_No_9.mp3"],
+                finishedLoading
+            );
+
+            bufferLoader.load();
+
+        }
+
+        function finishedLoading(bufferList) {
+            playBreak();
+            audiobuff = bufferList[0];
+            //displayBuffer(context, audiobuff);
+        }
+
+        function playBreak() {
+            gain = audioContext.createGain();
+            gain.gain.value = 0.25; //
+
+            source = audioContext.createBufferSource();
+            source.buffer = bufferLoader.bufferList[1];
+
+            source.connect(gain);
+            gain.connect(audioContext.destination);
+
+            source.onended = function () {
+                playBreak();
+            }
+            source.start(0, 0, source.buffer.duration);
+        }
+
+
+        function playGranul(buffer) {
+            granul = audioContext.createBufferSource();
+            granul.buffer = buffer;
+            granul.playbackRate.value = mouseY / 500.0;
+            var gainnode = audioContext.createGain();
+            gainnode.gain.value = 0.5;
+            granul.connect(gainnode);
+            gainnode.connect(audioContext.destination);
+            var position = clamp(mouseX, 0, canvas.width);
+            section = (granul.buffer.length / 44100.0) / canvas.width;
+            granul.start(0, position * section, section);
+        }
+
+        function draw() {
+            var s = 100;
+            ctx.drawImage(im, mouseX - s / 2, mouseY - s / 2, s, s);
+            window.requestAnimationFrame(draw);
+        }
+
+
+        window.mouseX = 0;
+        window.mouseY = 0;
+
+        window.addEventListener('mousemove', function (e) {
+            window.mouseX = e.clientX;
+            window.mouseY = e.clientY;
+            playGranul(audiobuff);
+        });
+
+
+        draw();
+        window.addEventListener('load', init);
+        window.addEventListener('load', makeBG);
+    </script>
+
+</body>
+
+</html>

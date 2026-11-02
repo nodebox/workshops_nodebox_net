@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0131)http://vrt.emsecure.net/optiext/optiextension.dll?ID=A0zzz3JVxpipICjhZWrGo%2BKWEzrSVCrT64xjsR&GUID=C6C4C2C6F5814B19B781899C622DE89B -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="sg:pagetag" content=""><meta name="sg:flowtag" content=""></head><body leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0" bgcolor="#FFFFFF"><script type="text/javascript" language="javascript" src="jquery.js"></script><script type="text/javascript" language="javascript" src="simFunctions.js"></script><script type="text/javascript">
+ var pollGuid = 'C6C4C2C6F5814B19B781899C622DE89B';
+ 
+ $(document).ready(function() {
+ //Check Cookie
+ var cookieName = 'vrt_poll_708_' + pollGuid;
+ var chkCookie = getCookie(cookieName);
+
+ if (chkCookie.length > 0){
+ window.location = 'http://vrt.emsecure.net/optiext/optiextension.dll?id=Hv2CxgE1fac2Tvc7XUaLrGHVwARBGoM1OGKJtihUFos3Zuxitb1XbGrQr%2B0MVg6n0FN85AYKo_HHHW&GUID=' + pollGuid + '&ALREADY_VOTED=1';
+ } else {
+ $('.form').show();
+ }
+
+ if ($.browser.mobile) {
+ $('#BROWSER_CLIENT_MOBILE').val(1);
+ }
+ else {
+ $('#BROWSER_CLIENT_MOBILE').val(0);
+ }
+
+ parseErrors('');
+ });
+</script>
+
+
+<link type="text/css" href="simGeneral.css" rel="stylesheet"><!-- 
+<link type="text/css" href="http://vrt.emsecure.net/scripts/css/vrt/Modules/Poll.css" rel="stylesheet" />
+--><link type="text/css" href="poll_deredactie.css" rel="stylesheet">
+<div class="form" style=""><form name="pollForm" method="post" action="http://vrt.emsecure.net/optiext/optiextension.dll?id=Erylg9WbJVidKH0KNJ4MaWNGGtHWYbEKnGqe4JQcF87x63lj%2BKGj%2BU6utl_2E9L0vSsTkHrw9hEEEV"><!-- Poll Actief --><input type="HIDDEN" name="POLLID" value="740" id="POLLID"><input type="HIDDEN" name="GUID" value="C6C4C2C6F5814B19B781899C622DE89B" id="GUID"><input type="HIDDEN" name="BROWSER_CLIENT_MOBILE" value="0" id="BROWSER_CLIENT_MOBILE"><h1>Het is nu ook officieel: het hooikoortsseizoen is opnieuw gestart. Heeft u er al last van?</h1><div class="answers"><!-- Answer 1 --><div class="radio" id="A1"><input type="radio" name="ANSWER" id="ANSWER_1" value="1"><label id="lblAnswer1" for="ANSWER_1" class="answer">Ja</label></div><!-- Answer 2 --><div class="radio" id="A2"><input type="radio" name="ANSWER" id="ANSWER_2" value="2"><label id="lblAnswer2" for="ANSWER_2" class="answer">Neen</label></div></div><div class="clear button"><a href="http://vrt.emsecure.net/optiext/optiextension.dll?ID=A0zzz3JVxpipICjhZWrGo%2BKWEzrSVCrT64xjsR&amp;GUID=C6C4C2C6F5814B19B781899C622DE89B#" onclick="document.pollForm.submit();">Bevestigen</a></div><div id="showResults" class="clear"><br><a href="http://vrt.emsecure.net/optiext/optiextension.dll?id=LKMg%2Bt9tlqBphDmFTQl2hEyvcHsXfZq9bdYcnTl9khmowYx84zTOJFQs923aSVfM2DE_LF3Up0viNy&amp;GUID=C6C4C2C6F5814B19B781899C622DE89B" style="color: ">Bekijk hier de antwoorden</a></div><!-- EINDE ARTICLE CONTAINER --></form></div>  </body></html>

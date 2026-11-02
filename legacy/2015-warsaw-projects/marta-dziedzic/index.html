@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Embed Test</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://nodeboxwarsaw.herokuapp.com/static/js/bundle.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Disney Profit Percentages</h1>
+            <h2>By Marta Dziedzic</h2>
+            <p>Visual representation of of Disneys profits. Here you will find all the profits Disney made Domestically from their very first film to their most recent release. Zoom in and out and drag around.</p>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="container">
+           <label for="sizeSlider">Size</label>
+        <input id="sizeSlider" type="range" min="0" max="300" value="35" oninput="changeSize(this)">
+            <button onclick="player.start()">Start</button>
+            <button onclick="player.stop()">Stop</button>
+       </div>
+    </div>
+
+    <div class="scene">
+        <div class="container">
+            <canvas width="960" height="500" id="c"></canvas>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2015</p>
+        </div>
+    </div>
+</body>
+</html>

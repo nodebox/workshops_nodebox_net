@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Apollo 13</title>
+
+
+    <style>
+        body {
+            background-color: black;
+            width: 807px;
+            margin: 0 auto;
+        }
+        
+        #game {
+            background: url(schip);
+            width: 807px;
+            height: 576px;
+            position: relative;
+        }
+        
+        div {
+            width: 45%;
+            height: 600px;
+            border: 1px solid black;
+            background: black;
+            margin: 2%;
+            padding: 0;
+            display: inline-block;
+        }
+        
+        header {
+            font-size: 72px;
+            font-family: helvetica;
+            text-align: center;
+            color: #ffffff;
+        }
+        
+        button {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            margin-left: 40px;
+            margin-top: 250px;
+            align-items: center
+        }
+        
+        #img {
+            margin-top: 10px
+        }
+        
+        #b0 {
+            background-color: #ff00c4;
+            top: -230px;
+            left: 250px;
+        }
+        
+        #b1 {
+            background-color: #952cff;
+            top: 170px;
+            left: 420px;
+        }
+        
+        #b2 {
+            background-color: #00ffff;
+            top: -230px;
+            left: 380px;
+        }
+        
+        #b3 {
+            background-color: #00ff58;
+            top: 170px;
+            left: 205px;
+        }
+        
+        .glow {
+            box-shadow: 1px 1px 30px #e2ff00;
+            border: 0px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header> Apollo 13 </header>
+
+    <div id="game">
+        <button id="b0"></button>
+        <button id="b1"></button>
+        <button id="b2"></button>
+        <button id="b3"></button>
+    </div>
+
+
+
+    <script src="utils.js"></script>
+
+
+    <script>
+        var audioCtx = new AudioContext();
+
+        var osc;
+
+        var gain = audioCtx.createGain();
+        gain.gain.value = 0.5;
+
+        gain.connect(audioCtx.destination);
+
+        var notes = [NOTES.F4, NOTES.F5, NOTES.F6, NOTES.F7];
+
+
+        var melody = [0, 2, 3, 1, 3, 0, 3, 1, 0, 3];
+        // for (var i = 0; i < 10; i++) {
+        // Math.floor(Math.random() * 4)
+
+
+        var noteIndex = 0;
+        var noteLength = 500;
+        var level = 2;
+        var userMelody = [];
+
+        function playMelody() {
+            noteIndex = 0;
+            var firstNote = melody[0];
+            var firstFrequency = notes[firstNote];
+
+            osc = audioCtx.createOscillator();
+            osc.type = 'real';
+            osc.frequency.value = firstFrequency;
+            osc.connect(gain);
+            osc.start();
+
+            var firstButton = document.querySelectorAll('button')[firstNote];
+            firstButton.classList.add('glow');
+
+            setTimeout(nextNoteInMelody, noteLength);
+        }
+
+        function nextNoteInMelody() {
+            var note = melody[noteIndex];
+            var button = document.querySelectorAll('button')[note];
+            button.classList.remove('glow');
+
+            noteIndex++;
+            if (noteIndex < level) {
+                var newNote = melody[noteIndex];
+                var newFrequency = notes[newNote];
+                osc.frequency.value = newFrequency;
+                var newButton = document.querySelectorAll('button')[newNote];
+                newButton.classList.add('glow');
+                setTimeout(nextNoteInMelody, noteLength);
+            } else {
+                stopPlaying();
+
+            }
+        }
+        //function youWin () {
+        //alert( 'You have discovered a new planet!')
+        //}
+
+        function gameOver() {
+            alert('Houston, we have a problem!');
+        }
+
+        //function checkMelody2 (){
+        //for (var i=userMelody.length)
+        //  {youWin();
+        //}
+
+        function checkMelody() {
+            for (var i = 0; i < userMelody.length; i++) {
+                var expectedNote = melody[i];
+                var userNote = userMelody[i];
+                if (expectedNote !== userNote) {
+                    gameOver();
+                    return;
+                }
+            }
+
+            if (userMelody.length === level) {
+                // We played all notes correctly.
+                level++;
+                setTimeout(playMelody, noteLength);
+                userMelody = [];
+            }
+        }
+
+        function stopPlaying() {
+            osc.stop();
+        }
+
+        function playNote(freq) {
+            osc = audioCtx.createOscillator();
+            osc.type = 'sine';
+            osc.frequency.value = freq;
+            osc.start();
+            osc.connect(gain);
+            setTimeout(stopPlaying, noteLength);
+        }
+
+        function playNote0() {
+            playNote(notes[0]);
+            userMelody.push(0);
+            checkMelody();
+        }
+
+        function playNote1() {
+            playNote(notes[1]);
+            userMelody.push(1);
+            checkMelody();
+        }
+
+        function playNote2() {
+            playNote(notes[2]);
+            userMelody.push(2);
+            checkMelody();
+        }
+
+        function playNote3() {
+            playNote(notes[3]);
+            userMelody.push(3);
+            checkMelody();
+        }
+
+
+        playMelody();
+
+
+        document.querySelector('#b0').addEventListener('click', playNote0);
+        document.querySelector('#b1').addEventListener('click', playNote1);
+        document.querySelector('#b2').addEventListener('click', playNote2);
+        document.querySelector('#b3').addEventListener('click', playNote3);
+    </script>
+
+</body>
+
+
+</html>

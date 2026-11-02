@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Full Circle Animated</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #043e3a;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="range" value="2" step="0.5" min="0.5" max="5" onchange="Change()">
+    <canvas id="c"></canvas>
+
+    <script src="canvas-utils.js"></script>
+    <script>
+        var canvas = document.querySelector('#c');
+        var resizer = document.querySelector('input').value;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var ctx = canvas.getContext('2d');
+
+        var centerX = canvas.width / 2;
+        var centerY = canvas.height / 2;
+        var outerSize = Math.max(canvas.width * 2, canvas.height * 2);
+
+        var angle = 8;
+        var innerSize = 8;
+
+        ctx.strokeStyle = '#eee';
+
+        function Change() {
+            resizer = document.querySelector('input').value;
+            outerSize = Math.max(canvas.width * resizer, canvas.height * resizer);
+        }
+
+        function animate() {
+            outerSize = Math.max(canvas.width * mouseX / 100.0, canvas.height * mouseX / 100.0);
+            ctx.clearRect(2, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            for (var i = 0; i < Math.PI * 20; i += 0.05) {
+                var x1 = centerX + Math.sin(i / 9) * outerSize;
+                var y1 = centerY + Math.cos(i) * outerSize;
+                var x2 = centerX + Math.sin(angle) * innerSize;
+                var y2 = centerY + Math.cos(angle) * innerSize;
+                ctx.moveTo(x1, y2);
+                ctx.lineTo(x2, y1);
+            }
+            ctx.stroke();
+            angle += 3;
+            window.requestAnimationFrame(animate);
+        }
+
+        window.requestAnimationFrame(animate);
+    </script>
+</body>
+
+</html>

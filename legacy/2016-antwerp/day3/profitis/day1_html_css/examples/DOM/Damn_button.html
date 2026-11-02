@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Damn Button</title>
+	<style>
+		div {
+			position: absolute;
+		}
+		button {
+			background: blue;
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<script>
+		var calls = ["click me", "pick me", "click this", "hit the button"];
+
+		function reposition() {
+			var d = document.createElement("div");
+			d.id = "pack";
+			d.style.left = Math.random() * 400 + "px";
+			d.style.top = Math.random() * 300 + "px";
+			var b = document.createElement("button");
+			var p = parseInt(Math.random() * calls.length);
+			b.innerHTML = calls[p];
+			b.onclick = reposition;
+
+			d.appendChild(b);
+			document.body.appendChild(d);
+
+			if (document.body.querySelectorAll("#pack").length > 1) {
+				var del = document.body.querySelector("#pack");
+				document.body.removeChild(del);
+			}
+		}
+		reposition();
+	</script>
+
+
+</body>
+
+</html>

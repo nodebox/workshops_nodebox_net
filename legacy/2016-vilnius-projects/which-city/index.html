@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WHICH CITY ARE YOU?</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div id="choose">
+        <h1>WHICH CITY ARE YOU?</h1>
+
+        <p>WHAT DO YOU CHOOSE?</p>
+        <p>
+            <button onclick="changeCity('ny')">Hot-Dog</button>
+        </p>
+
+        <p>
+            <button onclick="changeCity('b')">Beer</button>
+        </p>
+
+        <p>
+            <button onclick="changeCity('a')">Magic Brownie</button>
+        </p>
+    </div>
+
+    <div id="main">
+        <canvas width="700" height="700" id="try"></canvas>
+        <br>
+        <p>
+            <button onclick="goBack()">Give me a little push</button>
+        </p>
+        
+    
+    </div>
+
+
+    <footer>
+
+    </footer>
+
+    <script src="https://nodebox.live/api/v1/ndbx.js"></script>
+    <script>
+        var options = {
+            userId: 'Aryna',
+            projectId: 'tutorial',
+            functionId: 'try',
+            canvasId: 'try'
+        };
+        ndbx.embed(options, function (err, player) {
+            window.player = player;
+
+        });
+
+        function changeCity(name) {
+            if (window.player) {
+                player.setValue('city', 's', name);
+                if (name === 'a') {
+                    player.setValue('text', 's', 'AMSTERDAM');
+                } else if (name === 'b') {
+                    player.setValue('text', 's', 'BERLIN');
+                } else if (name === 'ny') {
+                    player.setValue('text', 's', 'NEW YORK');
+                }
+                player.stop();
+                player.start();
+
+                var choose = document.querySelector('#choose');
+                choose.style.display = 'none';
+                var main = document.querySelector('#main');
+                main.style.display = 'block';
+            }
+        }
+
+        function goBack() {
+            var choose = document.querySelector('#choose');
+            choose.style.display = 'block';
+            var main = document.querySelector('#main');
+            main.style.display = 'none';
+        }
+        
+        
+    </script>
+
+<div id="main">
+        
+        <br>
+        
+    </div>
+
+</body>
+
+</html>

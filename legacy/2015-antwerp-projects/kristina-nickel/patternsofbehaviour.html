@@ -1,0 +1,56 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script src="http://live.nodebox.net/static/js/bundle.js"></script>
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+    <div id="wrap">
+    <h1>patterns of behaviour</h1>
+    <!-- <input type="range" min="2" max= "300" oninput="changeSize(this)"> -->
+    <div class="controls">
+    <select onChange="changePersonA(this)">
+        <option value="D-type.csv" selected>D-Type</option>
+        <option value="I-type.csv">I-Type</option>
+        <option value="S-type.csv">S-Type</option>
+        <option value="C-type.csv">C-Type</option>
+   </select>
+
+    <select onChange="changePersonB(this)">
+        <option value="D-type.csv" selected>D-Type</option>
+        <option value="I-type.csv">I-Type</option>
+        <option value="S-type.csv">S-Type</option>
+        <option value="C-type.csv">C-Type</option>
+   </select>
+    </div>
+
+
+
+    <br>
+   <canvas id="c" width= "800" height="800"></canvas>
+      <script>
+          var player =app.embed({userId:'KristinaNickel',projectId:'patterns', canvasId:'c',animate:true});
+
+          function changeSize (e) {player.setValue('rect1', 'width', parseFloat(e.value));}
+
+          function changePersonA(e) {
+                player.setValue('personA', 's', e.value);
+              player.ndbx._currentFrame = 0;
+              player.start();
+          }
+
+        function changePersonB(e) {
+                player.setValue('personB', 's', e.value);
+              player.ndbx._currentFrame= 0;
+              player.start();
+          }
+
+
+
+        </script>
+    </div>
+    </body>
+    </html>

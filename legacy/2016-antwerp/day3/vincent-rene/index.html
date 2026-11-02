@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>XERROX DRUM MACHINE</title>
+    <style>
+        body {
+            font-family: din;
+            font-size: 20px;
+        }
+        
+        input {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+        }
+        
+        #tempo {
+            width: 400px;
+        }
+        
+        .glow {
+            box-shadow: 0 0 5px red;
+        }
+    </style>
+</head>
+
+<body>
+    TEMPOSLIDER
+    <br>
+    <input type="range" min="0" max="2000" id="tempo">
+    <br> KICK
+    <div class="track">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+    </div>
+    SNARE
+    <div class="track">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+    </div>
+    HIHAT
+    <div class="track">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+    </div>
+    CRASH
+    <div class="track">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+        <input type="checkbox" class="step">
+    </div>
+
+</body>
+
+<script>
+    var counter = 0;
+    var sequenceCount = 0;
+    var interval = 500;
+    var trackFunctions = [playKick, playSnare, playHihat, playCrash];
+    var steps = 16;
+
+    function playKick() {
+        var osc1 = audioCtx.createOscillator();
+        osc1.type = "square"; // sine, sawtooth, square, triangle,...
+        osc1.frequency.value = 50; //=NOTES.A4;
+        osc1.start(0);
+        osc1.stop(audioCtx.currentTime + .3);
+
+        var freqlfo1 = audioCtx.createOscillator();
+        freqlfo1.type = "sine";
+        freqlfo1.frequency.value = 55;
+        freqlfo1.start();
+        freqlfo1.stop(audioCtx.currentTime + .05);
+
+        freqlfo1.connect(gain);
+        gain.connect(osc1.frequency);
+        osc1.connect(mastergain);
+    }
+
+    function playSnare() {
+        var osc2 = audioCtx.createOscillator();
+        osc2.type = "triangle"; // sine, sawtooth, square, triangle,...
+        osc2.frequency.value = 500; //=NOTES.A4;
+        osc2.start(0);
+        osc2.stop(audioCtx.currentTime + .15);
+
+        var freqlfo2 = audioCtx.createOscillator();
+        freqlfo2.type = "sine";
+        freqlfo2.frequency.value = 150;
+        freqlfo2.start();
+        freqlfo2.stop(audioCtx.currentTime + .25);
+
+        freqlfo2.connect(gain);
+        gain.connect(osc2.frequency);
+        osc2.connect(mastergain);
+    }
+
+    function playHihat() {
+        var osc3 = audioCtx.createOscillator();
+        osc3.type = "sawtooth"; // sine, sawtooth, square, triangle,...
+        osc3.frequency.value = 3500; //=NOTES.A4;
+        osc3.start(0);
+        osc3.stop(audioCtx.currentTime + .1);
+
+        var freqlfo3 = audioCtx.createOscillator();
+        freqlfo3.type = "sine";
+        freqlfo3.frequency.value = 500;
+        freqlfo3.start();
+        freqlfo3.stop(audioCtx.currentTime + .05);
+
+        freqlfo3.connect(gain);
+        gain.connect(osc3.frequency);
+        osc3.connect(mastergain);
+    }
+
+    function playCrash() {
+        var osc4 = audioCtx.createOscillator();
+        osc4.type = "square"; // sine, sawtooth, square, triangle,...
+        osc4.frequency.value = 1500; //=NOTES.A4;
+        osc4.start(0);
+        osc4.stop(audioCtx.currentTime + .5);
+
+        var freqlfo4 = audioCtx.createOscillator();
+        freqlfo4.type = "sine";
+        freqlfo4.frequency.value = 50;
+        freqlfo4.start();
+        freqlfo4.stop(audioCtx.currentTime + .25);
+
+        freqlfo4.connect(gain);
+        gain.connect(osc4.frequency);
+        osc4.connect(mastergain);
+    }
+
+    function step() {
+        var tracks = document.querySelectorAll(".track");
+        var prevSequenceCount = sequenceCount;
+        sequenceCount++;
+        sequenceCount = sequenceCount % steps;
+        var nextSequenceCount = sequenceCount;
+        for (var i = 0; i < tracks.length; i++) {
+            var track = tracks[i];
+
+            var buttons = track.querySelectorAll(".step");
+
+            /*  counter++;
+
+              if (counter % 10 == 0) {
+                  sequenceCount++;
+              }*/
+
+            buttons[prevSequenceCount].classList.remove('glow')
+            buttons[nextSequenceCount].classList.add('glow')
+
+            console.log(sequenceCount);
+
+            var now = buttons[sequenceCount].checked;
+
+            if (now) {
+                trackFunctions[i]();
+                //                playKick();
+            }
+
+            console.log(now);
+        }
+
+        //window.requestAnimationFrame(check);  
+        setTimeout(step, interval);
+
+    }
+
+    function changeTempo() {
+        interval = parseInt(60000 / this.value);
+    }
+
+    var audioCtx = new AudioContext();
+
+
+    var gain = audioCtx.createGain();
+    gain.gain.value = 750;
+
+    var mastergain = audioCtx.createGain();
+    mastergain.gain.value = .7;
+    mastergain.connect(audioCtx.destination);
+
+    setTimeout(step, interval);
+
+    //check();
+    //window.addEventListener('mousemove', check)
+    tempoSlider = document.querySelector("#tempo");
+    tempoSlider.addEventListener('input', changeTempo)
+</script>
+
+</html>

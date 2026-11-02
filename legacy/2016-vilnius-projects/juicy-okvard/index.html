@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="fontcss.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://nodebox.live/api/v1/ndbx.js"></script>
+
+
+	<title>Font</title>
+
+</head>
+
+<body>
+	<input type="range" id="decibels" min="0" max="100">
+
+	<a class="trigger">OKVARD</a>
+
+		<div class="about">
+
+			<h2 class="pirmas">About this font</h2>
+			<p>Okvard is one of the two "dancing" typefaces which are synced to the song played in the background, moreover, changes it's size and form depending on the intensity of a sound.
+				<br><br><a class="linkas" href="fluid/fluid.html"> Link to Juicy typeface </a></p>
+		</div>
+
+
+		<div class="raide">
+			<canvas width="450" height="520" id="mycanvas"></canvas>
+		</div>
+
+				<ul class="slider">
+					<li>
+						<input type="range" min="10" max="500" step="5" oninput="changeSize(this)"> </li>
+					<li>
+						<input text="range" value="A" oninput="changeText(this)">
+					</li>
+				</ul>
+
+<script type="text/javascript" src="fontasjava.js"></script>
+</body>
+
+</html>

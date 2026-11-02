@@ -1,0 +1,7 @@
+body {background: #222;text-align:center;color:white;font-family:Verdana;font-size:11px}
+div#content {width:700px;margin:auto}
+h1{font-size:12px;margin:0 0 20px 0;padding:0;}
+p {text-align:left;font-size:11px}
+ul{list-style-type:square;font-size:11px;margin:10px 0 0 0;padding:0;}
+li{text-align:left;;font-size:11px}
+a{color:white;}

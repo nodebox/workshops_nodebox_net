@@ -1,0 +1,83 @@
+body {
+	background: white;
+	color: #1e373e;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 40px;
+	font-family: "Helvetica", Helvetica;
+	font: 14px;
+}
+
+
+}
+#content {}
+footer {
+	margin-top: 20px;
+	background: yellow;
+	background: #ffb045;
+}
+footer h1 {
+	margin-top: 100px;
+	font-size: 40px;
+	font-weight: 40;
+}
+footer h2 {
+	font-style: light;
+	font-size: 20px;
+	margin-top: -20px;
+}
+footer h3 {
+	font-size: 20px;
+	margin-top: -16px;
+	margin-left: -3px;
+	margin-bottom: 0px;
+	font-family: "Helvetica", Helvetica;
+}
+#wie {
+	background: #ffb045;
+	padding-top: 20px;
+	padding-bottom: 200px;
+	font-weight: 40;
+	margin-left: auto;
+	margin-top: 160px;
+}
+#wie h1 {
+	margin-left: 10px;
+	font-size: 70px;
+	margin-top: 0px;
+}
+#wie img {
+	margin-left: 70px;
+	float: left;
+	margin-top: -80px;
+}
+#wie p {
+	float: right;
+	margin-right: 300px;
+	text-align: left;
+	padding: 5px;
+	width: 400px;
+	margin-top: -10px;
+}
+#redenen {
+	text-align: 300px;
+}
+#redenen_header {
+	margin-left: -110px;
+	margin-top: 40px;
+	width: 120%;
+	height: 400%;
+}
+#work {
+	margin-top: 80px;
+}
+#work img {
+	max-width: 50%;
+	max-height: 30%;
+	text-align: center;
+}
+
+}
+
+}

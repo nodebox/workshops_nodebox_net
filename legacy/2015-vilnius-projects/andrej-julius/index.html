@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>VIG Generator</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<script src="http://live.nodebox.net/static/js/bundle.js" ></script>
+<script src="http://live.nodebox.net/static/js/bundle.js"></script>
+<script src="gif.js"></script>
+<script src="main.js"></script>
+
+
+</head>
+<body>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1><a href="#">V.I.G.</a></h1>
+			<span>Video identity generator</a></span> </div>
+	</div>
+</div>
+<div id="wrapper1">
+	<div id="welcome" class="container">
+		<div class="title">
+			<h2>Make your moving avatar!</h2>
+			<span class="byline">Just enter your name, select color and style</span> </div>
+		<div class="content">
+
+
+    <label for="name">Name</label>
+    <input id="name" type="text" value="Name" oninput="changeName(this)"><p>
+
+    <br>
+
+    <label for="color">Color</label>
+    <input id="color" type="range" min="0" max="11" oninput="changeColor(this)"><p>
+
+    <label for="style">Style</label>
+    <input id="style" type="range" label="style" min="0" max="16" oninput="changeFX01(this)"><p>
+
+    <br>
+
+<!--  CANVAS   -->
+
+<canvas id="c" width="500" height="500" style="background: white;border: 1px solid black"></div>
+
+
+        <br>
+
+
+    	<a href="#" class="button" onclick="makeGIF()" id="makeGIFButton">Make GIF</a>    </div>
+
+		</div>
+</div>
+
+<div id="copyright">
+	<div class="title">
+<!--		<h2>Be Happy </h2>-->
+		<span class="byline">Powered By NodeBox Live</span> </div>
+
+	<p>&copy; All rights reserved. Made by <a href="http://vda.lt/"> A&J </a> Team</a>.</p>
+</div>
+</body>
+</html>

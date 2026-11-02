@@ -1,0 +1,89 @@
+body {
+    background: linear-gradient(to top, #b2ff99, #fffc99, #ffb599);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    z-index: 0;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+}
+
+#canvas-wrapper {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#c {
+    background: url(../images/cloud.png);
+    background-size: cover;
+}
+
+h1 {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.descripion {
+    text-align: left;
+    position: fixed;
+    width: 20%;
+    padding: 0% 79% 0% 1%;
+}
+
+footer {
+    z-index: 1;
+    padding: 10% 0% 0% 0%;
+}
+#img1 {
+    padding: 5% 0% 10% 30%;
+}
+#img2 {
+    padding: 30% 50% 20% 0%;
+}
+
+#img3 {
+    padding: 30% 50% 20% 0%;
+}
+
+#img5 {
+    padding: 30% 0% 20% 60%;
+}
+
+#img7 {
+    padding: 20% 60% 10% 0%;
+}
+#img10 {
+    padding: 20% 0% 20% 50%;
+}
+#img11 {
+    padding: 30% 40% 10% 0%;
+}
+#img13 {
+    padding: 20% 0% 10% 60%;
+}
+#img15 {
+    padding: 10% 60% 10% 0%;
+}
+#img17 {
+    padding: 28% 0% 10% 60%;
+}
+#textField {
+    font: inherit;
+    background: transparent;
+    outline: none;
+    border:1px solid black;
+    padding: 5px;
+    color: inherit;
+}

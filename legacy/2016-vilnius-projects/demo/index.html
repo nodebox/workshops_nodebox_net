@@ -1,0 +1,100 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Embedding Example</title>
+	<style>
+body { font: 18px monospace; background: #f7f7f7; color: #666; text-align: center; }
+.container { width: 1000px; margin: 50px auto; }
+canvas {margin: 50px 0;}
+</style>
+</head>
+<body>
+<div class="container">
+    <!-- The canvas element, where the visualization is rendered -->
+    <canvas id="c" width="700" height="300"></canvas>
+    <br>
+
+    <!-- The slider controls -->
+    Volume<br><input type="range" min="0" max="100" step="1" id="decibels">
+</div>
+    <!-- A link to the NodeBox JavaScript API  -->
+    <script src="https://nodebox.live/api/v1/ndbx.js"></script>
+
+    <!-- Your custom initialization code -->
+    <script>
+    // Again, replace these with your own userId / projectId / functionId / canvasId
+    var options = {
+      userId: 'fdb',
+      projectId: 'volumeDemo',
+      functionId: 'main',
+      canvasId: 'c',
+      autoplay: true
+    };
+
+    // Initialize the NodeBox player object
+    ndbx.embed(options, function(err, player) {
+      if (err) {
+        throw new Error(err);
+      } else {
+        window.player = player;
+      }
+    });
+
+    var analyser;
+
+    var samples = [];
+    samples.length = 2;
+    var sampleIndex = 0;
+    var sampleCount = 0;
+
+    function onAudio(stream) {
+      analyser = audioContext.createAnalyser();
+      analyser.fftSize = 64;
+
+      var input = audioContext.createMediaStreamSource(stream);
+      analyser = audioContext.createAnalyser();
+      input.connect(analyser);
+      requestAnimationFrame(onAudioSample);
+    }
+
+    function onAudioSample() {
+      var times = new Uint8Array(this.analyser.frequencyBinCount);
+      analyser.getByteFrequencyData(times);
+      var sample = times[32];
+      samples[sampleIndex] = sample;
+      sampleIndex++;
+      if (sampleIndex >= samples.length) {
+        sampleIndex = 0;
+      }
+      sampleCount = Math.min(sampleCount + 1, samples.length);
+
+      var sum = 0;
+      for (var i = 0; i < sampleCount; i++) {
+        sum += samples[i];
+      }
+
+      var volume = sum / sampleCount;
+
+      document.querySelector('#decibels').value = volume;
+      if (window.player) {
+        window.player.setValue('volume', 'v', volume);
+      }
+      requestAnimationFrame(onAudioSample);
+
+    }
+
+    function onAudioError(e) {
+      console.error('audio error', e);
+    }
+
+
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    var audioContext = new AudioContext();
+    navigator.getUserMedia({audio: true}, this.onAudio, this.onAudioError);
+
+
+
+
+    </script>
+</body>
+</html>

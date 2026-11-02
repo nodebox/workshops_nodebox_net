@@ -1,0 +1,14 @@
+---
+title: the socialising puzzle idea
+author: mazvyde
+assets:
+ - filename: Scan10001.jpg
+   type: image
+ - filename: Scan10002.jpg
+   type: image
+ - filename: Scan100021.jpg
+   type: image
+ - filename: Scan100011.jpg
+   type: image
+---
+<a href="/media/2010-lahti/Scan100021.jpg"><img src="/media/2010-lahti/Scan100021.jpg" alt="" title="file" width="217" height="300" class="alignnone size-medium wp-image-220" /></a><a href="/media/2010-lahti/Scan100011.jpg"><img src="/media/2010-lahti/Scan100011.jpg" alt="" title="Scan10001" width="218" height="300" class="alignnone size-medium wp-image-221" /></a>

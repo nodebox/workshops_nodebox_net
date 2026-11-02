@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Data worlds</title>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+    <script src="http://live.nodebox.net/static/js/bundle.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta charset=utf-8 />
+</head>
+
+<body>
+    Everything is data
+    <h1>Data worlds</h1>
+    <div id="uploadtext">Upload image to begin...</div>
+    <br>
+    <input id="i" type='file' onchange="readURL(this);" />
+    <br>
+    <img id="image" src="#" alt="your image" />
+    <canvas width="640" height="500" id="c"></canvas>
+
+    <script>
+        var ra = "",
+            ga = "",
+            ba = "",
+            filename = "";
+
+        $('#image').hide();
+
+        function readURL(input) {
+
+
+
+            $('#i').hide();
+            document.getElementById("uploadtext").innerHTML = "Loading... (it can take a really long time, sorry)";
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#image')
+                        .attr('src', e.target.result);
+                    $('#i').hide();
+
+                    var image = document.getElementById("image");
+                    var canvas = document.createElement("canvas");
+                    canvas.setAttribute("id", "imgCanvas");
+
+                    document.body.appendChild(canvas);
+
+                    filename = $('#i').val();
+
+
+
+
+                    canvas.width = 100;
+                    canvas.height = image.height * (100 / image.width);
+
+                    var context = canvas.getContext("2d");
+
+                    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+                    var imgData = context.getImageData(0, 0, canvas.width, canvas.height);
+                    //console.log(imgData);
+
+                    for (var i = 0; i < imgData.data.length; i += 4) {
+                        ra += imgData.data[i] + ",";
+                        ga += imgData.data[i + 1] + ",";
+                        ba += imgData.data[i + 2] + ",";
+                    }
+                    ra = ra.slice(0, ra.length - 1);
+                    ga = ga.slice(0, ga.length - 1);
+                    ba = ba.slice(0, ba.length - 1);
+                    sent();
+                    console.log("loaded and send");
+                    //player.stop();
+                    $('#i').show();
+                    document.getElementById("uploadtext").innerHTML = "Upload other image...";
+
+
+                };
+                reader.readAsDataURL(input.files[0]);
+
+
+            }
+        }
+
+        var player = app.embed({
+            userId: 'dedek',
+            projectId: 'createWorld',
+            canvasId: 'c',
+            functionId: 'main'
+        });
+
+        function sent() {
+            //console.log(ra);
+            //console.log(ga);
+            //console.log(ba);
+            player.setValue('seedInput', 's', filename);
+            player.setValue('rInput', 's', ra);
+            player.setValue('gInput', 's', ga);
+            player.setValue('bInput', 's', ba);
+        }
+    </script>
+
+    <footer>if you don't have image, try a <a href="bonus.html">bonus</a>
+    </footer>
+</body>
+
+</html>

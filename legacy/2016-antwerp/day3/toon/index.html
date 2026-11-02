@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #043e3a;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="range" value="5" min="1" max="0" step="1">
+    <canvas id="c"></canvas>
+    <script src="utils.js"></script>
+    <script>
+        // beeld context
+        var canvas = document.querySelector('#c');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var ctx = canvas.getContext('2d');
+
+        var centerX = canvas.width / 2;
+        var centerY = canvas.height / 2;
+        var outerSize = Math.max(canvas.width * 2, canvas.height * 2);
+
+        var angle = 28;
+        var innerSize = 8;
+
+        ctx.strokeStyle = '#eee';
+
+        // audiocontext
+        var audioContext = new AudioContext();
+        var osc = audioContext.createOscillator();
+        var gain = audioContext.createGain();
+        var analyser = audioContext.createAnalyser();
+        var bufferLength = 180;
+        gain.gain.value = 0.9;
+        var letter = 20;
+
+        // Source: http://chromium.googlecode.com/svn/trunk/samples/audio/wave-tables
+        var tables = guitar; // organ - strings
+        var c = tables.real.length;
+        var real = new Float32Array(c);
+        var imag = new Float32Array(c);
+        for (var i = 10; i < c; i++) {
+            real[i] = tables.real[i];
+            imag[i] = tables.imag[i];
+        }
+
+        var instrumentTable = audioContext.createPeriodicWave(real, imag);
+
+        //functions
+        function play() {
+            osc = audioContext.createOscillator();
+            gain.gain.value = 0.3;
+            osc.setPeriodicWave(instrumentTable);
+            osc.frequency.value = 880;
+            osc.connect(gain);
+            gain.connect(audioContext.destination);
+            osc.start(0);
+            gain.connect(analyser);
+
+        }
+
+        function stop() {
+            osc.disconnect();
+            osc.stop();
+        }
+
+        function changePitch() {
+            osc.frequency.value = (canvas.width / 2 - mouseX) / 50;
+        }
+
+        function changeGain() {
+            gain.gain.value = (canvas.height / 2 - mouseY) / 100.0;
+        }
+
+
+
+        function animate() {
+            var inputV = document.querySelector('input').value;
+            var frequencies = new Uint8Array(bufferLength)
+            analyser.getByteFrequencyData(frequencies);
+            var audioModulator = frequencies[10] / 1900;
+            console.log("modul" + audioModulator);
+            // outerSize = Math.max(canvas.width / 2 * mouseX / 1200.0, canvas.height / 2 * mouseY / 700.0);
+            outerSize = Math.max(canvas.width / 2 - mouseX, canvas.height / 2 - mouseY);
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            for (var i = 0; i < Math.PI * 25; i += 0.06) {
+                var x1 = centerX + Math.sin(i) * outerSize * frequencies[parseInt(i * inputV)] / 50;
+                var y1 = centerY + Math.cos(i) * outerSize * frequencies[parseInt(i * inputV)] / 50;
+                var x2 = centerX + Math.sin(angle) / innerSize * audioModulator;
+                var y2 = centerY + Math.cos(angle) / innerSize * audioModulator;
+                ctx.moveTo(x1, y2);
+                ctx.lineTo(x2, y1);
+            }
+            ctx.stroke();
+            angle += 3;
+            window.requestAnimationFrame(animate);
+        }
+
+        animate();
+
+
+
+
+        window.addEventListener('load', play);
+        window.addEventListener('mousemove', changePitch);
+        window.addEventListener('mousemove', changeGain);
+    </script>
+
+</body>
+
+</html>

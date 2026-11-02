@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://live.nodebox.net/static/js/bundle.js"></script>
+    <script src="main.js"></script>
+
+
+
+
+
+</head>
+<body>
+    <div class="header">
+        <div class="no-container">
+        <table>
+            
+            <tr>
+                
+                <td width="50%" valign="top">
+        <h1>Calendar project</h1>
+        <h3>By Justina Siciunaite</h3>
+                    
+                </td>
+    
+            <td>
+        <h2>Description</h2>
+
+                       <p>This is a unique calendar. Each season has a different color, each month has a different shape which depends on when particular month starts and ends, each week has a line, so you don't need any day numbers. There is a weekends in the red columns. Orange stars shows you celebrations and other Lithuania national holidays. And now.... it is your time to mark some important days for you! Choose year,month, day and type of your event and you will see how your own calendar looks like. And only you will be able to read it. Make it interesting, different and unique.</p>
+                
+            </td>
+                            </tr>
+        </table>
+    </div>
+    </div>
+
+   <div class="controls">
+   <h1>Make your own calendar</h1>
+   <table id ="eventsTable">
+       <tr>
+          
+           <th>Year</th>
+           <th>Month</th>
+           <th>Day</th>
+           <th>Event</th>
+           
+           <button onclick="addEvent()">Add Event</button>
+           
+       </tr>
+       <tr>
+           <td><input type="text" value="2015" id="yearField"></td>
+           <td><select name="" id="monthField">
+               <option value="1">1 - January</option>
+                              <option value="2">2 - February</option>
+               <option value="3">3 - March</option>
+               <option value="4">4 - April</option>
+               <option value="5">5 - May</option>
+               <option value="6">6 - June</option>
+               <option value="7">7 - July</option>
+               <option value="8">8 - August</option>
+               <option value="9">9 - September</option>
+               <option value="10">10 - October</option>
+               <option value="11">11 - November</option>
+               <option value="12">12 - December</option>
+
+           </select></td>
+           <td><input type="text" placeholder="E.g. 22" id="dayField"></td>
+           <td><select id="typeField">
+               <option value="celebration">Celebration</option>
+               <option value="birthday">Birthday</option>
+               <option value="meeting">Meeting</option>
+               <option value="holiday">Holiday</option>
+               <option value="project">Project</option>
+               <option value="deadline">Deadline</option>
+               <option value="other">Other</option>
+
+           </select></td>
+       </tr>
+   </table>
+   
+   <br>
+
+</div>
+<div class="scene">
+  <h1>Your Calendar</h1>
+   <canvas width="700" height="700" id="c"></canvas>
+   
+
+</div>
+   <script>
+
+        var player = app.embed({userId: 'Juste', projectId: 'calendar', canvasId: 'c'});
+        //player.start();
+
+    </script>
+
+
+
+
+</body>
+</html>

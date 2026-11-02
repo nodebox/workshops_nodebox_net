@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NDBX</title>
+    <script src="http://live.nodebox.net/static/js/bundle.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div id="wrap">
+    
+   <h1>My iTuneslibrary</h1>
+   <h2>By Sanne De Block</h2>
+   <p> </p>
+   Genre:<input type="range" min="0" max="100" step="1" value="2" oninput="changeGenre(this)">
+   <br>
+       <canvas id="c" width="1200" height="850" ></canvas>
+       </div>
+   
+   
+   
+   
+   
+   
+   
+   
+   <script>
+    var player = app.embed({userId: 'SanneDeBlock', projectId: 'embedTest' ,functionId: 'mainvis', canvasId:'c' });
+    
+    function changeGenre(e) {
+    player.setValue('slice1', 'startIndex', parseInt(e.value));
+                    }
+    </script>
+</body>
+</html>

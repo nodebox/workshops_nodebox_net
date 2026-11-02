@@ -1,0 +1,68 @@
+body {
+    font: 14px sans-serif;
+    line-height: 1.6;
+    background: #fcfcfc;
+    border-top: 4px solid #77c;
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    margin: 20px auto;
+    width: 640px;
+    height: 480px;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    color: #666;
+}
+
+.controls {
+    margin-bottom: 60px;
+    color: #999;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.controls span {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.controls input[type="text"] {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #999;
+    color: #999;
+    font-size: 10px;
+    background: inherit;
+}
+
+.controls input[type="range"] {
+    vertical-align: middle;
+}
+
+#type {
+    position: relative;
+}
+
+.glyph {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    line-height: 10px;
+}
+
+p.footer {
+    position: absolute;
+    bottom: 15px;
+    font-size: 10px;
+    color: #999;
+}
+
+p.footer a {
+    color: #999;
+}

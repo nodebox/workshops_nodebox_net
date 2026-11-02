@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ONE RING TO RULE THEM ALL</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://live.nodebox.net/static/js/bundle.js"></script>
+
+
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>MAGIC RING MAKER</h1>
+            <h2>By Kamile Balcytyte</h2>
+            <p>Magic Ring Maker is a result of one hardcore, mind-exhausting but amazing week workshop with Frederik De Bleser and NodeBox .</p>
+Name
+<input type="text" name="firstname" placeholder="jonas" oninput="changefirstName(this)">
+
+<br>
+Last name
+<input type="text" name="lastname" placeholder="jonaitis" oninput="changelastName(this)">
+
+<br>
+Birthdate example - 19901013
+<input type="text" name="birthdate" placeholder="19901013" oninput="changebirthdate(this)">
+
+<br>
+
+<canvas width="1366" height="768" id="c"></canvas>
+
+
+
+<script>
+
+var player = app.embed({userId: 'Kamile', projectId: 'finalProject',
+canvasId: 'c'});
+player.start();
+
+function changefirstName(e) {
+player.setValue('firstName', 's', e.value);
+}
+
+function changelastName(e) {
+player.setValue('lastName', 's', e.value);
+}
+
+function changebirthdate(e) {
+player.setValue('birthdate', 's', e.value);
+}
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

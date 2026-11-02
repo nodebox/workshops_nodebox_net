@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hundred Year</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto:300');
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="canvas-wrapper">
+            <!-- The canvas element, where the visualization is rendered -->
+            <canvas id="c" width="850" height="500"></canvas>
+        </div>
+
+
+        <!-- The slider controls -->
+        <div class="slider">
+            <table>
+                <tr>
+                    <th>NAME:</th>
+                    <th>AGE:</th>
+                    <th>MOOD:</th>
+                    <th>FAV.COLOR:</th>
+                    <th>ANGLE:</th>
+                    <th>DISTANCE:</th>
+
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="your name" oninput="changeText(this)">
+                    </td>
+                    <td>
+                        <input type="type" placeholder="your age" min="0" max="115" step="1" oninput="changeFontSize(this)"> </td>
+                    <td>
+                        <input type="range" min="0" max="200" step="2" oninput="changeOffset(this)"> </td>
+                    <td>
+                        <input type="range" min="1" max="100" step="1" oninput="changeSeed(this)"> </td>
+                    <td>
+                        <input type="range" min="1" max="360" step="1" oninput="changeAngle(this)"> </td>
+                    <td>
+                        <input type="range" min="1" max="100" step="1" oninput="changeDistance(this)"> </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- A link to the NodeBox JavaScript API  -->
+    <script src="https://nodebox.live/api/v1/ndbx.js"></script>
+
+    <!-- Your custom initialization code -->
+    <script>
+        /*   onResize();*/
+
+        // Again, replace these with your own userId / projectId / functionId / canvasId
+        var options = {
+            userId: 'ugnebalciunaite',
+            projectId: 'hundredyears',
+            functionId: 'main',
+            canvasId: 'c',
+            autoplay: true
+        };
+
+        // Initialize the NodeBox player object
+        ndbx.embed(options, function (err, player) {
+            if (err) {
+                throw new Error(err);
+            } else {
+                window.player = player;
+            }
+        });
+
+        function changeText(e) {
+            player.setValue('toUpperCase1', 'value', e.value);
+        }
+
+
+        // This function is called when the hue slider is dragged.
+        function changeFontSize(e) {
+            window.player.setValue('convert1', 'v', e.value);
+        }
+
+        function changeOffset(e) {
+            window.player.setValue('mood', 'v', e.value);
+
+        }
+
+        function changeSeed(e) {
+            window.player.setValue('randomNumbers1', 'seed', e.value);
+
+        }
+
+        function changeAngle(e) {
+            window.player.setValue('lineAngle1', 'angle', e.value);
+
+        }
+
+        function changeDistance(e) {
+            window.player.setValue('lineAngle1', 'distance', e.value);
+
+        }
+        /*function onResize()   {
+        var canvas = document.querySelector('#c');
+        canvas.width = window.innerWidth;
+        }*/
+
+
+        /*window.addEventListener('resize', onResize);*/
+    </script>
+</body>
+
+</html>

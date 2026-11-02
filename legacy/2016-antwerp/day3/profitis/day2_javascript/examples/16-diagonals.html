@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Randomness</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  canvas {
+    background: #223344;
+  }
+  </style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script src="canvas-utils.js"></script>
+<script>
+  var canvas = document.querySelector('#c');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var ctx = canvas.getContext('2d');
+
+  ctx.fillStyle = 'black';
+  ctx.strokeStyle = 'white';
+  ctx.font = '72px arial';
+
+  var cellSize = 50;
+
+  function draw() {
+    Math.seedrandom(42);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.lineCap = 'square'; // Probeer 'round', 'square' of 'butt'
+    for (var y = 0; y < canvas.height; y += cellSize) {
+      for (var x = 0; x < canvas.width; x += cellSize) {
+        var toggle = Math.random();
+        if (toggle > 0.5) {
+          ctx.lineWidth = mouseX / 20;
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+          ctx.lineTo(x + cellSize, y + cellSize);
+          ctx.stroke();
+        } else {
+          ctx.lineWidth = mouseY / 20;
+          ctx.beginPath();
+          ctx.moveTo(x, y + cellSize);
+          ctx.lineTo(x + cellSize, y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  document.addEventListener('mousemove', draw);
+  draw();
+</script>
+</body>
+</html>

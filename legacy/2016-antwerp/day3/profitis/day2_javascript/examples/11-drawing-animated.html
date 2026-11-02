@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Randomness</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: black;
+  }
+  </style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<footer>Click and drag to draw.</footer>
+<script src="canvas-utils.js"></script>
+<script>
+  var canvas = document.querySelector('#c');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var ctx = canvas.getContext('2d');
+
+  ctx.strokeStyle = 'black';
+  ctx.lineWidth = 0.2;
+  var rotation = 0;
+
+  function draw() {
+    if (mouseDown) {
+      ctx.save();
+      ctx.translate(mouseX, mouseY);
+      ctx.rotate(rotation);
+      strokeLine(0, 0, 100, 0);
+      ctx.restore();
+
+      rotation += 0.1;
+    }
+  }
+
+  window.addEventListener('mousemove', draw);
+</script>
+</body>
+</html>

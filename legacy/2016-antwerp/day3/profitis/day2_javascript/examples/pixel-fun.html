@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pixels</title>
+  <style type="text/css">
+    body { background: black; }
+  </style>
+</head>
+<body>
+
+<!--beetje naar http://joshondesign.com/p/books/canvasdeepdive/chapter06.html
+dezelfde functies als slit scan dus wellicht kunnen we daarop voortbouwen
+introductie van een lijst/ raw pixeldata uit het beeld. RGB EN A! Eens ze dat doorhebben kunnen we ermee spelen.
+Heb er ook een alternatieve tekenmodus (in rechthoekjes) bijgezet. Eventueel kunnen we daar opnieuw fillRects en hun respectievelijke kleur tekenen. Maar tegen dan zijn alle kopjes al wel warm vrees ik.
+-->
+
+<center>
+  <canvas width="1280" height="720" id="c" style="border: 1px solid black"></canvas><br>
+  <video id="v" width="640" height="360" autoplay style="display: none">
+</center>
+
+<script>
+var canvas = document.querySelector('#c');
+var ctx = canvas.getContext('2d');
+var video = document.getElementById('v');
+
+//Hoort allemaal bij de tweede tekenoptie.
+ctx.strokeStyle = 'orange';
+ctx.lineWidth = 2;
+
+function inRects(im){
+    var seg = 10;
+    for(var i = 0; i < 640; i+=seg ){
+        for(var j = 0;j < 360;j+=seg ){
+            var num = (j * 640 + i);
+            var pi = im.data[num * 4] / 10; // *4 -->opnieuw : RAW! / 10 is om ze te verkleinen
+            ctx.strokeRect(i - pi / 2, j - pi / 2, pi, pi);
+        }
+    }
+}
+// tot hier
+
+
+function onImage() {
+    ctx.drawImage(video, 0, 0, 640, 360);
+    var imagePixels = ctx.getImageData(0,0,640,360);
+
+    for (var i = 0, l = imagePixels.data.length; i < l; i += 4) { // ruwe data van de pixel: rgba
+
+        // -------->  nightvision
+        imagePixels.data[i] = 0; // rood op 0
+        imagePixels.data[i + 2] = 30;  // blauw op 30
+
+
+        // -------->  desaturatie
+        //var average = (imagePixels.data[i]*0.21 + imagePixels.data[i + 1]*0.71 + imagePixels.data[i + 2]*0.07) / 3;
+        //imagePixels.data[i] = average;
+        //imagePixels.data[i + 1] = average;
+        //imagePixels.data[i + 2] = average;
+
+        // -------->   invert image
+        //imagePixels.data[i] = 255 - imagePixels.data[i]; // r
+        //imagePixels.data[i + 1] = 255 - imagePixels.data[i + 1]; // g
+        //imagePixels.data[i + 2] = 255 - imagePixels.data[i + 2]; // b
+
+        // -------->  detect edges.. (kinda)
+        //if (imagePixels.data[i] > 50) {
+        //        imagePixels.data[i + 3] = 20; // alpha hoog
+        // }
+        //
+
+        // -------->  add noise. voor in combinatie met de nightvision green..
+        var randColor1 = 0.5 - Math.random();
+        var randColor2 = 0.5 - Math.random();
+        var randColor3 = 0.5 - Math.random();
+        imagePixels.data[i] = imagePixels.data[i]*randColor1; // green
+        imagePixels.data[i + 1] = imagePixels.data[i + 1]*randColor2; // green
+        imagePixels.data[i + 2] = imagePixels.data[i + 2]*randColor3; // blue
+
+
+    }
+
+// optie 1: ik geef de aangepaste lijst als beeld terug.
+ctx.putImageData(imagePixels, 0, 0);
+
+    //OF
+
+// optie 2: ik doe iets met die aangepaste functies. In deze teken ik ze als rechthoekjes om de 10 pixels. (zie functie)/ Let op: als je dat nu aanzet zal je niets zien want de vierkanten krijgen een size op basis van de rood component die in de nightvision mode op 0 staat.. Misschien testen met de originele pixels/
+
+//ctx.fillStyle = '#223344';
+//ctx.fillRect(0, 0, 640, 360);
+//inRects(imagePixels);
+
+}
+
+function startStream(stream) {
+  video.src = window.URL.createObjectURL(stream);
+  setInterval(onImage, 30);
+}
+
+function onError() {
+  console.log('ERR', arguments);
+}
+
+navigator.webkitGetUserMedia({ video: true }, startStream, onError);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+body {font:11px/1.5 Arial,Helvetica,sans-serif;padding:10px;}
+a {color:#222;text-decoration:none;}
+a:hover {text-decoration:underline;}
+h1 {font-size:1.3em;}
+
+.answers {margin-bottom:10px;}
+.button a {color:white;background:#84C803;padding:4px;font-size:1.2em;text-decoration:none !important;}
+.clear {clear:both;}
+
+.question {font-size:1.5em;font-weight:bold;margin-bottom:10px;color:black;}
+.answer {margin-top:10px;font-size:1.3em;}
+.graphBackground {background:#eee;height:15px;}
+.graph {background:#84C803;height:15px;}
+.totalVotes {font-weight:bold;padding-top:15px;}

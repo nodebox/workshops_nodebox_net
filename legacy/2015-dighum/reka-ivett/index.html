@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Helyesiras</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://dighum.herokuapp.com/static/js/bundle.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Facebook activities of the Hungarian spelling advisor page</h1>
+            <h2>Réka Kovács & Ivett Benyeda</h2>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="container">
+            <label for="frameSlider">Time</label>
+            <input id="frameSlider" type="range" min="0" max="146" value="0" oninput="changeDate(this)">
+	    <p>12.Jan.2015 - 09.June 2015</p>
+
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="container">
+            <canvas width="960" height="600" id="c"></canvas>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2015</p>
+        </div>
+    </div>
+</body>
+</html>

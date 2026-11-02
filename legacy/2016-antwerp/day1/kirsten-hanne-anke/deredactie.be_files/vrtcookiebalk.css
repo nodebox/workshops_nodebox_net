@@ -1,0 +1,56 @@
+body.widget-vrtcookiebalk {
+	margin-top: 56px;
+}
+
+#widget-vrtcookiebalk {
+	position: absolute;
+	top: 28px;
+	left: 0;
+	width: 100%;
+	height: 21px;
+	padding-top: 7px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.6pt;
+	background: #a9cfdd; /* Old browsers */
+	background: -moz-linear-gradient(top, #a9cfdd 0%, #bfe3eb 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a9cfdd), color-stop(100%, #bfe3eb) ); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #a9cfdd 0%, #bfe3eb 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #a9cfdd 0%, #bfe3eb 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #a9cfdd 0%, #bfe3eb 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #a9cfdd 0%, #bfe3eb 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(  startColorstr='#a9cfdd', endColorstr='#bfe3eb', GradientType=0 ); /* IE6-9 */
+}
+
+#widget-vrtcookiebalk,#widget-vrtcookiebalk a {
+	color: #42464B;
+}
+
+.widget-vrtcookiebalk-wrapper {
+	padding-left: 15px;
+}
+
+#widget-vrtcookiebalk a {
+	text-decoration: underline;
+}
+
+#widget-vrtcookiebalk a:hover {
+	text-decoration: none;
+}
+
+#widget-vrtcookiebalk a.info {
+	margin-left: 5px;
+}
+
+#widget-vrtcookiebalk a.close {
+	margin-left: 80px;
+	background-image: url('cookiecross.png');
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding-left: 12px;
+}
+
+@media print {
+	#widget-vrtcookiebalk {
+		display: none;
+	}
+}

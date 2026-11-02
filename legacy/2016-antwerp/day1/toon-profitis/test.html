@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(background.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: monospace;
+            font-size: 100px;
+            display: inline-block;
+            width: 100px;
+        }
+        
+        div {
+            animation: mover 6s infinite;
+            animation-direction: alternate;
+        }
+        
+        #mask {
+            position: absolute;
+            top: 318px;
+            left: 2500px;
+            animation: mask-animation 1s infinite;
+        }
+        
+        #vorm {
+            position: absolute;
+            top: 1700px;
+            left: 4000px;
+            animation: vorm-animation 3s infinite;
+        }
+        
+        @keyframes mover {
+            0% {
+                transform: skewX(0) rotate(20deg);
+            }
+            100% {
+                transform: translateX(500px) scaleY(10);
+            }
+        }
+        
+        @keyframes mask-animation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(180deg);
+            }
+        }
+        
+        @keyframes vorm-animation {
+            0% {
+                transform: rotate(0deg) scale(1, 1);
+            }
+            100% {
+                transform: rotate(180deg) scale(0.5, 0.5);
+            }
+        }
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+
+    <div style="animation-delay: 1.5s">hello</div>
+
+    <img src="mask.png" alt="" id="mask">
+    <img src="vormBrackets.png" alt="" id="vorm">
+    <img src="Single-banana.png" alt="" id="banana">
+    <img src="shape-2.png" alt="" id="shape2">
+
+</body>
+
+
+</html>

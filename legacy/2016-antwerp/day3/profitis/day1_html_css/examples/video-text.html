@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Clipping</title>
+  <style>
+  html, body {
+    width: 100%;
+    height: 100%;
+    background: black;
+  }
+
+  text {
+    font: 150px helvetica,arial,sans-serif;
+    font-weight: bold;
+    text-anchor: middle;
+  }
+
+  .letter-a {
+     -webkit-clip-path:url(#clip-a);
+     clip-path:url(#clip-a);
+  }
+
+  .letter-b {
+     -webkit-clip-path:url(#clip-b);
+     clip-path:url(#clip-b);
+  }
+
+  </style>
+</head>
+<body>
+
+<svg class="svg" width="0" height="0">
+  <clippath id="clip-a">
+    <text x="100" y="140">A</text>
+  </clippath>
+  <clippath id="clip-b">
+    <text x="100" y="140">B</text>
+  </clippath>
+</svg>
+
+<video src="media/army-of-me.mp4" autoplay loop muted width="200" class="letter-a"></video>
+<video src="media/army-of-me.mp4" autoplay loop muted width="200" class="letter-b"></video>
+<video src="media/army-of-me.mp4" autoplay loop muted width="200" class="letter-b"></video>
+<video src="media/army-of-me.mp4" autoplay loop muted width="200" class="letter-a"></video>
+
+</body>
+</html>

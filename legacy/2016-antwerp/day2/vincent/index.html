@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Webcam Grey Drawing and Rotating</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: black;
+        }
+        
+        #c {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: .8;
+            -webkit-filter: blur(5px) saturate(0) brightness(0.65) invert(0) contrast(4.0);
+            mix-blend-mode: difference;
+            animation-name: mover;
+            animation-duration: .025s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        
+        @keyframes mover {
+            0%,
+            100% {}
+            50% {
+                transform: scale(1.05) rotateX(45deg)rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+    <script src="canvas-utils.js"></script>
+    <script>
+        var canvas = document.querySelector('#c');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var ctx = canvas.getContext('2d');
+
+        var mouseX = 0;
+        var mouseY = 0;
+
+        function onMouseMove(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        }
+
+        function onFrame(video) {
+            if (mouseDown) {
+                ctx.drawImage(video, mouseX - video.width / 2, mouseY - video.height / 2);
+            }
+        }
+
+        window.addEventListener('mousemove', onMouseMove);
+        loadVideo(onFrame);
+    </script>
+</body>
+
+</html>

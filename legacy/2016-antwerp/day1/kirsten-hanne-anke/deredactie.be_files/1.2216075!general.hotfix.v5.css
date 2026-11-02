@@ -1,0 +1,11 @@
+/* VID-1375 -  playerbalk niet zichtbaar op ipad */
+.jwplayer .jwcontrolbar {z-index:1}
+/* Layout hotfixes */
+.traffic-measure-label{width: 15px}
+/* Ranking table misalignment */
+.ranking td:first-child {line-height:inherit}
+/* TMB-543 */
+.storyline-social li {vertical-align: bottom; }
+.storyline-social li.twittershare {margin-bottom: -6px; }
+/* Radio 2 Logo */
+.eventstreamcontainer .radio2 .title:before,.newstimelinewidget li.radio2 .title:before {background: url(/static/fixes/deredactie_sprite.svg) no-repeat -170px -145px;}

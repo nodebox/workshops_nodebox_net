@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Embed Test</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://dighum.herokuapp.com/static/js/bundle.js"></script>
+    <script src="main.js"></script>
+    
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Actor Body Count Mugshots</h1>
+            <h2>By Alejandra Villacis Miranda and Damien Pierre</h2>
+            
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="container">
+            <!--<label for="actorSlider">Actor's Portrait by Body Count</label>-->
+            <input id="actorSlider" value="0" type="range" min="1" max="100" oninput="changeActor(this)">
+            <!--<label for="hueSlider">Hue</label>
+            <input id="hueSlider" type="range" min="0" max="255" oninput="changeHue(this)">
+            <br>
+            <button onclick="player.start()">Start</button>
+            <button onclick="player.stop()">Stop</button>-->
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="container">
+            <canvas width="960" height="600" id="c"></canvas>
+            <canvas width="480" height="400" id="d"></canvas>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2015</p>
+        </div>
+    </div>
+</body>
+</html>

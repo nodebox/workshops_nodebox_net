@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>A Performance Screen Con</title>
+    <style type="text/css">
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            background: black;
+        }
+        
+        div {
+            position: fixed;
+            width: 100%;
+            margin: 0;
+            animation-name: mover;
+            animation-duration: 5s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            mix-blend-mode: difference;
+        }
+        
+        @keyframes mover {
+            0%,
+            100% {}
+            50% {
+                transform: rotateY(360deg) rotateX(360deg);
+            }
+        }
+        
+        video {
+            width: 100%;
+            opacity: 0.7;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="animation-delay:0.00s">
+        <video id="cameronvideo" src="cameronsmallcrop.mp4" autoplay loop></video>
+    </div>
+
+    <div style="animation-delay:0.25s">
+        <video id="cameronvideo" src="cameronsmallcrop.mp4" autoplay loop></video>
+    </div>
+    <div style="animation-delay:0.50s">
+        <video id="cameronvideo" src="cameronsmallcrop.mp4" autoplay loop></video>
+    </div>
+    <div style="animation-delay:0.75s">
+        <video id="cameronvideo" src="cameronsmallcrop.mp4" autoplay loop></video>
+    </div>
+    <div style="animation-delay:1.00s">
+        <video id="cameronvideo" src="cameronsmallcrop.mp4" autoplay loop></video>
+    </div>
+    <div style="animation-delay:1.25s">
+        <video id="cameronvideo" src="cameronsmallcrop.mp4" autoplay loop></video>
+    </div>
+    <div style="animation-delay:1.50s">
+        <video id="cameronvideo" src="cameronsmallcrop.mp4" autoplay loop></video>
+    </div>
+    <div style="animation-delay:1.75s">
+        <video id="cameronvideo" src="cameronsmallcrop.mp4" autoplay loop></video>
+    </div>
+    <div style="animation-delay:2.00s">
+        <video id="cameronvideo" src="cameronsmallcrop.mp4" autoplay loop></video>
+    </div>
+    <div style="animation-delay:2.25s">
+        <video id="cameronvideo" src="cameronsmallcrop.mp4" autoplay loop></video>
+    </div>
+    <div style="animation-delay:2.50s">
+        <video id="cameronvideo" src="cameronsmallcrop.mp4" autoplay loop></video>
+    </div>
+    <div style="animation-delay:2.75s">
+        <video id="cameronvideo" src="cameronsmallcrop.mp4" autoplay loop></video>
+    </div>
+
+    <script>
+        var vid = document.querySelectorAll("#cameronvideo");
+        console.log(vid);
+
+        function playatrandom() {
+            for (var i = 0; i < vid.length; i++) {
+                var videofile = vid[i];
+                videofile.currentTime = Math.floor((Math.random() * 100) + 1);
+                videofile.playbackRate = 0.75;
+                videofile.style.animationDuration = 1 + i + "s";
+            }
+        }
+
+        window.addEventListener('load', playatrandom);
+    </script>
+</body>
+
+</html>

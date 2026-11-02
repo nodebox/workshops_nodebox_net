@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Randomness</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			font: 40px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			background: #11c2d7;
+		}
+		
+		footer {
+			position: absolute;
+			bottom: 30px;
+			width: 100%;
+			text-align: center;
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<canvas id="c"></canvas>
+	<footer>Make noise and draw.</footer>
+	<script src="canvas-utils.js"></script>
+	<script src="decibel-meter.js"></script>
+	<script>
+		// Drawing
+		var canvas = document.querySelector('#c');
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+		var ctx = canvas.getContext('2d');
+
+		// ctx.strokeStyle = '#c2d6df';
+		// Change the #number to another color you like
+		ctx.strokeStyle = 'hsl(' + random(0, 360) + ', 100%, 50%)';
+
+		function draw() {
+			if (mouseDown) {
+				strokeLine(pmouseX, pmouseY, mouseX, mouseY);
+			}
+		}
+
+
+
+		// Decibel Meter
+
+		var meter = DecibelMeter.create('meter');
+
+
+		meter.on('ready', function (meter, sources) {
+			var mic = sources[0]; // select first mic
+			meter.connect(mic); // connect to mic
+			setInterval(function () {
+				meter.listen()
+			}, 200);
+		});
+
+
+		meter.on('sample', function (dB, percent, level) {
+			// console.log('s', percent);
+			ctx.lineWidth = percent * 60;
+		});
+
+
+		window.addEventListener('mousemove', draw);
+	</script>
+</body>
+
+</html>

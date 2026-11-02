@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Scala Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: url(fonts/ScalaSans.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Scala Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: url(fonts/ScalaSans-Bold.otf) format('truetype');
+}
+
+body {
+    font-family: 'ScalaSans';
+    font-size: 72px;
+}
+
+
+body {
+    font: 24px 'Scala Sans', sans-serif;
+    color: #333;
+    text-align: center;
+    margin: 20px 40px;
+    line-height: 1.5em;
+}
+
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a.btn {
+    display:block;
+    margin: 20px;
+    padding: 10px;
+    /*border: 2px solid red;*/
+}
+
+
+.active {
+    color: red;
+}
+
+
+#instructions-screen p {
+    margin-top: 200px;
+    font-size: 36px;
+}
+
+#loading-screen img {
+    position: relative;
+    top: -150px;
+}
+
+#fish-type {
+    margin-top: 2em;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 2em;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+#prediction {
+    margin-bottom: 2em;
+}

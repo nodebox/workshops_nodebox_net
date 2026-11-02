@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clapping Music by Steve Reich</title>
+    <style>
+        div {
+            width: 145%;
+            height: 900px;
+            border: 0px solid black;
+            background: #000301;
+            margin: -1%;
+            padding: 0;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div id="player1"></div>
+    <div id="player2"></div>
+    <script>
+        var context;
+        var audioBuffer;
+        var p1, p2; 
+    
+
+
+        function init() {
+            context = new AudioContext();
+            console.log(context);
+            loadSound("sounds/clap.wav");
+            p1 = document.querySelector("#player1");
+            p2 = document.querySelector("#player2");
+        }
+        
+
+        function playSound(buffer) {
+            var sample = context.createBufferSource();
+            sample.buffer = buffer;
+            sample.playbackRate.value = 21;
+            sample.connect(context.destination);
+            sample.start(0);
+
+        }
+
+        function onError(e) {
+            console.log(e);
+        }
+
+
+        function loadSound(url) {
+            var request = new XMLHttpRequest();
+            request.open('GET', url, true);
+            request.responseType = 'arraybuffer';
+
+            request.onload = function () {
+                context.decodeAudioData(request.response, function (buffer) {
+                    //playLoop(buffer);
+                    audioBuffer = buffer;
+                    // een keer de audio in buffer -> naar clapping music procudere
+                    clappingMusic();
+                }, onError);
+            }
+            request.send();
+        }
+
+        var count = 0;
+        var normal = 0;
+        var shift = 0;
+        var speed = 2.5;
+        var repeat = 4;
+        var seq = "x o o x x x x o o o x x o"
+        var steps = seq.split(" ");
+
+        function hitMeSteve(when, who) {
+            if (when == "x" && count % speed == 0) {
+                playSound(audioBuffer);
+                who.style.background = '#27c776';
+            } else {
+                who.style.background = '#062714';
+            }
+
+        }
+
+        function clappingMusic() {
+            count++;
+            //counter voor speler 1
+            if (count % speed == 3) {
+                normal++;
+            }
+            // counter voor speler 2
+            if (count % (steps.length * speed * repeat) == 2) {
+                shift++;
+            }
+    
+            console.log(normal + " - " + shift);
+
+            // 1ste speler audio + viz
+            var now = steps[normal % steps.length];
+            hitMeSteve(now, p1);
+
+            //2de speler audio + viz
+            var canon = steps[(normal + shift) % steps.length];
+            hitMeSteve(canon, p2);
+
+            window.requestAnimationFrame(clappingMusic);
+        }
+
+        window.addEventListener('load', init);
+        
+    </script>
+
+</body>
+
+</html>

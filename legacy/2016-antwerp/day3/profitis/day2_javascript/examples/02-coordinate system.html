@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Coordinate system</title>
+</head>
+<body>
+<canvas id="c" style="border: 1px solid black"></canvas>
+<script>
+  var canvas = document.querySelector('#c');
+  var ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'blue';
+
+  var x = 10;
+  var y = 20;
+  var width = 30;
+  var height = 40;
+
+  ctx.fillRect(x, y, width, height);
+</script>
+
+</body>
+</html>

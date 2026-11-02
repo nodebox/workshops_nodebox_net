@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nanó Wallenius</title>
+    <link rel="stylesheet" href="css/responsiveslides.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+
+
+
+    <style>
+        #thumbs .thumb img {
+            max-width: 100%;
+        }
+        
+        #slideshow img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Nanó Wallenius</h1>
+        <br>
+        <nav>
+            <a href="index.php">Home</a>
+            <a href="about.php">CV</a>
+
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <div class="slides-container">
+            <ul class="rslides">
+
+                <li><img src="img/nano-1.jpg" alt=""></li>
+                <li><img src="img/nano-2.jpg" alt=""></li>
+                <li><img src="img/nano-3.jpg" alt=""></li>
+                <li><img src="img/nano-4.jpg" alt=""></li>
+                <li><img src="img/nano-5.jpg" alt=""></li>
+                <li><img src="img/nano-6.jpg" alt=""></li>
+                <li><img src="img/nano-7.jpg" alt=""></li>
+                <li><img src="img/nano-8.jpg" alt=""></li>
+                <li><img src="img/nano-9.jpg" alt=""></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <footer>Copyright Nanó Wallenius &copy; 2016 </footer>
+
+    <script>
+        $(function () {
+            $(".rslides").responsiveSlides({
+                auto: false,
+                nav: true
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drawing With Type</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  </style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script src="canvas-utils.js"></script>
+<script>
+  var canvas = document.querySelector('#c');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var ctx = canvas.getContext('2d');
+
+  ctx.fillStyle = 'black';
+  ctx.strokeStyle = 'white';
+  ctx.font = '72px arial';
+  ctx.textAlign = 'center';
+
+  var letter = 'A';
+
+  function draw() {
+    var fontSize = (mouseX - canvas.width / 2) * 2;
+    ctx.font = fontSize + 'px arial';
+    ctx.strokeText(letter, canvas.width / 2, mouseY);
+    ctx.fillText(letter, canvas.width / 2, mouseY);
+  }
+
+  function changeKey(e) {
+    letter = String.fromCharCode(e.keyCode);
+  }
+
+  window.addEventListener('mousemove', draw);
+  window.addEventListener('keydown', changeKey);
+</script>
+</body>
+</html>

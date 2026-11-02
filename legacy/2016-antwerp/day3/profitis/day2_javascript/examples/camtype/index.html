@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CamType</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+    <h1>CamType</h1>
+    <video autoplay style="display:none"></video>
+    <canvas id="c" width="64" height="48" style="display: none"></canvas>
+    <p class="controls">
+        <span>Letters: <input type="text" oninput="onChangeLetters(this)" value="A"></span>
+        <span>Size: <input type="range" min="0" max="1" value="0.1" step="0.01" oninput="onChangeSize(this)"></span>
+        <span>Colored: <input type="checkbox" checked onchange="onChangeColored(this)"></span>
+    </p>
+    <div id="type"></div>
+    <p class="footer">By <a href="http://www.enigmeta.com/">Frederik De Bleser</a></p>
+</div>
+<script src="camtype.js"></script>
+</body>
+</html>

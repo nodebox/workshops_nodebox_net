@@ -1,0 +1,40 @@
+@font-face {
+    font-family: apple;
+    src: url(apple.ttf);
+}
+
+
+body {
+    text-align: center;
+    font-family: apple, monospace, sans-serif;
+    background-color: #eaeaea;
+    overflow-x: hidden;
+    
+}
+
+h1 {
+ font-size: 50px   
+}
+
+#image {
+    position: absolute;
+    top: -500px;
+}
+#i{
+    font-family: monospace;
+}
+#imgCanvas {
+    position: absolute;
+    top: -500px;
+}
+
+footer {
+    position: fixed;
+    font-size: 10px;
+    width: 100%;
+    bottom: 10px;
+}
+footer a {
+ color:inherit;
+    
+}

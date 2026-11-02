@@ -1,0 +1,81 @@
+body {
+    background: #000000;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.big {
+    color: aliceblue;
+    font-size: 1.5rem;
+}
+
+p {
+    color: aliceblue;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 0rem;
+}
+
+
+button {
+    border: 2px solid white;
+    width: 20rem;
+    padding: 5px;
+    background: transparent;
+    color: white;
+    font: inherit;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: white;
+    color: black;
+}
+
+.page {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+}
+
+.contact {
+    margin-top: 60rem;
+    margin-left: 60rem;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translate(0, 100px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+#choose {
+    border: 2px solid white;
+    width: 30rem;
+    margin: 5rem auto;
+    padding: 5rem;
+    text-align: center;
+    animation: slide-in 0.8s;
+}
+
+
+#main {
+    display: none;
+    width: 700px;
+    margin: 2rem auto;
+    padding: 2rem 5rem 5rem 5rem;
+    text-align: center;
+    animation: slide-in 0.8s;
+}

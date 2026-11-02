@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    html,body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      margin: 0;
+      background: black;
+    }
+
+    video {
+      width: 50px;
+      transform: scaleY(100);
+      float: left;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+<video src="media/army-of-me.mp4" loop></video>
+
+<script>
+
+function playVideoAtRandomInterval(video) {
+  setTimeout(function() {video.play() }, 1000 + Math.random() * 15000);
+}
+
+window.onload = function() {
+  var videos = document.getElementsByTagName('video');
+  for (var i = 0; i < videos.length; i++) {
+    playVideoAtRandomInterval(videos[i]);
+  }
+};
+
+</script>
+</body>
+</html>

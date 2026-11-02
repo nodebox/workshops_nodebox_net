@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Windspeed</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="test.js"></script>
+
+</head>
+
+<audio src="Wind-Mark_DiAngelo-1940285615.mp3" autoplay loop id="windSound"> </audio>
+
+<a href="#noscroll" id="mute"><img src="mute_2.png"></a>
+<script>var audio = document.getElementById('windSound');
+
+document.getElementById('mute').addEventListener('click', function (e)
+{
+    e = e || window.event;
+    audio.muted = !audio.muted;
+    e.preventDefault();
+}, false);
+</script>
+
+<body>
+    <!-- The canvas element, where the visualization is rendered -->
+    <canvas id="c" width="1400" height="620"></canvas>
+
+
+    <div class="typebox">
+        <input type="text" value="WIND TYPE" oninput="changeText(this)">
+    </div>
+
+
+    <!-- A link to the NodeBox JavaScript API  -->
+    <script src="https://nodebox.live/api/v1/ndbx.js"></script>
+
+    <!-- Your custom initialization code -->
+    <script>
+        // Again, replace these with your own userId / projectId / functionId / canvasId
+        var options = {
+            userId: 'Milda_s',
+            projectId: 'wind',
+            functionId: 'windy',
+            canvasId: 'c',
+            autoplay: true
+        };
+
+        // Initialize the NodeBox player object
+        ndbx.embed(options, function (err, player) {
+            if (err) {
+                throw new Error(err);
+            } else {
+                window.player = player;
+            }
+        });
+
+        function changeText(text) {
+            if (window.player) {
+                player.stop();
+                player.start();
+                player.setValue('textPath3', 'text', text.value);
+            }
+        }
+    </script>
+
+
+    <div class="wrap">
+        <div id="map"></div>
+    </div>
+
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <script>
+        function changeLocation(lat, lng) {
+            if (window.player) {
+                player.stop();
+                player.start();
+                window.player.setValue('getWeather2', 'lat', lat);
+                window.player.setValue('getWeather2', 'lon', lng);
+            }
+
+            var url = 'https://api.darksky.net/forecast/cd8a0f25eb22b6e21c86297fc0580f8b/' + lat + ',' + lng;
+            var wrappedUrl = 'https://corset.herokuapp.com?url=' + encodeURI(url);
+            $.getJSON(wrappedUrl, function (data) {
+                console.log(data);
+                var windSpeed = data.currently.windSpeed;
+                var audioElement = document.querySelector('#windSound');
+                audioElement.volume = windSpeed / 50;
+            });
+        }
+
+        function onMapClick(e) {
+            //alert("You clicked the map at " + e.latlng);
+            changeLocation(e.latlng.lat, e.latlng.lng);
+        }
+
+        function onLocation(position) {
+            console.log(position);
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+            map.panTo(L.latLng(lat, lng));
+            changeLocation(lat, lng);
+        }
+
+        function onLocationError(err) {}
+
+
+        var map = L.map('map').setView([50.684, 4.292], 5);
+        var osmUrl = 'http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png';
+        var osmAttrib = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+        var osm = new L.TileLayer(osmUrl, {
+            minZoom: 2,
+            maxZoom: 5,
+            attribution: osmAttrib
+        });
+        map.addLayer(osm);
+        map.on('click', onMapClick);
+
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(onLocation, onLocationError);
+        }
+
+        changeLocation(50.684, 4.292);
+    </script>
+</body>
+
+</html>

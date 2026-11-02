@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>WEEKEND COUNTDOWN</title>
+</head>
+<style>
+    body {
+        background-color: #3e405a;
+        width: 1000px;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+</style>
+
+<body>
+    <!-- The canvas element, where the visualization is rendered -->
+
+    <canvas id="c" width="1000" height="1000"></canvas>
+
+
+    <!-- A link to the NodeBox JavaScript API  -->
+    <script src="https://nodebox.live/api/v1/ndbx.js"></script>
+
+    <!-- Your custom initialization code -->
+    <script>
+        // Again, replace these with your own userId / projectId / functionId / canvasId
+        var options = {
+            userId: 'KirstenRyvers',
+            projectId: 'projectvier',
+            functionId: 'main',
+            canvasId: 'c',
+            autoplay: true
+        }
+        ndbx.embed(options, function (err, player) {
+            if (err) {
+                throw new Error(err);
+            } else {
+                window.player = player;
+            }
+        });
+    </script>
+</body>
+
+</html>

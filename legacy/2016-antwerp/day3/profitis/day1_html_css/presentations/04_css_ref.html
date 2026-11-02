@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Reference Slides</title>
+  <link rel="stylesheet" type="text/css" href="css/slides.css">
+  <link rel="stylesheet" type="text/css" href="css/css-ref.css">
+  <script src="js/slides.js"></script>
+</head>
+<body>
+            <section>
+                <h1>CSS Reference</h1>
+            </section>
+
+            <section>
+                <h1>CSS Background Properties</h1>
+                    <ul>
+                        <li>background-color</li>
+                        <li>background-image</li>
+                        <li>background-repeat</li>
+                        <li>background-attachment</li>
+                        <li>background-position</li>
+                        <li>background-size</li>
+                        <li>background-clip</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>background-color</h1>
+                    <div id="exdiv">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+background-color: red;
+margin: auto;
+width: 600px;
+height: 250px;
+}
+</pre>
+                    <aside>
+                        background: gewone kleur/ kan opgegeven worden in hex, rgb en kleurnaam(red, white,..)
+                    </aside>
+                </section>
+
+                <section>
+                    <h1>background-image</h1>
+                    <div id="exdiv2">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+    background-image: url("image.png");
+}
+</pre>
+
+                </section>
+
+                <section>
+                    <h1>background-image en color</h1>
+                    <div id="exdiv2a">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+    background-color:red;
+    background-image: url("image.png");
+}
+            </pre>
+
+                </section>
+
+                <section>
+                    <h1>background-repeat no repeat</h1>
+                    <div id="exdiv3">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+    background-image: url("image.png");
+    background-repeat: no-repeat;
+}
+            </pre>
+
+                </section>
+
+                <section>
+                    <h1>background-repeat: repeat x</h1>
+                    <div id="exdiv3a">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+    background-image: url("image.png");
+    background-repeat: repeat-x;
+}
+            </pre>
+                </section>
+
+                <section>
+                    <h1>background-repeat: repeat y</h1>
+                    <div id="exdiv3b">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+    background-image: url("image.png");
+    background-repeat: repeat-y;
+}
+            </pre>
+                </section>
+
+
+                <section>
+                    <h1>background-attachment</h1>
+                    <div id="exdiv4a">
+                        <p>#exdiv</p>
+                        <br>kijk
+                        <br>het
+                        <br>beeld
+                        <br>scrollt
+                        <br>niet
+                        <br>mee
+                        <br>met
+                        <br>de
+                        <br>rest
+                        <br>van
+                        <br>het
+                        <br>element
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+    background-image: url("image.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+            </pre>
+                    <aside>
+                        <p>het div element is scrollable: op die manier kan je die fixed tonen.</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <h1>background-position</h1>
+                    <div id="exdiv4">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+    background-image: url("image.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+            </pre>
+                </section>
+
+
+                <section>
+                    <h1>background in 1 statement</h1>
+                    <div id="exdiv5">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+    background: #a8a6a6 url("image.png") no-repeat right bottom
+}
+            </pre>
+                    <p>opeenvolgend:</p>
+                    <p>color, image, repeat, attachment, position</p>
+                </section>
+
+
+                <section>
+                    <h1>background-size / css3</h1>
+                    <div id="exdiv6">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+    background-image: url("image.png");
+    background-repeat: no-repeat;
+    background-size: 600px 250px;
+}
+            </pre>
+                </section>
+
+                <section>
+                    <h1>background-size / css3</h1>
+                    <div id="exdiv6a">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+    background-image: url("image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+            </pre>
+                </section>
+
+                <section>
+                    <h1>background-size / css3</h1>
+                    <div id="exdiv6b">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+    background-image: url("image.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+            </pre>
+                </section>
+
+                <section>
+                    <h1>background-clip / css3 </h1>
+                    <div id="exdiv7">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+    background-image: url("image.png");
+    background-repeat: no-repeat;
+    background-clip: border-box; // default
+}
+            </pre>
+                </section>
+
+                <section>
+                    <h1>background-clip</h1>
+                    <div id="exdiv7a">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+    background-image: url("image.png");
+    background-repeat: no-repeat;
+    background-clip: padding-box; // default
+}
+            </pre>
+                </section>
+                <section>
+                    <h1>background-clip</h1>
+                    <div id="exdiv7b">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+    background-image: url("image.png");
+    background-repeat: no-repeat;
+    background-clip: content-box; // default
+}
+            </pre>
+                </section>
+
+                <section>
+                    <h1>css text properties</h1>
+                    <ul>
+                        <li>color</li>
+                        <li>text-align</li>
+                        <li>text-decoration</li>
+                        <li>text-transform</li>
+                        <li>text-indent</li>
+                        <li>text-shadow</li>
+                        <li>text-overflow</li>
+
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>text-kleur</h1>
+                    <p id="pex">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+    color:#62621f;
+}
+            </pre>
+                </section>
+
+
+                <section>
+                    <h1>text-alignering </h1>
+                    <p id="pex">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+    text-align:center;
+}
+            </pre>
+                </section>
+
+                <section>
+                    <h1>text-alignering : links</h1>
+                    <p id="pex1">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+    text-align:left;
+}
+            </pre>
+                </section>
+
+                <section>
+                    <h1>text-alignering : rechts</h1>
+                    <p id="pex2">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+    text-align:right;
+}
+            </pre>
+                </section>
+
+                <section>
+                    <h1>text-alignering : uitgelijnd</h1>
+                    <p id="pex3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper nibh et enim ullamcorper nec aliquam magna ullamcorper. Maecenas iaculis elit accumsan erat semper feugiat. Fusce eros nisi, molestie at imperdiet eleifend, elementum tempus ante. Donec sed quam vitae neque ultricies lacinia. Praesent diam sem, iaculis a laoreet vitae, malesuada nec augue. Duis consequat tempus felis, ac venenatis metus rutrum ac. Suspendisse eget porttitor enim. Donec nec ipsum urna. Integer iaculis leo sed urna pharetra at pharetra turpis tincidunt. Vestibulum eget rutrum leo. Phasellus laoreet, est eu molestie rhoncus, lorem massa pharetra metus, eu mattis eros nisi at est.</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+    text-align:justify;
+}
+            </pre>
+                </section>
+
+
+                <section>
+                    <h1>text-decoratie</h1>
+                    <p id="pex4">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+    text-decoration: none;
+}
+            </pre>
+                </section>
+
+                <section>
+                    <h1>text-decoratie: onderlijnen</h1>
+                    <p id="pex4a">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+    text-decoration: underline;
+}
+            </pre>
+                </section>
+
+                <section>
+                    <h1>text-decoratie: doorstrepen</h1>
+                    <p id="pex4b">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+    text-decoration: line-through;
+}
+            </pre>
+                </section>
+
+                <section>
+                    <h1>text-decoratie: bovenlijn</h1>
+                    <p id="pex4c">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+    text-decoration:overline;
+}
+            </pre>
+                </section>
+
+
+                <section>
+                    <h1>text-tranformatie</h1>
+                    <p id="pex5c">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+    text-transform: none;
+}
+            </pre>
+                </section>
+
+                <section>
+                    <h1>text-tranformatie: hoofdletters</h1>
+                    <p id="pex5">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+text-transform: uppercase;
+}
+</pre>
+                </section>
+
+                <section>
+                    <h1>text-tranformatie: kleine letters</h1>
+                    <p id="pex5a">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+text-transform: lowercase;
+}
+</pre>
+                </section>
+
+                <section>
+                    <h1>text-tranformatie: hoofdletter 1ste letter</h1>
+                    <p id="pex5b">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+text-transform: capitalise;
+}
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>text-indentatie</h1>
+                    <p id="pex6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper nibh et enim ullamcorper nec aliquam magna ullamcorper. Maecenas iaculis elit accumsan erat semper feugiat. Fusce eros nisi, molestie at imperdiet eleifend, elementum tempus ante. Donec sed quam vitae neque ultricies lacinia. Praesent diam sem, iaculis a laoreet vitae, malesuada nec augue.</p>
+                    <p id="pex6">
+                        Duis consequat tempus felis, ac venenatis metus rutrum ac. Suspendisse eget porttitor enim. Donec nec ipsum urna. Integer iaculis leo sed urna pharetra at pharetra turpis tincidunt. Vestibulum eget rutrum leo. Phasellus laoreet, est eu molestie rhoncus, lorem massa pharetra metus, eu mattis eros nisi at est.
+                    </p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+text-indent:50px;
+}
+
+</pre>
+                </section>
+
+                <section>
+                    <h1>text-schaduw</h1>
+                    <p id="pex7">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+text-shadow: 2px 2px 3px #ffff00;
+}
+
+</pre>
+                    <p>opeenvolgend:</p>
+                    <p>
+                        horizontaal schaduw, vertikaal schaduw, blur, kleur
+                    </p>
+                </section>
+
+                <section>
+                    <h1>text-schaduw: 2 lagen</h1>
+                    <p id="pex7a">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+text-shadow: 0 0 5px #ffff00, 0 0 15px #ff00ff;}
+
+</pre>
+
+                </section>
+
+
+                <section>
+                    <h1>text-overflow</h1>
+                    <p id="pexoverf">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper nibh et enim ullamcorper nec aliquam magna ullamcorper. Maecenas iaculis elit accumsan erat semper feugiat. Fusce eros nisi, molestie at imperdiet eleifend, elementum tempus ante. Donec sed quam vitae neque ultricies lacinia. Praesent diam sem, iaculis a laoreet vitae, malesuada nec augue. Duis consequat tempus felis, ac venenatis metus rutrum</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+text-overflow: clip;
+}
+
+</pre>
+                    <aside>hover over txt to make it visible</aside>
+                </section>
+
+                <section>
+                    <h1>word-break</h1>
+                    <p id="pexoverf1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper nibh et enim ullamcorper nec aliquam magna ullamcorper. Maecenas iaculis elit accumsan erat semper feugiat. Fusce eros nisi, molestie at imperdiet eleifend, elementum tempus ante. Donec sed quam vitae neque ultricies lacinia. Praesent diam sem, iaculis a laoreet vitae, malesuada nec augue. Duis consequat tempus felis, ac venenatis metus rutrum</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+word-break: break-all;
+}
+
+</pre>
+
+                </section>
+
+
+                <section>
+                    <h1>word-break</h1>
+                    <p id="pexoverf2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper nibh et enim ullamcorper nec aliquam magna ullamcorper. Maecenas iaculis elit accumsan erat semper feugiat. Fusce eros nisi, molestie at imperdiet eleifend, elementum tempus ante. Donec sed quam vitae neque ultricies lacinia. Praesent diam sem, iaculis a laoreet vitae, malesuada nec augue. Duis consequat tempus felis, ac venenatis metus rutrum</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+word-break: keep-all;
+}
+
+</pre>
+
+                </section>
+
+                <section>
+                    <h1>word-wrap</h1>
+                    <p id="pexoverf3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper nibh et enim ullamcorper nec aliquam magna ullamcorper. Maecenas iaculis elit accumsan erat semper feugiat. Fusce erossem, iaculis a laoreet vitae, malesuada nec augue. Duis consequat tempus felis, ac venenatis metus rutrum</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+word-wrap: break-word;
+}
+
+</pre>
+
+                </section>
+
+                <section>
+                    <h1>lijn hoogte: groot</h1>
+                    <div id="pex8">
+                        <br>
+                        <p>tekst lijn 1</p>
+                        <p>tekst lijn 2</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+div {
+line-height:40px;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>lijn hoogte: klein</h1>
+                    <div id="pex8a">
+                        <br>
+                        <p>tekst lijn 1</p>
+                        <p>tekst lijn 2</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+div {
+line-height:8px;
+}
+
+</pre>
+
+                </section>
+
+
+                <section>
+                    <h1>ruimte tussen letters</h1>
+                    <div id="pex9">
+                        <p class="a">dit is tekst a</p>
+                        <p class="b">en dit tekst b</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+.a {
+letter-spacing:20px;
+}
+.b {
+letter-spacing:0.5px;
+}
+
+</pre>
+                </section>
+            </section>
+                <section>
+                    <h1>css font properties</h1>
+                </section>
+
+
+                <section>
+                    <ul>
+                        <li>font-family</li>
+                        <li>font-size</li>
+                        <li>font-style</li>
+                        <li>font-variant</li>
+                        <li>font-weight</li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h1>font-family</h1>
+                    <p id="pex11">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+font-family: "Times New Roman", "Times", monospace;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>font-size</h1>
+                    <p id="pex13b">stukje tekst in 12 px</p>
+                    <p id="pex13b2">stukje tekst in 32 px</p>
+                    <h6>style.css</h6>
+                    <pre>
+.a {
+font-size:12px;
+}
+.b {
+font-size:32px;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>font-size in em : +/- 16px</h1>
+                    <p id="pex13bb">stukje tekst in 1 em</p>
+                    <p id="pex13bb2">stukje tekst in 3 em</p>
+                    <h6>style.css</h6>
+                    <pre>
+.a {
+font-size:1em;
+}
+.b {
+font-size:3em;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>font-style</h1>
+                    <p id="pex12">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+font-style:normal;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>font-style</h1>
+                    <p id="pex12a">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+font-style:italic;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>font-style (bijna idem als italic)</h1>
+                    <p id="pex12b">stukje tekst</p>
+                    <h6>style.css</h6>
+                    <pre>
+p {
+font-style:oblique;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>font-variant</h1>
+                    <p id="pex14b">Stukje tekst normaal</p>
+                    <p id="pex14b2">Stukje tekst b. Let op de hoofdletters</p>
+                    <h6>style.css</h6>
+                    <pre>
+.a {
+font-variant:normal;
+}
+.b {
+font-variant:small-caps;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>font-weight</h1>
+                    <div id="pex15">
+                        <p class="a">Stukje tekst normaal</p>
+                        <p class="b">Stukje tekst vet</p>
+                        <p class="c">Stukje tekst light</p>
+                        <p class="d">Stukje tekst tss 100 en 900</p>
+                    </div>
+
+                    <h6>style.css</h6>
+                    <pre>
+.a {font-weight:normal;}
+.b {font-weight:bold;
+.c {font-weight:lighter;
+.d {font-weight:900;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>@font-face </h1>
+                    <div>
+                        <p class="font">p.font in Daniel black</p>
+
+                    </div>
+
+                    <h6>style.css</h6>
+                    <pre>
+p.font {
+font-family: myFont;
+}
+
+@font-face{
+font-family:myFont;
+src:url(Daniel-Black.woff);
+}
+
+</pre>
+
+
+                </section>
+            </section>
+
+            <section>
+                <h1>het box model</h1>
+            </section>
+
+
+            <section>
+                <h1>totale breedte is content breedte + padding + margin + border</h1>
+                <div id="box">
+                    <div id="exbox">
+                        <p>#exbox</p>
+                    </div>
+                </div>
+                <h6>style.css</h6>
+                <pre>
+#exbox {
+width: 320px;
+padding: 10px;
+border: 5px solid gray;
+margin: 0;
+}
+
+</pre>
+                <p>totaal in dit geval: 320 + 20 (padding links en rechts) + 10 (border links en rechts) + 0 margin</p>
+            </section>
+
+                <section>
+                    <h1>css border properties</h1>
+                </section>
+
+
+                <section>
+                    <h1>border: borderstyle</h1>
+                    <div id="exbox1">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-style:solid;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>border: borderstyle</h1>
+                    <div id="exbox1a">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-style:dashed;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>border: borderstyle</h1>
+                    <div id="exbox1b">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-style:dotted;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>border: borderstyle</h1>
+                    <div id="exbox1c">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-style:double;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>border: borderstyle</h1>
+                    <div id="exbox1d">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-style:groove;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>border: borderstyle</h1>
+                    <div id="exbox1e">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-style:ridge;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>border: borderstyle</h1>
+                    <div id="exbox1f">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-style:inset;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>border: borderstyle</h1>
+                    <div id="exbox1g">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-style:outset;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>border: gecombineerd</h1>
+                    <div id="exbox1h">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-style: dotted solid double dashed;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>border: gecombineerd 2</h1>
+                    <div id="exbox1i">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-top-style: dotted;
+border-right-style: solid;
+border-bottom-style: dotted;
+border-left-style: solid;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>border: kleur</h1>
+                    <div id="exboxcol">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-style:solid;
+border-width: 10px;
+border-color: red;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>border: 2 kleuren</h1>
+                    <div id="exboxcol2">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-style:groove;
+border-width: 10px;
+border-color: red green;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>border: 4 kleuren</h1>
+                    <div id="exboxcol3">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-style:groove;
+border-width: 10px;
+border-color: red green transparent yellow;
+}
+
+</pre>
+                </section>
+
+
+
+                <section>
+                    <h1>border: width uniform</h1>
+                    <div id="exboxw">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-width: 10px;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>border: width divers</h1>
+                    <div id="exboxw2">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-width: 10px 20px 2px 5px;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>border: rounding uniform</h1>
+                    <div id="exboxr">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-radius: 20px;
+}
+</pre>
+                </section>
+
+                <section>
+                    <h1>border: rounding divers</h1>
+                    <div id="exboxra">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-radius: 15px 50px;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>border: rounding divers</h1>
+                    <div id="exboxrb">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+border-radius: 15px 50px 15px 0;
+}
+
+</pre>
+                </section>
+
+                <section>
+                    <h1>css padding properties</h1>
+                </section>
+
+                <section>
+                    <h1>padding uniform</h1>
+                    <div id="expad">
+                        <p class="no">#exdiv</p>
+                        <p class="yep">#exdiv_1</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+padding:0;
+}
+#exdiv_1 {
+padding:10px
+}
+
+</pre>
+                </section>
+
+                <section>
+                    <h1>padding divers</h1>
+                    <div id="expad2">
+                        <p class="no">#exdiv</p>
+                        <p class="yep">#exdiv_1</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+padding:25px 50px;
+}
+#exdiv_1 {
+padding: 25px 50px 75px 100px
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>padding divers 2</h1>
+                    <div id="expad3">
+                        <p>#exdiv</p>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+padding-top: 100px;
+padding-right: 35px;
+padding-bottom: 100px;
+padding-left: 30px;
+}
+
+</pre>
+                </section>
+
+                <section>
+                    <h1>css margin properties</h1>
+                </section>
+
+
+                <section>
+                    <h1>margin: uniform</h1>
+                    <div id="exmar">
+                        <p>#exdiv</p>
+                        <ul>
+                            <li>een</li>
+                            <li>twee</li>
+                            <li>drie</li>
+                            <li>vier</li>
+                        </ul>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+margin:auto;
+}
+
+#exdiv ul li {
+display: inline;
+margin: 20px;
+border: 2px solid red;
+color: red;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>css dimension properties</h1>
+                </section>
+
+
+                <section>
+                    <h1>width en height</h1>
+                    <div id="all">
+                        <div id="exdim">
+                            <p>#exdiv</p>
+                        </div>
+                        <div id="exdim2">
+                            <p>#exdiv2</p>
+                        </div>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+#exdiv {
+width:400px;
+height:200px;
+}
+
+#exdiv2 {
+width:200px;
+height:400px;
+}
+
+</pre>
+                </section>
+
+
+                <section>
+                    <h1>position</h1>
+                    <div class="relative">dit is een relatieve positie
+                        <div class="absolute">dit een absolute</div>
+                    </div>
+                    <h6>style.css</h6>
+                    <pre>
+div.absolute {
+position: absolute;
+top: 80px;
+right: 0;
+width: 200px;
+height: 100px;
+border: 2px solid #ffff00;
+}
+div.relative {
+position: relative;
+width: 400px;
+height: 200px;
+border: 2px solid #ffff00;
+}
+
+</pre>
+                </section>
+</body>

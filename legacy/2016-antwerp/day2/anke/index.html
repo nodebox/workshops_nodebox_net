@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Animation</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		}
+		
+		footer {
+			position: absolute;
+			bottom: 10px;
+			width: 100%;
+			text-align: center;
+			color: white;
+		}
+	</style>
+</head>
+<script src="canvas-utils.js"></script>
+
+<body>
+
+	<footer>Catch the goldfish.</footer>
+	<canvas id="c"></canvas>
+	<script>
+		var audio = new Audio('trololol.mp3');
+		audio.play();
+		var canvas = document.querySelector('#c');
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+		var ctx = canvas.getContext('2d');
+		ctx.fillStyle = '#223344';
+		ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+		ctx.fillStyle = 'black';
+		ctx.strokeStyle = 'white';
+		ctx.font = '72px arial';
+
+		var speed = 7;
+		var x = 5;
+		var y = 5;
+		var dx = speed;
+		var dy = speed;
+
+		function random(min, max) {
+			return min + Math.random() * (max - min);
+		}
+
+
+		function draw() {
+			ctx.fillStyle = 'rgba(53, 102, 159, 0.1)';
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
+			ctx.fillStyle = 'hsl(' + random(0, 34) + ', 100%, 50%)';
+			ctx.fillText('*', x, y);
+			ctx.length = 5
+			x += dx;
+			y += dy;
+
+
+			var afstandX = mouseX - x;
+			var afstandY = mouseY - y;
+
+			var afstand = Math.sqrt(afstandX * afstandX + afstandY * afstandY);
+
+			if (afstand < 100) {
+				if (afstandX > 0) {
+					dx = -speed;
+				} else {
+					dx = speed;
+				}
+				if (afstandY > 4) {
+					dy = -speed;
+				} else {
+					dy = speed;
+				}
+			}
+
+			if (x > canvas.width) {
+				dx = -speed;
+			}
+
+			if (x < 0) {
+				dx = speed;
+			}
+
+			if (y > canvas.height) {
+				dy = -speed;
+			}
+
+			if (y < 0) {
+				dy = speed;
+			}
+
+
+			window.requestAnimationFrame(draw);
+		}
+
+		draw();
+	</script>
+
+</body>
+
+</html>

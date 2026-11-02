@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Clipping</title>
+  <style>
+  html, body {
+    width: 100%;
+    height: 100%;
+    background: black;
+  }
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  </style>
+</head>
+<body>
+
+<svg class="svg" width="100%" height="100%">
+  <clippath id="outer-circle">
+    <circle r="250" cx="50%" cy="50%"/>
+  </clippath>
+  <clippath id="inner-circle">
+    <circle r="150" cx="50%" cy="50%"/>
+  </clippath>
+</svg>
+
+<div id="center">
+  <video src="media/buddy-holly.mp4" autoplay loop muted width="100%"></video>
+  <video src="media/army-of-me.mp4" autoplay loop muted width="100%" style="-webkit-clip-path:url(#outer-circle); clip-path:url(#outer-circle)"></video>
+  <video src="media/no-good.mp4" width="100%" autoplay loop muted style="-webkit-clip-path:url(#inner-circle); clip-path:url(#inner-circle)"></video>
+</div>
+</body>
+</html>

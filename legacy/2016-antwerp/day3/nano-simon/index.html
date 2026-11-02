@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Echoscream</title>
+
+</head>
+
+<body>
+
+
+
+    <audio id="audio" src="1.mp3"></audio>
+
+    <script src="utils.js">
+    </script>
+
+    <!--        <img width=100 src="emoji1.png" data-audio-src="1.wav" value="PLAY">-->
+
+
+
+    <script>
+        var imageName = "scream";
+
+        var imageList = ["munch.jpg", "me.png"];
+        var soundsLoadedCount = 0;
+        var soundBuffers = {};
+
+        var audioCtx = new AudioContext();
+        console.log(audioCtx);
+
+
+        function loadSound(index, url, callback) {
+            var request = new XMLHttpRequest();
+            request.open('GET', url, true);
+            request.responseType = 'arraybuffer';
+
+            request.onload = function () {
+                audioCtx.decodeAudioData(request.response, function (buffer) {
+                    soundBuffers[url] = buffer;
+                    callback(buffer);
+//                    // De content van de wav in nu in AudioBuffer.
+//                    console.log(buffer);
+//                    // playSound plaatst de buffer in de sample bufferSource node
+//
+//                    playSound(buffer);
+//                    //playLoop(buffer);
+
+                }, onLoadError);
+            }
+            request.send();
+        }
+        
+		function onLoadError(e) {
+			console.error(e);
+		}
+
+
+
+        function buildScreen() {
+
+            for (var i = 1; i < 7; i++) {
+                var im = document.createElement("img");
+                im.src = imageName + i + ".jpg"; // imageList[i]
+                im.setAttribute("data-audio-src", i + ".mp3"); // audioList[i]
+                im.style.width = "100px";
+                document.body.appendChild(im);
+            }
+
+        }
+        
+        function soundLoaded() {
+            console.log('load');
+        }
+        
+        function initSounds() {
+            for (var i =1;i<=6;i++) {
+                loadSound(i, i + '.mp3', soundLoaded) ;
+                
+            }
+            
+        }
+
+
+        function play() {
+            //var audio = document.getElementById("audio");
+            //audio.src = this.dataset.audioSrc;
+            console.log(this.dataset.audioSrc);
+            //audio.play();
+            playSound(this.dataset.audioSrc);
+        }
+
+        function playSound(src) {
+            var source = audioCtx.createBufferSource();
+            source.buffer = soundBuffers[src];
+            
+            var delay = audioCtx.createDelay(Math.random() * 10);
+            source.connect(delay);
+            //delay.connect(delay);
+            
+            var gain = audioCtx.createGain();
+            gain.gain.value = 0.8;
+            
+            delay.connect(gain);
+            gain.connect(delay);
+            gain.connect(audioCtx.destination);
+            
+            
+//            source.onended = function () {
+//                playBreak();
+//            }
+            source.start(0, 0, source.buffer.duration);
+        }
+
+        buildScreen();
+        initSounds();
+
+        var images = document.querySelectorAll('img');
+        for (var i = 0; i < images.length; i++) {
+            images[i].addEventListener('click', play);
+        }
+    </script>
+
+</body>

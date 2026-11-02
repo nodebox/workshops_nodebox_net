@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background: black;
+        }
+        
+        .town2 {
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 1040px;
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+        }
+        
+        .house {
+            position: absolute;
+            z-index: 100;
+            transform: scale(0.5) translate(-70px, -70px);
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #church {
+            position: absolute;
+            transform: scale(0.9) translate(-60px, -70px);
+            z-index: 100;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .person {
+            position: absolute;
+            transition: all 3s;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="town">
+        <img class="house" src="house.svg" style="top:10px;left:20px;">
+        <img class="house" src="house.svg" style="top:100px;left:20px;">
+        <img class="house" src="house.svg" style="top:100px;left:200px;">
+        <img class="house" src="house.svg" style="top:200px;left:200px;">
+        <img class="house" src="house.svg" style="top:170px;left:270px;">
+
+
+        <img class="house" src="house.svg" style="top:20px;left:120px;">
+        <img class="house" src="house.svg" style="top:150px;left:120px;">
+        <img class="house" src="house.svg" style="top:110px;left:300px;">
+        <img class="house" src="house.svg" style="top:250px;left:300px;">
+        <img class="house" src="house.svg" style="top:320px;left:370px;">
+
+        <img class="person" src="sad%20person.svg" alt="">
+        <img class="person" src="sad%20person.svg" alt="">
+        <img class="person" src="sad%20person.svg" alt="">
+        <img class="person" src="sad%20person.svg" alt="">
+        <img class="person" src="sad%20person.svg" alt="">
+        <img class="person" src="sad%20person.svg" alt="">
+    </div>
+
+    <div class="town2">
+        <img class="house" src="house.svg" style="top:10px;left:20px;">
+        <img class="house" src="house.svg" style="top:100px;left:20px;">
+        <img class="house" src="house.svg" style="top:100px;left:200px;">
+        <img class="house" src="house.svg" style="top:200px;left:200px;">
+        <img class="house" src="house.svg" style="top:170px;left:270px;">
+
+
+        <img class="house" src="house.svg" style="top:20px;left:120px;">
+        <img class="house" src="house.svg" style="top:150px;left:120px;">
+        <img class="house" src="house.svg" style="top:110px;left:300px;">
+        <img class="house" src="house.svg" style="top:250px;left:300px;">
+        <img class="house" src="house.svg" style="top:320px;left:370px;">
+
+        <img class="person" src="sad%20person.svg" alt="">
+        <img class="person" src="sad%20person.svg" alt="">
+        <img class="person" src="sad%20person.svg" alt="">
+        <img class="person" src="sad%20person.svg" alt="">
+        <img class="person" src="sad%20person.svg" alt="">
+        <img class="person" src="sad%20person.svg" alt="">
+    </div>
+
+    <img src="church.svg" alt="" id="church" style="top:100px;left:500px;">
+
+    <script>
+        var houses = document.querySelectorAll('.house');
+        var church = document.querySelector('#church');
+        var inChurch = false;
+        var town = document.querySelector('.town')
+        var audio = new Audio('scream.mp3');
+
+
+
+        function randomChoice(l) {
+            return l[Math.floor(Math.random() * l.length)];
+        }
+
+        function movePerson() {
+            if (inChurch) return;
+            var persons = document.querySelectorAll('.person');
+            for (var i = 0; i < persons.length; i++) {
+                var person = persons[i];
+                var randomHouse = randomChoice(houses);
+                person.style.top = randomHouse.style.top;
+                person.style.left = randomHouse.style.left;
+            }
+
+        }
+
+        movePerson();
+        setInterval(movePerson, 3000);
+
+        function flee() {
+            inChurch = true;
+            var persons = document.querySelectorAll('.person');
+            for (var i = 0; i < persons.length; i++) {
+                var person = persons[i];
+                person.style.top = church.style.top;
+                person.style.left = church.style.left;
+            }
+        }
+
+        function Scream() {
+            var audio = new Audio();
+            audio.src = 'scream.mp3';
+            audio.play();
+        }
+        addEventListener('mousedown', Scream);
+
+        function Scream2() {
+            var audio = new Audio();
+            audio.src = 'scream2.mp3';
+            audio.play();
+        }
+        addEventListener('mousedown', Scream2);
+
+        function Scream3() {
+            var audio = new Audio();
+            audio.src = 'scream3.mp3';
+            audio.play()
+        }
+        addEventListener('mousedown', Scream3);
+
+        function playMetal() {
+            var audio = new Audio();
+            audio.src = 'metal.mp3';
+            audio.play();
+
+        }
+
+        function backToNormal() {
+            inChurch = false;
+        }
+
+        window.addEventListener('mousedown', flee);
+        window.addEventListener('mouseup', backToNormal);
+        window.addEventListener('mousedown', playMetal);
+    </script>
+</body>
+
+</html>

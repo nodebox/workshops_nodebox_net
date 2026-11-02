@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Drawing</title>
+  <style>
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    background: black;
+    color: #666;
+    font: 14px sans-serif;
+    text-align: center;
+  }
+
+  video {
+    position: absolute;
+  }
+  </style>
+</head>
+<body>
+(click)
+
+<script type="text/javascript">
+function onMouseClick(e) {
+  var mouseX = e.clientX - 100;
+  var mouseY = e.clientY - 75;
+
+  var video = document.createElement('video');
+  video.src = 'media/buddy-holly.mp4';
+  video.autoplay = true;
+  video.loop = true;
+  video.muted = true;
+  video.style.left = mouseX + 'px';
+  video.style.top = mouseY + 'px';
+  video.style.width = '75px';
+  video.style.height = '75px';
+  document.body.appendChild(video);
+}
+
+window.addEventListener('click', onMouseClick);
+
+</script>
+</body>
+</html>

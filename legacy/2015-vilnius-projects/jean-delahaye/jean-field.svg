@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="-250" y="-250" width="500px" height="500px" viewBox="-250 -250 500 500">
+<g>
+<path d="M-300 -150L300 -150L300 150L-300 150Z" fill="green"/>
+<path d="M-46 0C-46 -25.405098492216503 -25.405098492216503 -46 0 -46C25.405098492216503 -46 46 -25.405098492216503 46 0C46 25.405098492216503 25.405098492216503 46 0 46C-25.405098492216503 46 -46 25.405098492216503 -46 0Z" fill="transparent" stroke="white" stroke-width="2"/>
+<path d="M-287.5 -139.5L287.5 -139.5L287.5 139.5L-287.5 139.5Z" fill="transparent" stroke="white" stroke-width="2"/>
+<path d="M-329.5 -73L-218.5 -73L-218.5 73L-329.5 73Z" fill="transparent" stroke="white" stroke-width="2"/>
+<path d="M218.5 -73L329.5 -73L329.5 73L218.5 73Z" fill="transparent" stroke="white" stroke-width="2"/>
+<path d="M0 200L-2 -160" fill="transparent" stroke="white" stroke-width="2"/>
+</g>
+</svg>

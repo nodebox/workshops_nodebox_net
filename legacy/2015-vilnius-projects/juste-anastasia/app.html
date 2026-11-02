@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fisherman's Oracle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="loading-screen" class="screen">
+        <a href="#" onclick="switchScreen('instructions-screen')">
+
+            <img src="buttons/0%20logo%20gray.svg" width="480">
+
+            <a href= "#"
+            onclick =<img src ="buttons/0%20logo%20black.svg">
+            <!-- IMAGE tag goes here: like <img src="fish.svg" width="300"> -->
+        </a>
+
+
+    </div>
+
+    <div id="instructions-screen" class="screen" style="display: none">
+        <a href="#" onclick="switchScreen('conditions-screen')">
+            <p>Focus on Your Question and Specify Fishing Conditions to Consult the Fisherman’s Oracle...</p>
+        </a>
+    </div>
+
+    <div id="conditions-screen" class="screen" style="display: none">
+
+       <h2>Fishing Conditions</h2>
+        <a href="#" onclick="setTime(0)" class="timeButton" id="time0"><img src="buttons/morning%20calm.svg"></a>
+ <!--        <img src = "buttons/morning%20click.svg"> -->
+        <a href="#" onclick="setTime(1)" class="timeButton" id="time1"><img src="buttons/day%20calm.svg"></a>
+        <!-- <img src ="buttons/day%20click.svg"> -->
+        <a href="#" onclick="setTime(2)" class="timeButton" id="time2"><img src ="buttons/evening%20calm.svg"></a>
+        <!-- <img src ="buttons/evening%20click.svg"> -->
+        <a href="#" onclick="setTime(3)" class="timeButton" id="time3"><img src="buttons/night%20calm.svg"></a>
+        <!-- <img src ="buttons/night%20click.svg"> -->
+        <h3>Time</h3>
+
+        <a href="#" onclick="setWeather(0)" class="weatherButton" id="weather0"><img src ="buttons/sun%20calm.svg"></a>
+
+        <!-- <img src = "buttons/sun%20click.svg"> -->
+        <a href="#" onclick="setWeather(1)" class="weatherButton" id="weather1"><img src="buttons/cloud%20calm.svg"></a>
+
+        <!-- <img src="buttons/cloud%20click.svg"> -->
+        <a href="#" onclick="setWeather(2)" class="weatherButton" id="weather2"><img src ="buttons/rain%20calm.svg"></a>
+
+        <!-- <img src = "buttons/rain%20click.svg"> -->
+        <a href="#" onclick="setWeather(3)" class="weatherButton" id="weather3"><img src ="buttons/storm%20calm.svg"></a>
+
+        <!-- <img src="buttons/storm%20click.svg"> -->
+        <h3>Weather</h3>
+
+        <a href="#" onclick="clickCompass();return false" class="compassButton" id="compass"><img src ="buttons/compass%20north.svg" width="400"></a>
+
+
+        <h3>Wind</h3>
+
+        <a href="#" class="btn" onclick="makePrediction()">
+            <img src="buttons/predict%20calm.svg">
+        </a>
+    </div>
+
+    <div id="predictions-screen" class="screen" style="display: none">
+
+<h2>Fishing Prediction</h2>
+    <div id="fish-type">Ordinary Carp</div>
+        <div id="prediction">....</div>
+        <a href="#" class="btn" onclick="switchScreen('loading-screen')">
+            <img src="buttons/try%20again%20calm.svg">
+            <!-- <img src="buttons/try%20again%20click.svg"> -->
+        </a>
+    </div>
+
+
+    <script id="sentences" type="text/spintax">
+        Today You have a chance to meet the {prettiest|nicest|most beautiful} {mermaid|amphibian man|frog} in the world.
+        Don't bring a {banana|woman|sandwich} when You go fishing. It will bring {bad luck|bad karma|bad week}.
+        Soon You should finally eat {the best|the most fantastic|the most spicy} fish {meal|soup|cutlets} of Your {life|earthly existence|wife}.
+        Kiss the first {fish|frog|herring} that You catch. It will bring You {luck|happiness|money}.
+        Today's catch will turn Your life towards {unexpected|unpredictable|the most fascinating} {direction|experience}.
+        But be aware not to step onto the boat with Your {left foot|umbrella|suitcase}.
+        But be aware that when You go fishing, You don’t wear yellow {clothes|hat|gloves}.
+        But do not play with fate: don’t {whistle|swim} while You're fishing.
+        Do remember not to {cut Your nails|shave|brush Your teeth} before You go fishing.
+    </script>
+
+    <script src="jquery-2.1.3.min.js"></script>
+    <script src="spintax.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

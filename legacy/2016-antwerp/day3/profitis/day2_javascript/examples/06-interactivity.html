@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactivity</title>
+</head>
+<body>
+<canvas id="c" style="border: 1px solid black"></canvas>
+<script>
+  var canvas = document.querySelector('#c');
+  var ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'black';
+  ctx.strokeStyle = 'white';
+  ctx.font = '72px arial';
+
+  function onMouseMove(e) {
+    ctx.fillText('X', e.clientX, e.clientY);
+    ctx.strokeText('X', e.clientX, e.clientY);
+  }
+
+  window.addEventListener('mousemove', onMouseMove);
+
+</script>
+</body>
+</html>

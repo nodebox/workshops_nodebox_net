@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>3DtypoGON (VVC + RT)</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000000;
+            font-family: helvetica;
+            font-weight: 800;
+            font-size: 18px;
+            color: #ffffff;
+        }
+        
+        input[type=range] {
+            width: 1500px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- The canvas element, where the visualization is rendered -->
+    <canvas id="c" width="1500" height="550"></canvas>
+
+    <!-- The slider controls -->
+    <br> TEXT
+    <br>
+    <input type="text" value="3DtypoGON" oninput="changeHeader(this)">
+    <br> N-VALUE N-GON = <span id="range">7</span>
+    <br>
+    <input type="range" min="1" max="32" value="7" step="1" oninput="changeNvalue(this)" onchange="showValueNGON(this.value)">
+    <br> RANDOM SEED N-GONS
+    <br>
+    <input type="range" min="1" max="5000" value="0" step="1" oninput="changeRandomshape(this)">
+    <br> MIN. SIZE N-GONS
+    <br>
+    <input type="range" min="1" max="50" value="1" step=".1" oninput="changeMinsize(this)">
+    <br> MAX. SIZE N-GONS
+    <br>
+    <input type="range" min="1" max="50" value="16" step=".1" oninput="changeMaxsize(this)">
+    <br> AMOUNT OF POINTS BETWEEN N-GONS
+    <br>
+    <input type="range" min="1" max="450" value="50" step=".1" oninput="changeAmountofpoints(this)">
+    <br> ROTATE X AXIS
+    <br>
+    <input type="range" min="0" max="360" value="0" step=".1" oninput="changeX(this)">
+    <br> ROTATE Y AXIS
+    <br>
+    <input type="range" min="0" max="360" value="0" step=".1" oninput="changeY(this)">
+    <br> ROTATE Z AXIS
+    <br>
+    <input type="range" min="0" max="360" value="0" step=".1" oninput="changeZ(this)">
+    <br> MOVE X IMAGE
+    <br>
+    <input type="range" min="-2500" max="2500" value="-305" step="1" oninput="moveX(this)">
+    <br> MOVE Y IMAGE
+    <br>
+    <input type="range" min="-3500" max="3500" value="-410" step="1" oninput="moveY(this)">
+    <br> SCALE IMAGE
+    <br>
+    <input type="range" min="0" max="1" value="0.1" step=".01" oninput="scale(this)">
+
+    <!-- Size:
+    <input type="range" min="10" max="500" step="1" oninput="changeSize(this)"> Hue:
+    <input type="range" min="0" max="1" step="0.01" oninput="changeHue(this)">-->
+
+    <!-- A link to the NodeBox JavaScript API  -->
+    <script src="https://nodebox.live/api/v1/ndbx.js"></script>
+
+    <!-- Your custom initialization code -->
+    <script>
+        // Again, replace these with your own userId / projectId / functionId / canvasId
+        var options = {
+            userId: 'VINCENTVC',
+            projectId: 'threeDTYPOGON',
+            functionId: 'main',
+            canvasId: 'c',
+            autoplay: true
+        };
+
+        // Initialize the NodeBox player object
+        ndbx.embed(options, function (err, player) {
+            if (err) {
+                throw new Error(err);
+            } else {
+                window.player = player;
+            }
+        });
+
+        function changeHeader(e) {
+            console.log(e.value);
+            window.player.setValue('string1', 's', e.value);
+        }
+
+        function changeNvalue(e) {
+            console.log(e.value);
+            window.player.setValue('resampleByAmount1', 'amount', e.value);
+        }
+
+        function changeRandomshape(e) {
+            window.player.setValue('number2', 'v', e.value);
+        }
+
+        function changeMinsize(e) {
+            window.player.setValue('randomNumbers1', 'min', e.value);
+        }
+
+        function changeMaxsize(e) {
+            window.player.setValue('randomNumbers1', 'max', e.value);
+        }
+
+        function changeAmountofpoints(e) {
+            window.player.setValue('number1', 'v', e.value);
+        }
+
+        function changeX(e) {
+            window.player.setValue('pointcloud1', 'rotX', e.value);
+        }
+
+        function changeY(e) {
+            window.player.setValue('pointcloud1', 'rotY', e.value);
+        }
+
+        function changeZ(e) {
+            window.player.setValue('pointcloud1', 'rotZ', e.value);
+        }
+
+        function moveX(e) {
+            window.player.setValue('number4', 'v', e.value);
+        }
+
+        function moveY(e) {
+            window.player.setValue('makePoint1', 'y', e.value);
+        }
+
+        function scale(e) {
+            window.player.setValue('makePoint2', 'x', e.value);
+            window.player.setValue('makePoint2', 'y', e.value);
+        }
+
+        function showValueNGON(newValue) {
+            document.getElementById("range").innerHTML = newValue;
+        }
+    </script>
+</body>
+
+</html>

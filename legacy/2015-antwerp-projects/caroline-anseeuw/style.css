@@ -1,0 +1,48 @@
+body {
+    background-color: white;
+    font-family: verdana,sans-serif;
+    color: #666
+        
+        ;
+}
+
+#wrap {
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    float: left;
+    margin: 0;
+    margin-top: px;
+    margin-bottom: 50px;
+}
+
+
+
+.clear {
+    width: 0;
+    height: 0;
+    clear:both;
+}
+
+#controls {
+    float: right;
+}
+
+button {
+    border: none;
+    padding: 8px;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(191, 191, 191);
+}
+
+
+p {
+    max-width: 30em;
+}

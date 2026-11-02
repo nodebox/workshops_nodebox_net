@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Randomness</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+    <script src="canvas-utils.js"></script>
+    <script>
+        var canvas = document.querySelector('#c');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var ctx = canvas.getContext('2d');
+
+        var cellSize = 4;
+
+        function draw() {
+            Math.seedrandom(42);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.lineWidth = 0, 4;
+            //ctx.strokeStyle = 'rgba(56, 6, 6, 0.5)';
+            ctx.strokeStyle = '#0f4e53';
+            ctx.fillStyle = '#0a6222';
+            for (var y = 0; y < canvas.height; y += cellSize) {
+                for (var x = 0; x < canvas.width; x += cellSize) {
+                    var dx = random(-mouseX, mouseX) / 100;
+                    var dy = random(-mouseY, mouseY) / 250;
+                    strokeEllipse(x + dx, y + dy, cellSize, cellSize);
+                    //fillEllipse(x, y, cellSize, cellSize);
+                }
+            }
+        }
+
+
+        draw();
+        window.addEventListener('mousemove', draw);
+    </script>
+</body>
+
+</html>

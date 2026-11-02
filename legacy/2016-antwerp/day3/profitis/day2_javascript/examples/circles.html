@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Randomness</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  canvas {
+    background: #eee;
+  }
+  </style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script src="canvas-utils.js"></script>
+<script>
+  var canvas = document.querySelector('#c');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var ctx = canvas.getContext('2d');
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var centerX = canvas.width / 2;
+    var centerY = canvas.height / 2;
+    var effect = 1;
+    for (var radius = 10; radius < canvas.width; radius += 5) {
+      strokeEllipse(centerX - radius, centerY - radius, radius * 2, radius * 2);
+
+      // Zet de lijn hierboven in commentaar en probeer de code hieronder.
+      // var dx = (mouseX - centerX) * effect;
+      // var dy = (mouseY - centerY) * effect;
+      // effect = effect * 0.99;
+      // strokeEllipse(centerX - radius + dx, centerY - radius + dy, radius * 2, radius * 2);
+    }
+  }
+
+  document.addEventListener('mousemove', draw);
+  draw();
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+body { margin: 0 auto; padding: 2em 2em 4em; max-width: 2000px; 
+	font-family: "Courier New", Helvetica, Arial, sans-serif; 
+	font-size: 12px; line-height: 1em; color: #3D3D3D; 
+	background-color: #000009; box-shadow: 0 0 2px rgba(0, 0, 0, 0.06); 
+	} 
+
+h1 {
+	font-family: "Courier New", Helvetica, Arial, sans-serif;
+	text-decoration: line-through; 
+}
+input[type='range'] {
+    -webkit-appearance: none !important;
+    background:#3D3D3D;
+    height:7px;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background:#828282;
+    height:10px;
+    width:15px;
+}

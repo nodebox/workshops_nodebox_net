@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>celltype</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+        
+        h6 {
+            color: slateblue;
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
+
+
+    <center>
+        <canvas id="c" width="700" height="300"></canvas>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h6>Biotypo - Simon Vanleeuw</h6>
+    </center>
+
+    <!--
+    <input type="range" min="10" max="500" step="1" oninput="changeSize(500 px)">
+    <input type="range" min="10" max="3" step="5" oninput="changeHue(500 px)">
+-->
+
+
+
+    <script src="https://nodebox.live/api/v1/ndbx.js"></script>
+
+    <script>
+        var options = {
+            userId: 'Simonster',
+            projectId: 'celltypo',
+            functionId: 'main',
+            canvasId: 'c',
+            autoplay: true
+        };
+
+        // Initialize the NodeBox player object
+        ndbx.embed(options, function (err, player) {
+            if (err) {
+                throw new Error(err);
+            } else {
+                window.player = player;
+            }
+        });
+
+
+        // This function is called when the size slider is dragged.
+        function changeSize(e) {
+            window.player.setValue('rect1', 'width', e.value);
+            window.player.setValue('rect1', 'height', e.value);
+        }
+
+        // This function is called when the hue slider is dragged.
+        function changeHue(e) {
+            window.player.setValue('hslColor1', 'hue', e.value);
+        }
+    </script>
+
+
+
+</body>
+
+</html>

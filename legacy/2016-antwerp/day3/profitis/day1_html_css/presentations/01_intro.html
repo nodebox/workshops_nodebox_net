@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Introduction Slides</title>
+  <link rel="stylesheet" type="text/css" href="css/slides.css">
+  <script src="js/slides.js"></script>
+</head>
+<body>
+
+    <section>
+        <blockquote cite="http://www.rushkoff.com/program-or-be-programmed/">The debate over whether the Net is good or bad for us fills the airwaves and the blogosphere. But for all the heat of claim and counter-claim, the argument is essentially beside the point: it’s here; it’s everywhere. The real question is, do we direct technology, or do we let ourselves be directed by it and those who have mastered it?</blockquote>
+        <br>
+        <br>
+        <h3>Douglas Rushkoff</h3>
+        <h6>Program or be programmed.</h6>
+
+        <aside class="notes">
+            <p>Waarom Web?</p>
+            <p>Douglas Rushkoff stelt programmeren op gelijke hoogte als alfabetisering.</p>
+            <p>Hij beschrijft in zijn boek <strong>program or be programmed</strong> 10 stappen om ons te wapenen tegenover een alleroverheersende technologische vooruitgang.</p>
+            <p>Leren programmeren verhoogt de individuele mogelijkheden ongeacht binnen welk domein.</p>
+            <p>De cursus is een eerste stap daartoe. HTML en CSS de eerste basisbeginselen.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>HTMLWTF</h3>
+        <img src="img/intro/internet.png" alt="The Internet.">
+
+        <aside class="notes ">
+            <p>Het internet is fantastisch. Het is de grootste bron aan informatie over van alles en nog wat.</p>
+            <p>Door computers van heel de wereld aan elkaar te schakelen tot een netwerk van servers kan je een fantastische wereld aan informatie binnenkrijgen.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>Waar is de cloud?</h3>
+        <img src="img/intro/facebook-open-compute-server-racks.jpg" class="screenshot ">
+        <aside class="notes ">
+            <p>Maar waar staat al die informatie? Het staat op servers: computers op maat gemaakt om honderden of duizenden bezoekers tegelijk te bedienen.</p>
+            <p>Die servers staan opgeslagen in racks: rijen met servers die zo efficiënt mogelijk werken.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>Data Center</h3>
+        <img src="img/intro/datacenter-oregon.jpg" class="screenshot ">
+        <aside class="notes">
+            <p>De servers zelf staan in datacenters: immense gebouwen, verspreid over de hele wereld, met erg snelle netwerk-verbindingen met andere datacenters.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>Data Center</h3>
+        <img src="img/intro/datacenter-cooling.jpg" class="screenshot ">
+        <aside class="notes">
+            <p>Zoveel duizenden computers produceren natuurlijk veel hitte, en koeling is een belangrijke factor. Veel nieuwe datacenters worden gebouwd naast een rivier of een zee om natuurlijke koeling te kunnen benutten.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>Data Center in België</h3>
+        <img src="img/intro/datac2.jpg" class="screenshot ">
+        <aside class="notes">
+            <p>Hier is het datacenter van Google in België, operationeel vanaf 2010 in St Ghislain. Al jullie YouTube-filmpjes komen hier vandaan.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>Ter land, ter zee en in de lucht</h3>
+        <img src="img/intro/map.png" class="screenshot ">
+        <aside class="notes">
+            <p>Omdat het internet wereldwijd is, moeten al die punten verbonden worden met elkaar. Dit gebeurt via een gigantische netwerk van kabels, die ook onder de zee lopen.</p>
+        </aside>
+
+    </section>
+
+    <section>
+        <h3>Kabelschip</h3>
+        <img src="img/intro/cable-laying-ship.jpg" class="screenshot ">
+        <aside class="notes">
+            <p>Hier zie je zo'n schip dat kabels legt vanaf het land tot over de zee. Het lijkt totaal absurd, maar dit is echt hoe het gebeurd. Geen Wi-Fi rechtstreeks naar Amerika!</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>Hoe werkt het dan?</h3>
+        <a href="http://hwi.uni.be/hwi_start.html">TCP/IP animatie</a><br>
+        <a href="http://computer.howstuffworks.com/internet/basics/internet.htm">internet op howstuffworks.com</a>
+    </section>
+
+    <section>
+        <h3>Het leven van een internet pakket</h3>
+        <img src="img/intro/visual-traceroute.gif" class="screenshot">
+        <aside class="notes ">
+            <p>Hier zie je hoe een pakketje van mijn computer naar de servers bij Google in Amerika gaat.</p>
+            <p>Het volgt nogal een vreemd pad, door Duitsland en Zwitserland.</p>
+            <p>Elk pakket op het internet gaat via een aantal grote knooppunten om tot z'n bestemming te geraken.</p>
+        </aside>
+    </section>
+
+    <section>
+       <h3>IP adres</h3>
+        <aside class="notes">
+           <p> Zoals we allemaal een thuisadres hebben, zo heeft ook elke website een adres: het IP-adres. EMRG zoek je door www.emrg.be in te typen, maar wij hebben ook gewoon een IP-adres. </p>
+            <p>Probeer 176.58.119.173 maar eens, het IP-adres van emrg.be, dan vind je onze onderzoekspagina's. Er bestaan tal van websites om IP adressen op te zoeken.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>DNS</h3>
+        <h4><em>Domain Name System</em></h4>
+        <img src="img/intro/dns.jpg" class="screenshot">
+        <aside class="notes">
+            <p>Net zoals je niet alle telefoonnummers hooft te onthouden, zo hoef je ook niet alle IP-addressen te onthouden. Een speciale dienst, converteert een domeinnaam (emrg.be) naar een IP-adres. Die dienst heet DNS, of Domain Name System.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>ISP</h3>
+        <h4><em>Internet Service Provider</em></h4>
+        <img src="img/intro/telenet-logo.jpg" class="screenshot">
+        <aside class="notes">
+            <p>De eerste stap bij het bezoeken is de lijn van jouw huis naar de Internet Service Provider, meestal Telenet of Proximus. Daar staat de DNS server die de vertaling doet van de naam naar het IP-adres, en die is ook de eerste stap naar het datacenter waar de juiste server staat.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>De server</h3>
+        <img src="img/intro/single-server.jpg" class="screenshot ">
+        <aside class="notes">
+           <p>Websites staan opgeslagen op servers: computers met veel opslagruimte die makkelijk toegankelijk zijn via internet. Je kunt een server vergelijken met de kast in je kamer: er liggen allemaal dingen in opgeslagen. Het verschil is dat een server overal staat; je kan er - als je een internetverbinding hebt - altijd iets uitpakken.</p>
+            <p>Je ISP gaat op een snelle, slimme manier op zoek naar de server waarin de website is opgeslagen die jij wilt bezoeken.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>en terug</h3>
+        <aside class="notes">
+            <p>Heeft de ISP de server gevonden, dan geeft die jouw verzoek door. Krijg je toegang tot de website, dan stuurt de server de bestanden die je wil zien in allemaal kleine pakketten terug. Die pakketten worden op jouw computer door de browser weer in elkaar gezet tot een leesbare website.</p>
+            <p>Het bijzondere aan het internet is dat de weg terug van de server naar jouw computer compleet anders kan zijn dan de weg van de computer naar de server. Dat zorgt ervoor dat alles wat hierboven staat in millisecondes kan gebeuren.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>Het Web</h3>
+        <aside class="notes">
+            <p>Hetgeen meestal wordt doorgestuurd zijn webpagina's. Daar gaan we het in deze cursus ook over hebben. Maar merk op dat er nog andere dingen zijn die over het internet worden doorgestuurd, email, de data van apps, ...</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>Flickr</h3>
+        <img src="img/intro/kittens-flickr.png " class="screenshot ">
+        <aside class="notes">
+            <p>Hier is een voorbeeld van zo'n webpagina, die van Flickr.</p>
+        </aside>
+
+    </section>
+
+    <section>
+        <h3>Amazon</h3>
+        <img src="img/intro/kittens-amazon.png " class="screenshot ">
+    </section>
+
+    <section>
+        <h3>deredactie.be</h3>
+        <img src="img/intro/kittens-deredactie.png " class="screenshot ">
+    </section>
+
+    <section>
+        <h3>Facebook</h3>
+        <img src="img/intro/kittens-facebook.png " class="screenshot ">
+    </section>
+
+    <section>
+        <h3>I Can Has Cheezburger?</h3>
+        <img src="img/intro/kittens-cheezburger.png " class="screenshot ">
+    </section>
+
+    <section>
+        <h3>HTMLWTF</h3>
+        <img src="img/intro/view-source.png ">
+        <aside class="notes ">
+            <p>Vandaag gaan we achter de schermen kijken van het web.</p>
+            <p>Elk van die pagina's is opgemaakt in HTML en vormgegeven met CSS. Het gedrag wordt bepaald door JavaScript.</p>
+            <p>Hier is de broncode van elk van die sites.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>Flickr</h3>
+        <img src="img/intro/html-flickr.png " class="screenshot ">
+    </section>
+
+    <section>
+        <h3>Amazon</h3>
+        <img src="img/intro/html-amazon.png " class="screenshot ">
+    </section>
+
+    <section>
+        <h3>deredactie.be</h3>
+        <img src="img/intro/html-deredactie.png " class="screenshot ">
+    </section>
+
+    <section>
+        <h3>Facebook</h3>
+        <img src="img/intro/html-facebook.png " class="screenshot ">
+    </section>
+
+    <section>
+        <h3>I Can Has Cheezburger?</h3>
+        <img src="img/intro/html-cheezburger.png " class="screenshot ">
+    </section>
+
+    <section>
+        <h3>HTMLWTF</h3>
+        <pre><code>&lt;html&gt;</code></pre>
+        <aside class="notes ">
+            <p>Je hebt gezien dat elk van deze pagina deze tekst bevat. HTML. Dit is een tag, en in deze cursus zal je er nog heel wat zien.</p>
+            <p>Dit lijkt misschien beangstigend in het begin, maar we nemen rustig onze tijd om dit goed door te nemen.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>Bottom-up aanpak</h3>
+        <ul>
+            <li>Zelfredzaamheid</li>
+            <li>Samenwerking</li>
+        </ul>
+        <aside class="notes ">
+            <p>We hebben er speciaal voor gekozen om je HTML en CSS te leren zodat je echt weet hoe pagina's gemaakt worden, en wat de code erachter is. Dit is belangrijk om verschillende redenen.</p>
+            <p>Je zou, in plaats van met HTML te werken, ook met een grafische editor werken. Die schrijft dan de HTML voor jou. Fantastisch!</p>
+            <p>Tot er iets mis gaat. De editor vormt een dun laagje boven de HTML en CSS: hij abstraheert als het ware de HTML en CSS tot een grafische omgeving.</p>
+            <p>Echter, door te doen alsof HTML en CSS niet bestaan loop je tegen problemen aan die je zelf niet kan oplossen. Een element staat niet op de juiste plaats? Als je nooit de HTML en CSS ziet weet je ook niet waar je moet beginnen zoeken.</p>
+            <p>Daarom is het belangrijk om te begrijpen hoe webpagina's gemaakt worden, alvorens je visuele tools gebruikt om pagina's aan te maken.</p>
+            <p>In de "echte " wereld zal je grote websites waarschijnlijk in team maken. Als je samenwerkt met een programmeur die de HTML en CSS voor jou doet is het nog steeds belangrijk om te begrijpen wat er mogelijk is. Dit laat de conversatie tussen jou en andere teamleden vlotter verlopen.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>Alternatieven</h3>
+        <h5>Waarom niet Flash?</h5>
+        <img src="img/intro/iphone.jpg" width="400">
+
+        <aside class="notes">
+            <p>Toen we een aantal jaren deze cursus gaven, was "waarom niet Flash" een veelvoorkomende vraag.</p>
+            <p>Ondertussen is het wel duidelijk dat Flash nauwelijks nog gebruikt wordt voor nieuwe sites. En de reden is de iPhone. Apple heeft nooit Flash ondersteund op de iPhone, en dat heeft de ondergang van Flash teweeg gebracht.</p>
+            <p>Flash heeft ook een hele slechte reputatie qua toegankelijkheid voor mensen met een visuele handicap. Mensen die niet in staat zijn van visuele webpagina's te bekijken (zoals blinden) kunnen je flash-website niet bezoeken. Dit is misschien niet belangrijk als je een portfolio met grafisch werk maakt, maar wordt wel belangrijk als je websites ontwikkeld voor andere mensen.</p>
+            <p>Daarnaast zijn er de zoekmachines. Een site in Flash bevat bijna geen zinnige informatie voor zoekrobots, waardoor je website het erg povertjes zal doen in Google.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>Structuur van webpagina</h3>
+        <ul>
+            <li>Structuur</li>
+            <li>Presentatie</li>
+            <li>Gedrag</li>
+        </ul>
+        <aside class="notes ">
+            <p>De structuur bepaalt de verschillende onderdelen van de inhoud zijn, en hoe ze in relatie staan.</p>
+            <p>De presentatie bepaalt hoe de inhoud visueel getoond moet worden.</p>
+            <p>Het gedrag bepaalt hoe de inhoud reageert en verandert gebaseerd op interactie met de gebruiker.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>Structuur van webpagina</h3>
+        <ul>
+            <li>Structuur: <strong>HTML</strong>
+            </li>
+            <li>Presentatie: <strong>CSS</strong>
+            </li>
+            <li>Gedrag: <strong>JavaScript</strong>
+            </li>
+        </ul>
+        <aside class="notes ">
+            <p>Belangrijk is dat de drie elementen gescheiden blijven, en enkel worden gebruikt waarvoor ze dienen.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>Spaghetticode</h3>
+        <img src="img/intro/archive-yahoo.png " class="screenshot ">
+        <aside class="notes ">
+            <p>In vroegere tijden, dat wil zeggen, 1998, werden structuur en presentatie gemengd. Dit leidde tot een grote soep aan code. Tegenwoordig hoeft dat allemaal niet.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>CSS Zen Garden</h3>
+        <img src="img/intro/zengarden-1.png " class="screenshot ">
+        <aside class="notes ">
+            <p>CSS Zen Garden toont dat één enkele HTML-pagina op duizenden verschillende manieren kan getoond worden.</p>
+            <p>De HTML-broncode is altijd hetzelfde. Enkel de opmaak, de CSS-code en de bijhorende beelden zijn verschillend.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>CSS Zen Garden</h3>
+        <img src="img/intro/html-zengarden.png " class="screenshot ">
+        <aside class="notes ">
+            <p>Dit is de HTML broncode van CSS Zen Garden. De volgende screenshots tonen allemaal andere opmaak, maar de broncode blijft hetzelfde.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h3>CSS Zen Garden</h3>
+        <img src="img/intro/zengarden-2.png ">
+    </section>
+
+    <section>
+        <h3>CSS Zen Garden</h3>
+        <img src="img/intro/zengarden-3.png ">
+    </section>
+
+    <section>
+        <h3>CSS Zen Garden</h3>
+        <img src="img/intro/zengarden-4.png " class="screenshot ">
+    </section>
+
+    <section>
+        <h3>Voordelen</h3>
+        <ul>
+            <li>Toegankelijkheid</li>
+            <li>Overdraagbaarheid</li>
+            <li>Onderhoudbaarheid</li>
+            <li>Snelheid</li>
+        </ul>
+
+        <aside class="notes ">
+            <p>Door HTML/CSS/JavaScript te scheiden.</p>
+            <ol>
+                <li>Propere, semantische HTML heeft voordelen voor gebruikers die niet-visuele webbrowsers gebruiken, zoals blinden. Waarom die focus op blinden? Het web is een democratische tool. Maakt niet uit welke huidskleur je hebt, welke webbrowser je gebruikt of welke handicap je hebt. Daarnaast zijn er ook zoekrobotten die je website opzoeken, en die kunnen ook niet zien. Google leest je site en gebruikt vooral de structuur-informatie uit HTML om te bepalen wat belangrijk is.</li>
+                <li>Je pagina wordt makkelijker overdraagbaar. Door HTML/CSS te scheiden kan je een nieuwe stylesheet implementeren en je hebt een mobiele versie van je pagina. We kunnen ook delen tussen verschillende projecten herbruiken.</li>
+                <li>Je pagina's worden makkelijker te onderhouden. Een designer kan aanpassingen aan de CSS doen zonder de HTML te hoeven aan te passen of de JavaScript code te veranderen.</li>
+                <li>Door HTML en CSS te scheiden moeten bezoekers van je website de CSS maar één keer downloaden, en gebruiken daarna de versie die ze in cache bewaren, wat de site sneller maakt.</li>
+            </ol>
+        </aside>
+    </section>
+
+    <section>
+        <h3>Planning</h3>
+        <ul>
+            <li>HTML overzicht</li>
+            <li>HTML oefening</li>
+            <li>CSS overzicht</li>
+            <li>CSS oefening</li>
+            <li>Project</li>
+        </ul>
+    </section>
+
+    <section>
+        <a href="02_html.html">HTML CRASH COURSE</a>
+    </section>
+
+</body>
+</html>

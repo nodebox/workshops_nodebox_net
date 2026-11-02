@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+
+    <script src=""></script>
+
+    <script>
+        var c = document.querySelector("#c");
+        var drawCtx = c.getContext('2d');
+        c.width = window.innerWidth;
+        c.height = window.innerHeight;
+
+
+
+        var audioCtx = new AudioContext();
+        console.log(audioCtx);
+
+        //crests analyser
+
+        var analyser = audioCtx.createAnalyser();
+        var bufferLength = 128; //512 1024
+
+
+        //crete sound
+
+        var osc = audioCtx.createOscillator();
+        osc.type = "sine"; //square, triangle...
+        osc.frequency.value = 440;
+        osc.start();
+
+        //create volume node
+
+        var gain = audioCtx.createGain();
+        gain.gain.value = 0.5;
+
+
+        //create network
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        gain.connect(analyser);
+
+
+        function draw() {
+            //background
+            drawCtx.fillstyle = 'green';
+            drawCtx.fillRect(0, 0, c.width, c.height);
+
+            var timedomain = new Uint8Array(bufferLength);
+            analyser.getByteTimeDomainData(timedomain);
+            // console.log(timedomain);
+
+            var segment = c.width / timedomain.length;
+            drawCtx.fillstyle = 'white';
+            for (var i = 0; i < timedomain.length; i++) {
+                drawCtx.fillRect(i * segment, 450, 6, -timedomain[i]);
+            }
+
+            window.requestAnimationFrame(draw);
+        }
+
+
+        draw();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+    <script src="utils.js"></script>
+    <script>
+        var canvas = document.querySelector('#c');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var ctx = canvas.getContext('2d');
+
+        var bcim = document.createElement("img");
+        bcim.src = "the-dump-2.png";
+        //var counter = 0;
+
+        var im = document.createElement("img");
+        im.id = "beethoven";
+        im.src = "beethovenHead.png";
+
+        function makeBG() {
+            ctx.drawImage(bcim, 0, 0, canvas.width, canvas.height);
+        }
+
+
+        var audioContext = new AudioContext();
+        var osc = audioContext.createOscillator();
+        var gain = audioContext.createGain();
+        gain.gain.value = 0.5;
+        var letter = 200;
+
+        // Source: http://chromium.googlecode.com/svn/trunk/samples/audio/wave-tables
+        var tables = strings; // organ - strings
+        var c = tables.real.length;
+        var real = new Float32Array(c);
+        var imag = new Float32Array(c);
+        for (var i = 0; i < c; i++) {
+            real[i] = tables.real[i];
+            imag[i] = tables.imag[i];
+        }
+
+        var instrumentTable = audioContext.createPeriodicWave(real, imag);
+
+        function play() {
+            osc = audioContext.createOscillator();
+            gain.gain.value = 0.5;
+            osc.setPeriodicWave(instrumentTable);
+            osc.frequency.value = 440;
+            osc.connect(gain);
+            gain.connect(audioContext.destination);
+            osc.start(0);
+
+        }
+
+        function stop() {
+            osc.disconnect();
+            osc.stop();
+        }
+
+        function changePitch() {
+            osc.frequency.value = mouseX;
+        }
+
+        function changeGain() {
+            gain.gain.value = mouseY / 100.0;
+        }
+
+        function draw() {
+            var s = 100;
+            ctx.drawImage(im, mouseX - s / 2, mouseY - s / 2, s, s);
+            window.requestAnimationFrame(draw);
+        }
+
+
+
+        function init() {
+            context = new AudioContext();
+            //console.log(context);
+            if (context) {
+                loadSound("Beethoven-Symphony No.9.mp3");
+            }
+        }
+
+
+        function playLoop(buffer) {
+            var sample = context.createBufferSource();
+            sample.buffer = buffer;
+            sample.connect(context.destination);
+            sample.start(0);
+
+            sample.onended = function () {
+                playLoop(buffer);
+            }
+        }
+
+        draw();
+
+        window.addEventListener('load', play);
+        window.addEventListener('mousemove', changePitch);
+        window.addEventListener('mousemove', changeGain);
+        window.addEventListener('load', makeBG);
+    </script>
+
+</body>
+
+</html>

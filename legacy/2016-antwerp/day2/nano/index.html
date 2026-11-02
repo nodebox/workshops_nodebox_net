@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EMOJIS AND MUSIC</title>
+</head>
+
+<body>
+
+    <body>
+        <audio id="audio" src="1.wav"></audio>
+        <script>
+        </script>
+
+        <img width=100 src="emoji1.png" data-audio-src="1.wav" value="PLAY">
+
+        <img width=100 src="emoji2.png" value="PLAY" data-audio-src="2.wav" >
+    
+        <img width=100 src="emoji3.png" value="PLAY"  data-audio-src="3.wav" >
+        
+        <img width=100 src="emoji4.png" value="PLAY"  data-audio-src="4.wav" >
+        
+        <img width=100 src="emoji5.png" value="PLAY"  data-audio-src="5.wav" >
+        
+        <img width=100 src="emoji6.png" value="PLAY" data-audio-src="6.wav">
+        
+        <img width=100 src="emoji7.png" value="PLAY" data-audio-src="7.wav">
+       
+        <img width=100 src="emoji8.jpg" value="PLAY" data-audio-src="8.wav">
+        
+        <img width=100 src="emoji9.png" value="PLAY" data-audio-src="9.wav">
+        
+        <img width=100 src="emoji10.png" value="PLAY" data-audio-src="10.wav">
+        
+        <img width=100 src="emoji11.jpg" value="PLAY" data-audio-src="11.wav">
+        
+        <img width=100 src="emoji12.png" value="PLAY" data-audio-src="12.wav">
+        
+        <img width=100 src="emoji13.png" value="PLAY" data-audio-src="13.wav">
+        
+        <img width=100 src="emoji14.png" value="PLAY" data-audio-src="14.wav">
+        
+        <img width=100 src="emoji15.jpg" value="PLAY" data-audio-src="15.wav">
+        
+        <img width=100 src="emoji16.png" value="PLAY" data-audio-src="16.wav">
+        
+        <img width=100 src="emoji17.jpeg" value="PLAY" data-audio-src="17.wav">
+        
+        <img width=100 src="emoji18.png" value="PLAY" data-audio-src="18.wav">
+        
+         <img width=100 src="emoji1.png" data-audio-src="19.wav" value="PLAY">
+
+        <img width=100 src="emoji2.png" value="PLAY" data-audio-src="20.wav" >
+    
+        <img width=100 src="emoji3.png" value="PLAY"  data-audio-src="21.wav" >
+        
+        <img width=100 src="emoji4.png" value="PLAY"  data-audio-src="22.wav" >
+        
+        <img width=100 src="emoji5.png" value="PLAY"  data-audio-src="23.wav" >
+        
+        <img width=100 src="emoji6.png" value="PLAY" data-audio-src="24.wav">
+        
+        <img width=100 src="emoji7.png" value="PLAY" data-audio-src="25.wav">
+       
+        <img width=100 src="emoji8.jpg" value="PLAY" data-audio-src="26.wav">
+        
+        <img width=100 src="emoji9.png" value="PLAY" data-audio-src="27.wav">
+        
+        <img width=100 src="emoji10.png" value="PLAY" data-audio-src="28.wav">
+        
+        <img width=100 src="emoji11.jpg" value="PLAY" data-audio-src="29.wav">
+        
+        <img width=100 src="emoji12.png" value="PLAY" data-audio-src="30.wav">
+        
+        <img width=100 src="emoji13.png" value="PLAY" data-audio-src="31.wav">
+        
+        <img width=100 src="emoji14.png" value="PLAY" data-audio-src="32.wav">
+        
+        <img width=100 src="emoji15.jpg" value="PLAY" data-audio-src="33.wav">
+        
+        <img width=100 src="emoji16.png" value="PLAY" data-audio-src="34.wav">
+        
+        <img width=100 src="emoji17.jpeg" value="PLAY" data-audio-src="35.wav">
+        
+        <img width=100 src="emoji18.png" value="PLAY" data-audio-src="36.wav">
+        
+        <img width=100 src="emoji5.png" value="PLAY"  data-audio-src="37.wav" >
+        
+        <img width=100 src="emoji6.png" value="PLAY" data-audio-src="38.wav">
+        
+        <img width=100 src="emoji7.png" value="PLAY" data-audio-src="39.wav">
+       
+        <img width=100 src="emoji8.jpg" value="PLAY" data-audio-src="40.wav">
+        
+        <img width=100 src="emoji9.png" value="PLAY" data-audio-src="41.wav">
+        
+        <img width=100 src="emoji10.png" value="PLAY" data-audio-src="42.wav">
+        
+        <img width=100 src="emoji11.jpg" value="PLAY" data-audio-src="43.wav">
+        
+        <img width=100 src="emoji12.png" value="PLAY" data-audio-src="44.wav">
+        
+        <img width=100 src="emoji13.png" value="PLAY" data-audio-src="45.wav">
+        
+        <img width=100 src="emoji14.png" value="PLAY" data-audio-src="46.wav">
+        
+        <img width=100 src="emoji15.jpg" value="PLAY" data-audio-src="47.wav">
+        
+        <img width=100 src="emoji16.png" value="PLAY" data-audio-src="48.wav">
+        
+        <img width=100 src="emoji17.jpeg" value="PLAY" data-audio-src="49.wav">
+        
+        <img width=100 src="emoji18.png" value="PLAY" data-audio-src="50.wav">
+        
+        <img width=100 src="emoji5.png" value="PLAY"  data-audio-src="51.wav" >
+        
+        <img width=100 src="emoji6.png" value="PLAY" data-audio-src="52.wav">
+        
+        
+        
+        
+        
+        <script>
+            function play() {
+                var audio = document.getElementById("audio");
+                audio.src = this.dataset.audioSrc;
+                console.log(this.dataset.audioSrc);
+                audio.play();
+            }
+            
+            var images = document.querySelectorAll('img');
+            for (var i=0;i<images.length;i++) {
+                images[i].addEventListener('click', play);
+            }
+            
+            
+        </script>
+
+    </body>

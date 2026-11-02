@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="/2007/themes/lahti2007/screen.css" rel="stylesheet" type="text/css" media="screen" />
+<title>Lahti 2007 - Code Examples</title></head>
+<body>
+<div id="shopbar">
+  <ul>
+    <li class="popup">
+      <a href="/"><span>All Workshops</span></a>
+      <ul>
+        <li><a href="/2016-antwerp/">2016 Antwerp</a></li>
+        <li><a href="/2015-liege/">2015 Liege</a></li>
+        <li><a href="/2015-warsaw/">2015 Warsaw</a></li>
+        <li><a href="/2015-vilnius/">2015 Vilnius</a></li>
+        <li><a href="/2015-antwerp/">2015 Antwerp</a></li>
+        <li><a href="/2014-vilnius/">2014 Vilnius</a></li>
+        <li><a href="/2014-antwerp/">2014 Antwerp</a></li>
+        <li><a href="/2013-valence/">2013 Valence</a></li>
+        <li><a href="/2013-montreal/">2013 Montréal</a></li>
+        <li><a href="/2013-vilnius/">2013 Vilnius</a></li>
+        <li><a href="/2013-helsinki/">2013 Helsinki</a></li>
+        <li><a href="/2013-lahti/">2013 Lahti</a></li>
+        <li><a href="/2013-antwerp/">2013 Antwerp</a></li>
+        <li><a href="/2012-the-hague/">2012 The Hague</a></li>
+        <li><a href="/2012-antwerp/">2012 Antwerp</a></li>
+        <li><a href="/2011-torino/">2011 Torino</a></li>
+        <li><a href="/2011-vilnius/">2011 Vilnius</a></li>
+        <li><a href="/2011-mad-fac/">2011 MAD-faculty</a></li>
+        <li><a href="/2011-lahti/">2011 Lahti</a></li>
+        <li><a href="/2011-helsinki/">2011 Helsinki</a></li>
+        <li><a href="/2011-antwerp/">2011 Antwerp</a></li>
+        <li><a href="/2010-antwerp/">2010 Antwerp</a></li>
+        <li><a href="/2010-lahti/">2010 Lahti</a></li>
+        <li><a href="/2009-lahti/">2009 Lahti</a></li>
+        <li><a href="/2008-helsinki/">2008 Helsinki</a></li>
+        <li><a href="/2007/">2007 Lahti</a></li>
+        <li><a href="/2005/">2005 Lahti</a></li>
+        <li><a href="/2004/day12.html">2004 Lahti</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+​
+<br><br>
+<div id="wrap">
+<div id="header">
+	<h1><a href="/2007/">Lahti 2007</a></h1>
+</div>
+<div id="nav">
+	<ul>
+		<li><a href="/2007/">Home</a></li>
+		<li><a href="/2007/students.html">Students</a></li>
+		<li><a href="/2007/code.html">Code</a></li>
+		<li><a href="/2007/about.html">About</a></li>
+		<li class="nav-spacer">&nbsp;</li>
+		<li class="nav-action"><a href="/2007/code-examples?login">Login</a></li>
+	</ul>
+</div>
+
+
+
+
+	</ul>
+</div>
+<div id="content">
+<p>The end result will be a battle-like environment. This means we need to be able to combine scripts of all the students into one coherent whole.</p>
+
+<pre><code>"Just put a try/catch block around it"
+    -- Tom
+</code></pre>
+
+<h2>Conventions</h2>
+
+<p>Code tries to map as close as possible to functional programming, meaning functions should have no side effects.</p>
+
+<p>Ideally, functions should be seen as generators or modifiers, and only do one of the two.</p>
+
+<p>We should be able to see what a modifier has modified or a generator has generated. This means that we would love to get delta-values out of the functions instead of real objects. We could use real objects and compare.</p>
+
+<p>The delta-values are important because we might be able to animate or damp them.</p>
+
+<h2>path_from_points</h2>
+
+<pre>
+from DrawingPrimitives import *
+def path_from_points(pts):
+    assert len(pts) > 1
+    path = BezierPath(_ctx)
+    path.moveto(pts[0].x, pts[0].y)
+    for pt in pts[1:]:
+        if isinstance(pt, PathElement) and pt.cmd == CURVETO:
+            path.curveto(pt.ctrl1.x, pt.ctrl1.y, pt.ctrl2.x, pt.ctrl2.y, pt.x, pt.y)
+        else:
+            path.lineto(pt.x, pt.y)    
+    path.inheritFromContext()
+    return path
+</pre>
+
+<h2>typing keys</h2>
+
+<pre>
+speed(30)
+
+def setup():
+    global textline, lastframe
+    textline = ""
+    lastframe = -100
+    
+    
+def draw():
+    global textline, lastframe
+    
+    if keydown and FRAME - lastframe > 5:
+        if keycode == 51: # backspace
+            textline = textline[:-1]
+        else:
+            textline += key
+        lastframe = FRAME
+        
+    text(textline, 10, 100)
+   
+</pre>
+
+<h2>typing keys (oo)</h2>
+
+<pre>
+speed(30)
+
+class Typer:
+    def __init__(self):
+        self.textline = ""
+        self.lastframe = -100
+        
+    def update(self):
+        if keydown and FRAME - self.lastframe > 5:
+            if keycode == 51: # backspace
+                self.textline = self.textline[:-1]
+            else:
+                self.textline += key
+            self.lastframe = FRAME
+
+def setup():
+    global typer
+    typer = Typer()
+    
+def draw():
+    global typer
+    
+    typer.update()
+
+        
+    text(typer.textline, 10, 100)
+</pre>
+</div> <!-- content -->
+<div id="updated">
+	Last update &mdash; 02 November 2026 14:20 </div>
+<div id="footer">
+	Generated by Ultrawiki. &copy; 2004-2007 Frederik De Bleser, Tom De Smedt, Lucas Nijs.
+</div>
+</div> <!-- wrap -->
+</body>
+</html>

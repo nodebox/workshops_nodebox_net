@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Beliveable words</title>
+</head>
+<body>
+    <!-- The canvas element, where the visualization is rendered -->
+   <br><br><br><br>
+ <center><canvas id="c" width="700" height="700"></canvas></center>
+
+    <!-- The slider controls -->
+    <!-- Size: <input type="range" min="10" max="500" step="1" oninput="changeSize(this)"> -->
+    <!-- Hue: <input type="range" min="0" max="1" step="0.01" oninput="changeHue(this)"> -->
+
+    <!-- A link to the NodeBox JavaScript API  -->
+    <script src="https://nodebox.live/api/v1/ndbx.js"></script>
+
+    <!-- Your custom initialization code -->
+    <script>
+    // Again, replace these with your own userId / projectId / functionId / canvasId
+    var options = {
+      userId: 'nanowallenius',
+      projectId: 'lesson',
+      functionId: 'allwords',
+      canvasId: 'c',
+      autoplay: true
+    };
+
+    // Initialize the NodeBox player object
+    ndbx.embed(options, function(err, player) {
+      if (err) {
+        throw new Error(err);
+      } else {
+        window.player = player;
+      }
+    });
+
+    // This function is called when the size slider is dragged.
+    function changeSize(e) {
+      window.player.setValue('rect1', 'width', e.value);
+      window.player.setValue('rect1', 'height', e.value);
+    }
+
+    // This function is called when the hue slider is dragged.
+    function changeHue(e) {
+      window.player.setValue('hslColor1', 'hue', e.value);
+    }
+    </script>
+</body>
+</html>

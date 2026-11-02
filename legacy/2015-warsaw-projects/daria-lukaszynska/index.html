@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>History of Fine Arts Timeline</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://nodeboxwarsaw.herokuapp.com/static/js/bundle.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>History of Fine Arts Timeline</h1>
+            <h2>By Daria Łukaszyńska</h2>
+            <p>The colors of each period are the average colors used on that time by artist in their masterpieces. Enjoy learning !</p>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="container">
+            <label for="sizeSlider">Year</label>
+            <input id="sizeSlider" type="range" min="-5000" max="1933" value="-5000" oninput="changeYear(this)" style="width:100%">
+            <br>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="container">
+            <canvas width="1000" height="700" id="c"></canvas>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2015</p>
+        </div>
+    </div>
+</body>
+</html>

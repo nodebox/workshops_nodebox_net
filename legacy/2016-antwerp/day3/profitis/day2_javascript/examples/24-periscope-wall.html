@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wall of Periscope</title>
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <style>
+    body {
+      background: black;
+      font: 14px sans-serif;
+      text-align: center;
+    }
+    video {
+      -webkit-filter: grayscale();
+      filter: grayscale();
+    }
+    p {
+      color: #666;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+<p>This only works in Safari (it requires HLS — HTTP Live Streaming)</p>
+<script>
+
+function loadBroadcast(broadcast) {
+  var url = 'https://rappi.herokuapp.com/periscope/broadcastDetails.json?id=' + broadcast.id
+  $.getJSON(url, function(result) {
+    if (result.status !== 'ok') {
+      return;
+    }
+    var link = document.createElement('a');
+    link.href = 'https://www.periscope.tv/w/' + broadcast.id;
+    link.title = broadcast.status;
+    link.target = '_blank';
+    var video = document.createElement('video');
+    video.src = result.details.streamingUrl;
+    video.autoplay = true;
+    video.width = 150;
+    link.appendChild(video);
+    document.body.appendChild(link);
+  });
+
+}
+
+$.getJSON('https://rappi.herokuapp.com/periscope/broadcasts.json', function(result) {
+  if (result.status !== 'ok') {
+    alert(result.message);
+  }
+  // Load the broadcasts
+  for (var i = 0; i < 27; i++) {
+    var broadcast = result.broadcasts[i];
+    loadBroadcast(broadcast);
+  }
+});
+</script>
+</body>
+</html>

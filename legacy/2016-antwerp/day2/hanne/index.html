@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Randomness</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: helvetica;
+        }
+        
+        #cavia {
+            position: absolute;
+            top: 90px;
+        }
+        
+        #cavia {
+            width: 75px
+        }
+        
+        #score {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 48px;
+            padding: 24px;
+            background: rgb(250, 188, 18);
+        }
+    </style>
+</head>
+
+<body>
+    <img id="cavia" src="cavia.png" alt="">
+    <div id="score">0</div>
+    <canvas id="c"></canvas>
+    <audio src="Homer.mp3" id="sound"></audio>
+    <script src="canvas-utils.js"></script>
+    <script>
+        var cavia = document.querySelector('#cavia');
+        var sound = document.querySelector('#sound');
+        var scoreTag = document.querySelector('#score');
+
+
+        var canvas = document.querySelector('#c');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var ctx = canvas.getContext('2d');
+
+        ctx.strokeStyle = 'rgb(250, 188, 18)';
+        ctx.lineWidth = 0, 5;
+
+        var centerX = canvas.width / 2;
+        var centerY = canvas.height / 2;
+        var circleSize = 20;
+
+        var score = 0;
+
+
+        var caviaX = 0;
+        var caviaY = 0;
+        var caviaDx = 5;
+        var caviaDy = 5;
+
+        function animate() {
+            if (mouseX > 0) {
+                centerX += (mouseX - centerX) * 0.1;
+                centerY += (mouseY - centerY) * 0.1;
+            }
+
+            strokeEllipse(centerX - circleSize, centerY - circleSize, circleSize * 2, circleSize * 2);
+
+            caviaX += caviaDx;
+            caviaY += caviaDy;
+
+            if (caviaX > window.innerWidth) {
+                caviaDx = -caviaDx;
+            }
+
+
+            if (caviaX < 0) {
+                caviaDx = -caviaDx;
+            }
+
+            if (caviaY > window.innerHeight) {
+                caviaDy = -caviaDy;
+            }
+
+            if (caviaY < 0) {
+                caviaDy = -caviaDy;
+            }
+
+            cavia.style.left = caviaX + 'px';
+            cavia.style.top = caviaY + 'px';
+
+            window.requestAnimationFrame(animate);
+
+        }
+
+        animate();
+
+
+        function caviaClick() {
+            console.log('cavia clicked!!');
+            sound.play();
+            score = score + 1;
+            scoreTag.innerHTML = score;
+
+        }
+
+        cavia.addEventListener('mousedown', caviaClick);
+    </script>
+</body>
+
+</html>

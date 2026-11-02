@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="/2007/themes/lahti2007/screen.css" rel="stylesheet" type="text/css" media="screen" />
+<title>Lahti 2007 - Documentation</title></head>
+<body>
+<div id="shopbar">
+  <ul>
+    <li class="popup">
+      <a href="/"><span>All Workshops</span></a>
+      <ul>
+        <li><a href="/2016-antwerp/">2016 Antwerp</a></li>
+        <li><a href="/2015-liege/">2015 Liege</a></li>
+        <li><a href="/2015-warsaw/">2015 Warsaw</a></li>
+        <li><a href="/2015-vilnius/">2015 Vilnius</a></li>
+        <li><a href="/2015-antwerp/">2015 Antwerp</a></li>
+        <li><a href="/2014-vilnius/">2014 Vilnius</a></li>
+        <li><a href="/2014-antwerp/">2014 Antwerp</a></li>
+        <li><a href="/2013-valence/">2013 Valence</a></li>
+        <li><a href="/2013-montreal/">2013 Montréal</a></li>
+        <li><a href="/2013-vilnius/">2013 Vilnius</a></li>
+        <li><a href="/2013-helsinki/">2013 Helsinki</a></li>
+        <li><a href="/2013-lahti/">2013 Lahti</a></li>
+        <li><a href="/2013-antwerp/">2013 Antwerp</a></li>
+        <li><a href="/2012-the-hague/">2012 The Hague</a></li>
+        <li><a href="/2012-antwerp/">2012 Antwerp</a></li>
+        <li><a href="/2011-torino/">2011 Torino</a></li>
+        <li><a href="/2011-vilnius/">2011 Vilnius</a></li>
+        <li><a href="/2011-mad-fac/">2011 MAD-faculty</a></li>
+        <li><a href="/2011-lahti/">2011 Lahti</a></li>
+        <li><a href="/2011-helsinki/">2011 Helsinki</a></li>
+        <li><a href="/2011-antwerp/">2011 Antwerp</a></li>
+        <li><a href="/2010-antwerp/">2010 Antwerp</a></li>
+        <li><a href="/2010-lahti/">2010 Lahti</a></li>
+        <li><a href="/2009-lahti/">2009 Lahti</a></li>
+        <li><a href="/2008-helsinki/">2008 Helsinki</a></li>
+        <li><a href="/2007/">2007 Lahti</a></li>
+        <li><a href="/2005/">2005 Lahti</a></li>
+        <li><a href="/2004/day12.html">2004 Lahti</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+​
+<br><br>
+<div id="wrap">
+<div id="header">
+	<h1><a href="/2007/">Lahti 2007</a></h1>
+</div>
+<div id="nav">
+	<ul>
+		<li><a href="/2007/">Home</a></li>
+		<li><a href="/2007/students.html">Students</a></li>
+		<li><a href="/2007/code.html">Code</a></li>
+		<li><a href="/2007/about.html">About</a></li>
+		<li class="nav-spacer">&nbsp;</li>
+		<li class="nav-action"><a href="/2007/documentation?login">Login</a></li>
+	</ul>
+</div>
+
+
+
+
+	</ul>
+</div>
+<div id="content">
+<p>This website is a <em>wiki</em>. This means that anyone who has a password, can login and make changes to the site content, all from a web browser. You can easily create new pages and basically organize the system however you please. A wiki means self-organising chaos.</p>
+
+<p><em>UltraWiki</em> is a wiki implementation supporting user management, different permissions and layouts per page, and themeability.</p>
+
+<h1>How Permissions work</h1>
+
+<p>Each page has permissions about who can edit and read. By default, you can edit any page your group created, or change the permissions of those pages. For example: setting the permissions of a page so that your group can edit and read, but deny everyone else the right to read, creates a private page for your group. You cannot edit the pages created by other groups, except for teachers who can edit the pages of students. Administrators can edit and read everything - only Tom and Frederik are administrators and we respect your confidentiality.</p>
+
+<h1>MarkDown</h1>
+
+<p>The basic editing syntax is based on <a href="http://daringfireball.net/projects/markdown/">MarkDown</a>. MarkDown has some simple styling rules:</p>
+
+<p><em>Headers:</em></p>
+
+<pre>Title
+=====</pre>
+
+<p><em>Links:</em></p>
+
+<pre>[[Projects]]
+[[http://www.nodebox.net/]]
+[[http://www.nodebox.net/]](Nodebox site)</pre>
+
+<p><em>Media:</em></p>
+
+<pre>!imagefile.jpg!
+!soundfile.mp3!
+!moviefile.mov!</pre>
+
+<p><em>Bold text:</em></p>
+
+<pre><strong>*important*</strong></pre>
+
+<p><em>Italic text:</em></p>
+
+<pre><em>_likely_</em></pre>
+
+<p><em>Horizontal line:</em></p>
+
+<pre>----</pre>
+
+<h1>HTML Markup</h1>
+
+<p>If you want to do more advanced layouting, you&#8217;ll have to use HTML in the edit window. Some simple HTML layout commands include:</p>
+
+<p><em>Table:</em></p>
+
+<table>
+<tr>
+<td>row 1 column 1</td>
+<td>row 1 column 2</td>
+</tr>
+<tr>
+<td>row 2 column 1</td>
+<td>row 2 column 2</td>
+</tr>
+</table>
+
+<p><br/></p>
+
+<p><code>&lt;table&gt;</code><br/>
+<code>&lt;tr&gt;</code><br />
+<code>&lt;td&gt;</code>row 1 column 1<code>&lt;/td&gt;</code><br />
+<code>&lt;td&gt;</code>row 1 column 2<code>&lt;/td&gt;</code><br />
+<code>&lt;/tr&gt;</code><br/>
+<code>&lt;tr&gt;</code><br/>
+<code>&lt;td&gt;</code>row 2 column 1<code>&lt;/td&gt;</code><br />
+<code>&lt;td&gt;</code>row 2 column 2<code>&lt;/td&gt;</code><br />
+<code>&lt;/tr&gt;</code><br/>
+<code>&lt;/table&gt;</code><br/></p>
+
+<p><em>Image link:</em></p>
+
+<p><code>&lt;a href="link"&gt;</code><br />
+<code>&lt;img src="../data/media/image.jpg" alt="" /&gt;</code><br />
+<code>&lt;/a&gt;</code></p>
+
+<p><em>Linebreak:</em></p>
+
+<p>Break to the next line <br /> without creating a new paragraph.</p>
+
+<p><code>Break to the next line &lt;br /&gt;without creating a new paragraph.</code></p>
+
+<p><em>CSS styles:</em></p>
+
+<p>Just as with normal HTML markup, you can use inline CSS to style your tags. This way you could use text color or different font sizes. Naturally, abuse of this feature will be dealt with accordingly - the wiki should be kept clean and consistent.</p>
+
+<p>This is very <span style="color:red;">important</span>.</p>
+
+<p><code>This is very &lt;span style="color:red;"&gt;important&lt;/span&gt;.</code></p>
+</div> <!-- content -->
+<div id="updated">
+	Last update &mdash; 02 November 2026 14:20 </div>
+<div id="footer">
+	Generated by Ultrawiki. &copy; 2004-2007 Frederik De Bleser, Tom De Smedt, Lucas Nijs.
+</div>
+</div> <!-- wrap -->
+</body>
+</html>

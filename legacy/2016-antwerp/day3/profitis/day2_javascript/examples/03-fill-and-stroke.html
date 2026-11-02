@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fill and Stroke</title>
+</head>
+<body>
+<canvas id="c" style="border: 1px solid black"></canvas>
+<script>
+  var canvas = document.querySelector('#c');
+  var ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'blue';
+  ctx.fillRect(10, 20, 30, 40);
+
+  ctx.strokeStyle = 'red';
+  ctx.lineWidth = 4;
+  ctx.strokeRect(15, 25, 30, 40);
+
+</script>
+
+</body>
+</html>

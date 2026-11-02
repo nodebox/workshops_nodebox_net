@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+    <script src= "canvas-utils.js"></script>
+
+</head>
+
+<body>
+    <canvas id="c" style="border: 1px solid black"></canvas>
+    <script>
+        var canvas = document.querySelector('#c');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerWidth;
+        var ctx = canvas.getContext('2d');
+        
+        function draw() {
+            if (mouseDown){
+                strokeLine(canvas.width/2, canvas.height/2, mouseX, mouseY);
+                strokeLine(canvas.width/2, canvas.height/2, mouseX, mouseY);
+            }
+            
+        }
+
+
+        window.addEventListener('mousemove', draw);
+    </script>
+
+
+
+</body>
+
+</html>

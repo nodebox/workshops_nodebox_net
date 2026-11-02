@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Aurora Forecast for Scandinavia</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+           <div id="canvas-wrap">
+            <canvas width="800" height="250" id="c2"></canvas>
+            </div>
+
+
+<h1 class="title" >Aurora Forecast for Scandinavia</h1>
+<br>
+
+<div class="location">
+
+<h2 class="subtitle" >Location</h1>
+<br>
+
+<img class="country" onclick="changeCountry('Iceland')" src="img/iceland.png" alt="" >
+
+<img class="country" onclick="changeCountry('Finland')" src="img/finland.png" alt="" >
+
+<img class="country" onclick="changeCountry('Sweden')" src="img/sweden.png" alt="" >
+
+<img class="country" onclick="changeCountry('Denmark')" src="img/denmark.png" alt="" >
+
+</div>
+
+
+<br>
+
+<div class="month">
+
+<h2 class="subtitle" >Month</h1>
+<button class="but_month" onclick="changeMonth('Jan')">JAN</button>	
+
+<button class="but_month" onclick="changeMonth('Feb')">FEB</button>	
+
+<button class="but_month" onclick="changeMonth('Mar')">MAR</button>
+	
+<button class="but_month" onclick="changeMonth('Apr')">APR</button>
+    
+ <br><br>   
+
+<button class="but_month" onclick="changeMonth('May')">MAY</button>
+	
+<button class="but_month" onclick="changeMonth('Jun')">JUN</button>
+	
+<button class="but_month" onclick="changeMonth('Jul')">JUL</button>
+	
+<button class="but_month" onclick="changeMonth('Aug')">AUG</button>
+    
+<br><br>
+	
+<button class="but_month" onclick="changeMonth('Sep')">SEP</button>
+	
+<button class="but_month" onclick="changeMonth('Oct')">OCT</button>
+	
+<button class="but_month" onclick="changeMonth('Nov')">NOV</button>
+	
+<button class="but_month" onclick="changeMonth('Dec')">DEC</button>
+	
+</div>
+
+
+
+<div class="weather">
+<h2 class="subtitle" >Weather</h2>
+
+<img class="wea" onclick="changeWeather('Clear')" src="img/clear.png" alt="" >
+
+<img class="wea" onclick="changeWeather('Partly cloudy')" src="img/p_cloudy.png" alt="" >
+ 
+<img class="wea" onclick="changeWeather('Overcast')" src="img/cloudy.png" alt="" >
+ 
+<img class="wea" onclick="changeWeather('Rainy')" src="img/rainy.png" alt="" >
+ 
+<img class="wea" onclick="changeWeather('Snow')" src="img/snow.png" alt="" >
+
+ </div>   
+
+  
+  
+   <div class="time">
+   <h2 class="subtitle" >Time</h1>
+   <img class="ti" onclick="changeTime('Dusk')" src="img/dusk.png" alt="" >
+   
+   <img class="ti" onclick="changeTime('Night')" src="img/night.png" alt="" >
+   
+   <img class="ti" onclick="changeTime('Dawn')" src="img/dawn.png" alt="" >
+   
+   </div> 
+   <div class="predict_container">
+    <button id="predict" onclick="predictAurora('Predict')">Predict<img id="pr" src="" alt="" ></button>
+   </div>
+    <div class="scene">
+        <div class="container">
+           
+            <canvas width="1" height="1" id="c"></canvas>
+           	<div id="result"></div> 
+            
+            
+        </div>
+    </div>
+     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="https://nodeboxwarsaw.herokuapp.com/static/js/bundle.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+		
+$( "#predict" ).click(function() {
+  $( "#result" ).show( "slow" );
+});
+        
+$( ".ti" ).click(function() {
+    $( "body" ).find( ".ti" ).removeClass("selected"); 
+  $(this).addClass("selected");
+});
+        
+$( ".wea" ).click(function() {
+    $( "body" ).find( ".wea" ).removeClass("selected"); 
+  $(this).addClass("selected");
+});
+        
+                
+$( ".but_month" ).click(function() {
+    $( "body" ).find( ".but_month" ).removeClass("selected"); 
+  $(this).addClass("selected");
+});
+        
+$( ".country" ).click(function() {
+    $( "body" ).find( ".country" ).removeClass("selected"); 
+  $(this).addClass("selected");
+});
+</script>
+   
+</body>
+</html>

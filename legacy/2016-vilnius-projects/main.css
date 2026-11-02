@@ -1,0 +1,296 @@
+/* GENERAL STYLES
+****************************************************************************/
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+html {
+}
+
+body {
+  font-family: 'Sahitya', serif;
+  margin: 0;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 750px) {
+  p {
+    text-align: justify;
+  }
+}
+
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  transition: background 0.3s;
+}
+
+a:hover {
+  background: #ddd;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* PAGE
+****************************************************************************/
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+}
+
+
+/* HEADER
+****************************************************************************/
+
+header {
+  margin-bottom: 3rem;
+  font-family: 'Bungee', cursive;
+}
+
+@media (min-width: 550px) {
+  header {
+    display: flex;
+  }
+
+  header nav a {
+    margin-left: 3rem;
+  }
+
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+header h2 {
+  font-size: 0.8rem;
+  opacity: 0.3;
+}
+
+header nav {
+  margin-left: auto;
+  font-size: 3rem;
+}
+
+header nav a {
+}
+
+header a {
+  color: black;
+  transition: color 0.3s;
+  border: none;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: red;
+  background: none;
+}
+
+/* DISCLAIMER
+****************************************************************************/
+.disclaimer {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  max-width: 30%;
+  margin-bottom: 2rem;
+}
+
+/* PROJECTS
+****************************************************************************/
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.projects .thumb {
+  position: relative;
+  width: 48%;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.projects .thumb img {
+  will-change: opacity;
+  transition: opacity 0.3s;
+}
+
+.projects .thumb:hover img {
+  //opacity: 0.1;
+  mix-blend-mode: difference;
+}
+
+.projects .thumb .caption {
+  position: absolute;
+  border: 2px solid white;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  padding-top: 50px;
+  text-align: center;
+  opacity: 0;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  will-change: transform, opacity;
+  transition: opacity 0.3s;
+  margin: 5px;
+  height: calc(100% - 15px);
+}
+
+.projects .thumb .title {
+  text-align: center;
+    font-family: 'Bungee', cursive;
+  font-size: 1.5vw;
+/*    mix-blend-mode: multiply;*/
+
+
+}
+
+.projects .thumb .author {
+    text-align: center;
+
+  font-size: 1vw;
+}
+
+.projects .thumb:hover .caption {
+  opacity: 1;
+  animation: slide-in 0.3s;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translate(0, 1rem);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+@media (min-width: 550px) {
+  .projects .thumb {
+    width: 30%;
+  }
+
+}
+
+/* CONTAINER
+****************************************************************************/
+.container {
+}
+
+@media (min-width: 550px) {
+  .container {
+    display: flex;
+  }
+}
+
+
+
+/* ABOUT
+****************************************************************************/
+
+.about {
+  max-width: 60%;
+}
+
+.about .big {
+  color: red;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 550px) {
+  .about {
+    flex: 1;
+  }
+
+  .about .big {
+    font-size: 2rem;
+  }
+}
+
+/* SIDEBAR
+****************************************************************************/
+
+.sidebar {
+    font-size: 1rem;
+}
+
+.sidebar h2 {
+  font-size: 1.2rem;
+}
+
+.sidebar p {
+    text-align: left;
+}
+
+@media (min-width: 550px) {
+  .sidebar {
+    width: 30%;
+    margin-left: 5rem;
+
+  }
+}
+
+.sidebar hr {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  margin: 3rem 0;
+}
+
+/* PROJECT PAGE
+****************************************************************************/
+
+.project img {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+
+/* FOOTER
+****************************************************************************/
+footer {
+  font-family: 'Bungee', cursive;
+  border-top: 1px solid #ccc;
+  padding: 3rem 0 0 0;
+  color: #999;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+
+footer a {
+  color: #999;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: red;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Fake hack</title>
+
+	<style>
+		div {
+			background: black;
+			width: 800px;
+			height: 230px;
+			margin: 5px;
+			padding: 10px;
+		}
+		p {
+			color: #43ed43;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div></div>
+
+	<script>
+		function FileHelper() {} {
+			FileHelper.readStringFromFileAtPath = function (pathOfFileToReadFrom) {
+				var request = new XMLHttpRequest();
+				request.open("GET", pathOfFileToReadFrom, false);
+				request.send(null);
+				var returnValue = request.responseText;
+
+				return returnValue;
+			}
+		}
+
+		var count = 0;
+		 // var txt = FileHelper.readStringFromFileAtPath("stuff/typer.txt"); // needs localhost
+
+
+		var txt = `
+struct group_info init_groups = { .usage = ATOMIC_INIT(2) };
+
+struct group_info *groups_alloc(int gidsetsize){
+	struct group_info *group_info;
+	int nblocks;
+	int i;
+
+
+	nblocks = (gidsetsize + NGROUPS_PER_BLOCK - 1) / NGROUPS_PER_BLOCK;
+
+	nblocks = nblocks ? : 1;
+	group_info = kmalloc(sizeof(*group_info) + nblocks*sizeof(gid_t *), GFP_USER);
+	if (!group_info)
+		return NULL;
+
+	group_info->ngroups = gidsetsize;
+	group_info->nblocks = nblocks;
+	atomic_set(&group_info->usage, 1);
+
+	if (gidsetsize <= NGROUPS_SMALL)
+		group_info->blocks[0] = group_info->small_block;
+	else {
+		for (i = 0; i < nblocks; i++) {
+			gid_t *b;
+			b = (void *)__get_free_page(GFP_USER);
+			if (!b)
+				goto out_undo_partial_alloc;
+			group_info->blocks[i] = b;
+		}
+	}
+	return group_info;
+
+
+out_undo_partial_alloc:
+
+	while (--i >= 0) {
+
+		free_page((unsigned long)group_info->blocks[i]);
+
+	}
+
+	kfree(group_info);
+
+	return NULL;
+
+}`
+
+		var lijnen = txt.split("\n");
+		var lijnenNoEmpty = [];
+
+		for (var i = 0; i < lijnen.length; i++) {
+			if (lijnen[i].split("").length > 0) {
+				lijnenNoEmpty.push(lijnen[i]);
+			}
+		}
+		var container = document.querySelector("div");
+		var count = 0;
+
+		function addElement() {
+
+			// maak een p element
+			//console.log(lijnen[
+			var p = document.createElement("p");
+			p.innerHTML = lijnenNoEmpty[count];
+			p.style.whiteSpace = 'pre';
+			p.style.fontFamily = 'monospace';
+			p.style.margin = "0";
+
+			container.appendChild(p);
+
+			count++;
+			count = count % lijnenNoEmpty.length;
+
+			if (container.childNodes.length > 15) {
+				var del = container.querySelector("p");
+				container.removeChild(del);
+			}
+		}
+
+		window.addEventListener('keypress', addElement);
+	</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

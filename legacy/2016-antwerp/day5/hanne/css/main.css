@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans Condensed';
+}
+
+html,
+body {
+    min-height: 100%;
+    height: 100%;
+    background-image: url(../images/Humo1.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#intro {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#work {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: white;
+}
+
+h1 {
+    position: fixed;
+    top: 0px;
+    left: 12px;
+}
+
+nav {
+    position: fixed;
+    bottom: 0px;
+    right: 12px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+.thumb {
+    display: inline-block;
+    width: 260px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}

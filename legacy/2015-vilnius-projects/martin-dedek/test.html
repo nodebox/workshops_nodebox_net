@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Embed Test</title>
+    <script src="http://live.nodebox.net/static/js/bundle.js"></script>
+</head>
+
+<body>
+    <h1>Embed Test</h1>
+
+    <input type="range" min="1" max="255" oninput="changeHue(this)">
+    <input type="checkbox" onchange="startStop(this)" checked>
+    <br>
+    <canvas width="500" height="500" id="c"></canvas>
+
+    <script>
+        var player = app.embed({
+            userId: 'dedek',
+            projectId: 'tutorial',
+            canvasId: 'c',
+            functionId: 'anim'
+        });
+        player.start();
+
+        function changeHue(e) {
+            player.setValue('hsb1', 'hue', parseFloat(e.value));
+        }
+
+        function startStop(e) {
+
+            if (e.checked)
+                player.start();
+            else
+                player.stop();
+        }
+    </script>
+
+</body>
+
+</html>

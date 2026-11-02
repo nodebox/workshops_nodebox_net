@@ -1,0 +1,72 @@
+body {
+    background: #FFFFFF;
+    font: 14px courier new;
+    color: #999;
+    width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    border-bottom: 2px invisible #666;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+header h1 {
+    font-size: 30px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+header nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #555;
+    margin-right: 20px;
+}
+
+header nav a:hover {
+    color: #88f;
+}
+
+footer {
+    border-top: 1px invisible #ddd;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-top: 10px;
+    font-size: 10px;
+}
+
+.thumb {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.slides-container {
+    position: relative;
+    height: 670px;
+}
+
+.rslides {
+    top: 20px;
+    position: absolute;
+    pointer-events: none;
+}
+
+.rslides_nav {
+    position: absolute;
+    top: 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.rslides_nav.prev {
+    left: 0;
+}
+
+.rslides_nav.next {
+    right: 0px;
+}

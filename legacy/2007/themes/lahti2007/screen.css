@@ -1,0 +1,217 @@
+/* @override http://lahti.grafitron.com/2007/themes/lahti2007/screen.css */
+
+body {
+	font: small verdana, helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+}
+
+#header h1 {
+ 	font: 150% helvetica;
+ 	font-weight: bold;
+	background: #eee url(backg.jpg);
+	margin: 0 0 0 0;
+	padding: 10px 10px 60px 10px;
+	font-size: 150%;
+	border-bottom: 2px solid #222;
+}
+
+#header h1 a {
+	color: #1e1220;
+	text-decoration: none;	
+}
+
+#header #older-workshops {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 15px;
+	font-size: 80%;
+	color: #1e1220;
+}
+
+#header #older-workshops a {
+	color: #1e1220;
+}
+
+#nav { 
+	position: absolute;
+	left: 0;
+}
+
+#nav ul { 
+	margin: 0;
+	padding: 10px;
+ }
+
+#nav li { 
+	list-style-type: none; 
+}
+
+#nav li a {
+	line-height: 170%;
+}
+
+#actionbar { 
+	border-top: 1px solid #ccc;
+	padding: 5px 10px;
+}
+
+#actionbar a { 
+	color: #77f;
+	margin-right: 5px;
+}
+
+#content, #footer, #actionbar, #updated { 
+	margin: 0 0 0 135px;
+	width: 60em;
+}
+
+#content {
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+#content ul {
+	margin: 10px 0;
+	padding: 0 0 0 30px;
+}
+
+#content h1 {
+ 	font: 120% helvetica,sans-serif;
+ 	font-weight: bold;
+	margin: 15px 0 5px 0;
+	padding: 0;
+}
+
+#content h2 {
+ 	font: 110% helvetica,sans-serif;
+ 	font-weight: bold;
+	margin: 15px 0 5px 0;
+	padding: 0;
+}
+
+#content p {
+	line-height: 130%;
+	margin: 5px 0 10px 0;
+}
+
+#content blockquote {
+	font-style: italic;
+}
+
+#content hr {
+	border: none;
+	border-top: 1px solid #999;
+	margin: 15px 0 15px 0;
+}
+
+#updated {
+	clear: both;
+	margin: 2em 0 0 135px;
+	font-size: 85%;
+	color: #aaa;
+}
+
+#footer {
+	clear: both;
+	border-top: 1px solid #eee;
+	font-size: 85%;
+	color: #ccc;
+	margin: 0.5em 0 0 135px;
+	padding: 0.5em 0;
+}
+
+form.uwform {
+	margin: 0 0 0px 0;
+	padding: 0 0 0px 0;
+}
+
+
+.important {
+    font-weight: bold;
+    color: red;
+}
+
+div#file-diff {
+	border-left: 2px solid #ccc;
+	padding: 0 0 0 5px;
+}
+
+span.diff-added, span.diff-removed {
+	position: relative;
+	left: -22px;
+	padding-left: 22px;
+}
+
+span.diff-added {
+	background: #ccf url('../img/diff-added.gif') no-repeat;
+}
+
+span.diff-removed {
+	background: #fcc url('../img/diff-removed.gif') no-repeat;
+}
+
+#marktoggle {
+	height: 12px;
+	vertical-align: middle;
+	display: inline;
+	padding-left: 12px;
+}
+
+#marktoggle a {
+	padding: 0 3px;
+}
+
+#markguide table {
+	margin: 10px 0 5px 0;
+}
+
+#markguide table th {
+	background: #ddd;
+	text-align: left;
+	font-weight: normal;
+}
+
+#markguide table th, #markguide table td {
+	padding: 5px;
+}
+
+#markguide table tr td + td {
+	font-family: monospace;
+}
+
+#marktoggle.closed {
+	background: url('../img/help-closed.gif') no-repeat scroll 0%;
+}
+
+#marktoggle.open {
+	background: url('../img/help-open.gif') no-repeat scroll 0%;
+}
+
+#media #tabs {
+	padding: 5px 10px 0 15px;
+	background: #eee;
+}
+
+#media #tabs a {
+	background: #fff;
+	padding: 5px 2px;
+}
+#media #content {
+	margin: 10px;
+}
+#media .thumb {
+	float: left;
+	padding: 5px;
+	width: 162px;
+	overflow: hidden;
+	
+}
+#media .thumb a img {
+	border: 1px solid #aaa;
+	padding: 2px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Video</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #ffffff;
+        }
+        
+        #c {
+            // margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+
+
+    <script src="canvas-utils.js"></script>
+    <script>
+        var canvas = document.querySelector('#c');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var ctx = canvas.getContext('2d');
+
+        var slitWidth = 30;
+        //        var audio = new audio('AAAAAA!!!!!!fall.mp3');
+        //        audio.play();
+
+
+        function onFrame(video) {
+            var videoFactor = video.width / video.height;
+            var windowFactor = window.innerWidth / window.innerHeight;
+            var scaleX = window.innerWidth / video.width;
+            var scaleY = window.innerHeight / video.height;
+            var scale = Math.min(scaleX, scaleY);
+            var dstY = 0;
+            //console.log(scaleX, scaleY);
+            if (480 * scale < window.innerHeight) {
+                dstY = (window.innerHeight - (480 * scale)) / 2;
+                ctx.fillRect(0, 0, window.innerWidth, dstY);
+                ctx.fillRect(0, window.innerHeight - dstY, window.innerWidth, dstY);
+
+            }
+
+            ctx.drawImage(video,
+                mouseX / scale, 0, slitWidth, 480,
+                mouseX, dstY, slitWidth * scale, 480 * scale);
+
+            if (mouseDown) {
+                slitWidth++;
+            } else {
+                slitWidth = 30;
+            }
+
+
+
+
+            //            if (mouseDown) {
+            //                audio++;
+            //            }
+            //        } else {
+            //            audio = 0;
+        }
+        //        Funciton Dosomething() {
+        //            alert('klik om jezelf langer te zien');
+        //        }
+        //        window.song = document.querySelector('#song');
+
+        loadVideo(onFrame);
+    </script>
+</body>
+
+</html>

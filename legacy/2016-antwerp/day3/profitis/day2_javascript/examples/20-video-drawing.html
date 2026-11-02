@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: black;
+  }
+  </style>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<script src="canvas-utils.js"></script>
+<script>
+  var canvas = document.querySelector('#c');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var ctx = canvas.getContext('2d');
+
+  var mouseX = 0;
+  var mouseY = 0;
+  var rotation = 0;
+
+  function onMouseMove(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  }
+
+  function onFrame(video) {
+    ctx.drawImage(video, mouseX - 320, mouseY - 240);
+
+    // Probeer dit eens: teken met een stuk van het beeld.
+    // ctx.drawImage(video, 280, 200, 80, 80, mouseX - 40, mouseY - 40, 80, 80);
+
+    // Of dit: roterende videobeelden.
+    // ctx.save();
+    // ctx.translate(canvas.width / 2, canvas.height / 2);
+    // ctx.rotate(rotation);
+    // var dx = mouseX - canvas.width / 2;
+    // ctx.translate(dx * 0.5, 0);
+    // ctx.drawImage(video, 280, 200, 80, 80, -40, -40, 80, 80);
+    // rotation += 0.1;
+    // ctx.restore();
+  }
+
+  window.addEventListener('mousemove', onMouseMove);
+  loadVideo(onFrame);
+</script>
+</body>
+</html>

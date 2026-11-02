@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Neo kubisme</title>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="canvas-utils.js"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            background: black;
+            color: white;
+            font: 14px sans-serif;
+            overflow: hidden;
+        }
+        
+        img {
+            width: 90px;
+            display: inline-block;
+        }
+        
+        #container {
+            display: inline-block;
+        }
+        
+        h1 {
+            position: absolute;
+        }
+        
+        #canvas {
+            -webkit-filter: brightness(1) grayscale(0.3) saturate(10);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="loading">Gathering Recources...</h1>
+
+
+    <canvas id="c"></canvas>
+
+    <script>
+        var canvas = document.querySelector('#c');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var ctx = canvas.getContext('2d');
+
+        var images = [];
+
+        function randomChoice(l) {
+            return l[Math.floor(Math.random() * l.length)];
+        }
+
+
+
+        $.getJSON('https://rappi.herokuapp.com/periscope/broadcasts.json', function (result) {
+            if (result.status !== 'ok') {
+                alert(result.message);
+            }
+            // Show the images of all  broadcast.
+            for (var i = 0; i < result.broadcasts.length; i++) {
+                var broadcast = result.broadcasts[i];
+                var img = new Image();
+                img.src = broadcast.imageUrl;
+                images.push(img);
+
+
+                //                var d = document.createElement('div');
+                //                d.id = "container";
+                //                d.style.width = "200px"
+                //                d.style.backgroundColor = "rgb(255,0,0)";
+                //                // d.style.display = "inline-block";
+                //                var img = document.createElement('img');
+                //                img.src = result.broadcasts[i].imageUrl;
+                //                d.appendChild(img);
+                //                document.body.appendChild(d);
+            }
+            document.querySelector('#loading').remove();
+
+        });
+
+
+        function draw() {
+            if (mouseDown) {
+                ctx.globalAlpha = 1;
+                ctx.globalCompositeOperation = "difference";
+
+                var img = randomChoice(images);
+                if (img) {
+
+                    ctx.drawImage(img, mouseX - img.width / 2, mouseY - img.height / 2);
+                }
+
+            }
+        }
+
+
+        window.addEventListener('mousemove', draw);
+    </script>
+</body>
+
+</html>

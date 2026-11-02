@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type='text/javascript' src='http://www.midijs.net/lib/midi.js'></script>
+    <script src="http://live.nodebox.net/static/js/bundle.js"> </script>
+
+</head>
+<body>
+   <h1> Royal Blood Visualized </h1>
+    <a href="#" onClick="MIDIjs.play('blood.mid');">Play</a>
+    <!--<input type="range" min="2" max="300" oninput="changeSize(this)">!-->
+<br>
+
+    <canvas id="c" width="4100" height="500" ></canvas>
+    <script>
+        var player = app.embed({userId:'Woodsel', projectId:'soundscript', canvasId: 'c', animate: false});
+        var player2 = app.embed({userId:'Woodsel', projectId:'soundscript', canvasId: 'c', animate: false});
+
+        function changeSize(e) {
+            player.setValue ('polygon1', 'radius', parseFloat(e.value));
+        }
+
+    </script>
+</body>
+</html>

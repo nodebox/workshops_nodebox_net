@@ -1,0 +1,66 @@
+<!-- The masking effect only works properly in Chrome or Safari -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drawing with Flickr</title>
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <style>
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    background: black;
+    color: white;
+    font: 14px sans-serif;
+  }
+
+  img {
+    -webkit-mask: url(img/feather.png);
+    position: absolute;
+    width: 75px;
+    height: 75px;
+  }
+  </style>
+</head>
+<body>
+<h1 id="loading">Loading...</h1>
+<script>
+
+var gPhotos = [];
+
+
+function randomChoice(l) {
+  return l[Math.floor(Math.random() * l.length)];
+}
+
+function init(query) {
+  $.getJSON('https://rappi.herokuapp.com/flickr/search.json?q=' + query, function(result) {
+    if (result.status !== 'ok') {
+      alert(result.message);
+    }
+    gPhotos = result.photos;
+    window.addEventListener('mousemove', onMouseMove);
+    document.querySelector('#loading').remove();
+  });
+}
+
+function onMouseMove(e) {
+  var mouseX = e.clientX - 37;
+  var mouseY = e.clientY - 37;
+  randomPhoto = randomChoice(gPhotos);
+  var img = document.createElement('img');
+  img.src = randomPhoto.squareUrl;
+  img.style.left = mouseX + 'px';
+  img.style.top = mouseY + 'px';
+  document.body.appendChild(img);
+}
+
+init('flower close up');
+
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <title>Dream Collapse</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://live.nodebox.net/static/js/bundle.js"></script>
+    <script src="interaction.js"></script>
+
+</head>
+<body>
+   <div class="header">
+       <div class="container">
+           <h1>DREAM COLLAPSE</h1>
+           <h2>By Pijus Kibildis</h2>
+           <p>This visualisation of a dream in NodBox Live during a workshop with Frederik de Blesser in Vilnius 2015 is an experimentation part of my bacheloir project "Single stories: visualisation of limited information".</p>
+           <p>Information becomes limited when facing content collapse, when a liniar way of gathering and understanding information can not be used. Content collapse happens because of the nature of mediated information, that it is volatile, uncertain, complex and ambiguous. Dreams by their nature and through interpretations express these qualities.</p>
+           <p>In this experiment, I decided to visualise only volatility and complexity and make both of these parameters interactive.</p>    
+           <p>The floating shapes are the information of the dream: images, emotions, sensations and ideas. The black line is the narative of the dream. The coloured nets are the areas of connections between information: yellow for images, green for senses, blue for ideas and red for emotions.</p>
+       </div>
+   </div>
+   
+   <div class="controls">
+          <div class="container">
+           <label for="Complexity">Complexity</label>
+           <input id="Complexity" type="range" min="500" max="568" oninput="changeComplexity(this)">
+           <label for="Volatility">Volatility</label>
+           <input id="Volatility" type="range" min="1" max="25" oninput="changeVolatility(this)">
+           <br>
+            <button onclick="player.start()">Start</button>
+            <button onclick="player.stop()">Stop</button>
+       </div>
+   </div>
+
+    <div class="scene">
+          <canvas width="1800" height="900" id="c"></canvas>
+    </div>
+    
+    
+    
+    <script>
+ 
+    function changeComplexity(e) {
+        if (!player) return;
+        player.setValue('seedNumber', 'v', parseFloat(e.value));        
+    }
+        
+    function changeVolatility(e) {
+        player.setValue('move', 'v', parseFloat(e.value)); 
+    }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+
+    window.player = app.embed({
+        userId: 'Pijus',
+        projectId: 'dreamCollapse',
+        canvasId: 'c'
+    });
+
+    player.start();
+
+});
+
+    </script>
+       
+       
+        
+  <div class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2015</p>
+        </div>
+    </div>          
+                                         
+</body>
+</html>

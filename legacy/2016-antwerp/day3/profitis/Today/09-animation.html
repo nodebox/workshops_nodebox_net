@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        #coin {
+            animation: hue-rotate 90s infinite;
+            float: left;
+        }
+        
+        @keyframes hue-rotate {
+            0% {
+                -webkit-filter: hue-rotate(0deg);
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                -webkit-filter: hue-rotate(180deg);
+                filter: hue-rotate(180deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+    <script>
+        var canvas = document.querySelector('#c');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#177fe6';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = 'black';
+        ctx.strokeStyle = 'white';
+        ctx.font = '25px arial';
+
+        var x = 9;
+        var y = 9;
+        var dx = 5;
+        var dy = 5;
+        var im = document.createElement("img");
+        im.id = "coin";
+        im.src = "COIN.png";
+        im.style.animationName = "hue-rotate";
+        var bcim = document.createElement("img");
+        bcim.src = "3537864_1_org.jpg";
+        var counter = 0;
+
+        function makeBG() {
+            ctx.drawImage(bcim, 0, 0, canvas.width, canvas.height);
+        }
+
+        function random(min, max) {
+            return min + Math.random() * (max - min);
+        }
+
+        function draw() {
+            //ctx.fillStyle = 'hsl(' + random(0, 360) + ', 100%, 50%)';
+            //ctx.fillText('$$', x, y);
+            var s = 50 * Math.sin(counter / 100.0);
+
+
+            ctx.drawImage(im, x - s / 2, y - s / 2, s, s);
+            x += dx;
+            if (counter % 15 == 0) {
+                y += dy * 5;
+            }
+            if (x > canvas.width) {
+                dx = -dx;
+            }
+
+            if (x < 0) {
+                dx = -dx;
+            }
+
+            if (y > canvas.height) {
+                dy = -dy;
+            }
+
+            if (y < 0) {
+                dy = -dy;
+            }
+            counter++;
+            window.requestAnimationFrame(draw);
+        }
+
+        draw();
+
+        window.addEventListener('load', makeBG);
+    </script>
+</body>
+
+</html>

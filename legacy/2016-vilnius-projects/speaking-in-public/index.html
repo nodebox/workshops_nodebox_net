@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- The slider controls -->
+
+        <div class="page" id="prepare">
+            <div id="input-form">
+                <textarea name="txt" id="txt" tabindex="1" class="txt" placeholder="I want to say..." oninput="changeText(this)"></textarea>
+                <div class='Bbutton1'>
+                    <button onclick="present()" class="b1">Share my mind</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="present">
+                       <button onclick="goBack()" class="goBackButton">New one</button>
+
+           
+           
+            <!-- The canvas element, where the visualization is rendered -->
+            <canvas id="c" width="800" height="400"></canvas>
+            <br>
+            <div class="sliders">
+                <div class="field"><label for="">Mind sizer</label>
+                    <input type="range" min="0" max="100" step="1" id="dfr font" oninput="changeFontSize(this)" class="slider"> </div>
+                <!--<div class="field"><label for="">Emotion</label>
+                    <input type="range" min="0" max="1" step="1" value="0" id="dfr family" oninput="changeFontFamily(this)" class="slider"> </div>-->
+               <div class="field"> <label for="">Mood</label>
+                    <input type="range" min="0" max="1" step="0.01" oninput="changeHue(this)" class="slider"> </div>
+                <div class="field">
+                    <label for="">Public help</label>
+                    <input type="range" min="0" max="100" step="1" id="decibels" oninput="changeDecibels(this)" class="slider">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- A link to the NodeBox JavaScript API -->
+
+    <script src="https://nodebox.live/api/v1/ndbx.js"></script>
+    <!-- Your custom initialization code -->
+    <script>
+        // NODEBOX STUFF
+
+        // Again, replace these with your own userId / projectId / functionId / canvasId
+        var options = {
+            userId: 'vestin',
+            projectId: 'invisibleVisible',
+            functionId: 'main',
+            canvasId: 'c',
+            autoplay: true
+        };
+
+        // Initialize the NodeBox player object
+        ndbx.embed(options, function (err, player) {
+            if (err) {
+                throw new Error(err);
+            } else {
+                window.player = player;
+            }
+        });
+
+        // This function is called when the size slider is dragged.
+        function changeDecibels(e) {
+            if (window.player) {
+                window.player.setValue('decibels', 'v', e.value);
+            }
+        }
+
+        // This function is called when the hue slider is dragged.
+        function changeHue(e) {
+            if (window.player) {
+                window.player.setValue('hslColor1', 'hue', e.value);
+            }
+        }
+
+        // This function is called when the hue slider is dragged.
+        function changeText(e) {
+            if (window.player) {
+                var text = e.value;
+                text = text.replace(' ', '     ');
+                window.player.setValue('text', 's', text);
+            }
+        }
+
+
+        function changeFontFamily(e) {
+            if (window.player) {
+                window.player.setValue('fontFamily', 'index', e.value);
+            }
+        }
+
+
+        // This function is called when the hue slider is dragged.
+        function changeFontSize(e) {
+            if (window.player) {
+                window.player.setValue('fontSize', 'v', e.value);
+            }
+        }
+
+        // PAGE TRANSITIONS
+
+        function present() {
+            var presentDiv = document.querySelector('#present');
+            presentDiv.style.display = 'block';
+            var prepareDiv = document.querySelector('#prepare');
+            prepareDiv.style.display = 'none';
+
+        }
+
+        function goBack() {
+            var presentDiv = document.querySelector('#present');
+            presentDiv.style.display = 'none';
+            var prepareDiv = document.querySelector('#prepare');
+            prepareDiv.style.display = 'block';
+
+        }
+
+        // AUDIO
+
+
+
+        var analyser;
+
+        var samples = [];
+        samples.length = 10;
+        var sampleIndex = 0;
+        var sampleCount = 0;
+
+        function onAudio(stream) {
+            analyser = audioContext.createAnalyser();
+            analyser.fftSize = 64;
+
+            var input = audioContext.createMediaStreamSource(stream);
+            analyser = audioContext.createAnalyser();
+            input.connect(analyser);
+            requestAnimationFrame(onAudioSample);
+        }
+
+        function onAudioSample() {
+            var times = new Uint8Array(this.analyser.frequencyBinCount);
+            analyser.getByteFrequencyData(times);
+            var sample = times[32];
+            samples[sampleIndex] = sample;
+            sampleIndex++;
+            if (sampleIndex >= samples.length) {
+                sampleIndex = 0;
+            }
+            sampleCount = Math.min(sampleCount + 1, samples.length);
+
+            var sum = 0;
+            for (var i = 0; i < sampleCount; i++) {
+                sum += samples[i];
+            }
+
+            var volume = sum / sampleCount;
+            volume = volume / 255 * 100;
+
+            document.querySelector('#decibels').value = volume;
+            if (window.player) {
+                window.player.setValue('decibels', 'v', volume);
+            }
+            requestAnimationFrame(onAudioSample);
+
+        }
+
+        function onAudioError(e) {
+            console.error('audio error', e);
+        }
+
+
+        window.AudioContext = window.AudioContext || window.webkitAudioContext;
+        var audioContext = new AudioContext();
+        navigator.getUserMedia({
+            audio: true
+        }, this.onAudio, this.onAudioError);
+    </script>
+</body>
+
+</html>

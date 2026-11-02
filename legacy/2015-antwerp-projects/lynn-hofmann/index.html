@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://live.nodebox.net/static/js/bundle.js"> </script>
+    <style>
+    body {
+        font-family: sans-serif;
+        font-size: 1em;
+    }</style>
+</head>
+<body>
+   <h1>Frequencies</h1>
+   <h2>Lynn Hofmann</h2>
+   <p>An animated visualization of the raw data, containing information of diverse frequencies of electromagnetic radiation.</p>
+    <!--<input type="range" min="2" max="300" oninput="changeSize(this)">!-->
+<br>
+
+    <canvas id="c" width="1500" height="3256" >Loading....</canvas>
+    <script>
+        var player = app.embed({userId:'Lynn', projectId:'rfData', canvasId: 'c', animate: true});
+
+        function changeSize(e) {
+            player.setValue ('polygon1', 'radius', parseFloat(e.value));
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+/* === STANDARD TAGS === */
+
+body, table
+{
+	font-family: Verdana;
+	font-size: 10px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+}
+
+a {
+color:grey;
+text-decoration:none;
+border-bottom: 1px solid;
+}
+
+h1 {
+font-size: 24px;
+font-Weight: bold;
+color: BLack;
+padding-left: 20px;
+
+}
+
+/* === HEADER === */
+#header {
+color: red;
+background: #333;
+padding-top: 0px;
+padding-left: 20px;
+
+}
+#header a { 
+color:white;
+text-decoration: none;
+border: 0;
+}
+
+#header table {
+width:100%
+}
+
+#header td {
+color: white;
+font-size: 10px;
+text-align:center;
+width:12.5%
+}
+
+#header .week {
+text-align:left;
+}
+
+#header .old {
+color: #ddd;
+}
+
+#header .selected {
+background:#544;
+}
+
+#header .future {
+color:#555;
+}
+
+.shadow {
+	background:url('g/topdrop.gif');
+	height:8px;
+}
+
+/* === CONTENT === */
+#content {
+color: Black;
+font-size: 10px;
+margin-left: 20px;
+margin-right: 20px;
+}
+
+#content .img {
+padding-left: 20px;
+}
+
+#content .hour {
+font-family: "American Typewriter";
+font-size:18px;
+}
+
+/* === FOOTER === */
+#footer {
+font-size: 9px;
+color: grey;
+margin-left: 20px;
+margin-right: 20px;
+}
+
+/* === SPECIFICS === */
+
+#day01_presentation {
+	float: left;
+}
+
+#day01_text {
+margin-top:25px;
+}
+
+#day01_text {
+margin-top:20px;
+float: right;
+margin-left: 20px;
+}
+
+#day01_1700 {
+clear:both;
+}
+
+#day02_fontlab {
+}
+
+td {
+	vertical-align: top;
+}
+
+div.column-wide {
+	width: 200px;
+	padding: 0 10px 0 10px;
+}
+
+div.column-wider {
+	width: 400px;
+	padding: 0 10px 0 10px;
+}
+
+div.column-thin {
+	width: 100px;
+	padding: 0 10px 0 10px;
+	text-align: top;
+}
+
+.times {
+	font-family: Times, "Times New Roman", serif;
+	font-size: 16px; 
+}
+
+.arial {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px; 
+}
+
+.border {
+	border: 1px solid black;
+	border-top: 3px solid;
+}
+
+a img {
+	border: 0;
+}
+
+div.grey {
+	background-color: #333;
+}
+
+div.construction {
+	background-image: url(day03/red1.gif);
+}
+
+img.border {
+	border: 1px solid black;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}

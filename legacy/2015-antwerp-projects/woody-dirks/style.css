@@ -1,0 +1,10 @@
+#wrapper {
+ position: relative;
+ height: 500px;
+}
+
+canvas {
+ position: absolute;
+    top:0px;
+    left:0px;
+}

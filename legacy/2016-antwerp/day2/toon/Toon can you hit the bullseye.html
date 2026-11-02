@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Loops</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+
+    <script src="canvas-utils.js"></script>
+    <script>
+        var canvas = document.querySelector('#c');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        var ctx = canvas.getContext('2d');
+
+        ctx.strokeStyle = '#0c6965';
+        ctx.strokeWidth = 10.3;
+
+        var segmentLength = 1000;
+        var randomSize = 60;
+
+        ctx.font = '20px arial';
+        ctx.fillStyle = 'black';
+        ctx.fillText('Can you hit the bullseye?', 100, 100);
+
+
+        ctx.font = '230px arial';
+        ctx.fillStyle = 'red';
+        ctx.fillText('O', 988, 672);
+        ctx.font = '180px arial';
+        ctx.fillStyle = 'black';
+        ctx.fillText('O', 1008, 653);
+        ctx.font = '120px arial';
+        ctx.fillStyle = 'red';
+        ctx.fillText('O', 1031, 631);
+        ctx.font = '80px arial';
+        ctx.fillStyle = 'black';
+        ctx.fillText('O', 1047, 617);
+        ctx.font = '220px arial';
+        ctx.fillStyle = 'red';
+        ctx.fillText('', 1031, 631);
+
+
+        function draw() {
+            Math.seedrandom(42);
+
+            // Gelijdelijk uitwissen
+            // ctx.fillStyle = 'rgba(255, 255, 255, 0.01)';
+            // ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.beginPath();
+            ctx.moveTo(0, mouseY);
+            for (var x = segmentLength; x < canvas.width + segmentLength; x += segmentLength) {
+                var lx = x;
+                var ly = mouseY + random(-randomSize, randomSize);
+                ctx.lineTo(lx, ly);
+            }
+            ctx.stroke();
+            randomSize += 10.8;
+        }
+
+        window.addEventListener('mousemove', draw);
+    </script>
+</body>
+
+</html>

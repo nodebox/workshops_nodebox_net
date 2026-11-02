@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Randomness</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: black;
+  }
+  </style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<footer>Click and drag to draw.</footer>
+<script src="canvas-utils.js"></script>
+<script>
+  var canvas = document.querySelector('#c');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var ctx = canvas.getContext('2d');
+
+  ctx.strokeStyle = 'black';
+  ctx.lineWidth = 2;
+
+  function draw() {
+    if (mouseDown) {
+      strokeLine(pmouseX, pmouseY, mouseX, mouseY);
+
+      // Draai mouseX en mouseY om voor vreemde lijnen.
+      //strokeLine(pmouseX, pmouseY, mouseY, mouseX);
+
+      // Vertrek vanuit een vaste positie (het nulpunt) naar de muis (mouseX / mouseY staan hier terug juist).
+      // strokeLine(0, 0, mouseX, mouseY);
+
+      // Vertrek vanuit het centrum.
+      // strokeLine(canvas.width / 2, canvas.height / 2, mouseX, mouseY);
+
+      // Gebruik een willekeurige waarde.
+      // var d = 20;
+      // var x1 = pmouseX + Math.random() * d;
+      // var y1 = pmouseY + Math.random() * d;
+      // var x2 = mouseX + Math.random() * d;
+      // var y2 = mouseY + Math.random() * d;
+      // strokeLine(x1, y1, x2, y2);
+
+      // Gebruik een lus om de vorige code meerdere keren uit te voeren.
+      // for (var i = 0; i < 10; i++) {
+      //   var d = 20;
+      //   var x1 = pmouseX + Math.random() * d;
+      //   var y1 = pmouseY + Math.random() * d;
+      //   var x2 = mouseX + Math.random() * d;
+      //   var y2 = mouseY + Math.random() * d;
+      //   strokeLine(x1, y1, x2, y2);
+      // }
+    }
+  }
+
+  window.addEventListener('mousemove', draw);
+</script>
+</body>
+</html>

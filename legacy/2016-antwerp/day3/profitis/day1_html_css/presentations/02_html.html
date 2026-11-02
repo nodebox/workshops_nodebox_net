@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Slides</title>
+  <link rel="stylesheet" type="text/css" href="css/slides.css">
+  <script src="js/slides.js"></script>
+</head>
+<body>
+    <section>
+        <h1>HTML</h1>
+        <h2>HTML = Hyper Text Markup Language</h2>
+        <aside>
+            HTML is niet ingewikkeld, maar belangrijk om te begrijpen omdat het het fundament is van de hele webpagina.
+        </aside>
+    </section>
+
+    <section>
+        <h1>HTML</h1>
+        <h2>HTML bepaalt inhoud en structuur.</h2>
+        <aside>Het is het skelet van je webpagina, waarna je de "huid" van CSS erop legt, en het gedrag bepaalt door JavaScript.</aside>
+    </section>
+
+    <section>
+        <h1>HTML</h1>
+        <h2>HTML is <strong>geen</strong> programmeertaal.</h2>
+        <h2>Het is een <strong>opmaaktaal</strong>.</h2>
+        <aside>Er wordt nog wel eens gedacht dat HTML een programmeertaal is. Dat is het niet. Het is een opmaaktaal, of "markup language" in Engels. Het voegt structuur, betekenis toe aan je inhoud.</aside>
+    </section>
+
+
+
+    <section>
+        <h1>Hoe ziet HTML eruit?</h1>
+        <pre style="font-size: 12px">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;Space Monkeys Inc.&lt;/title&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Space Monkeys Inc is the largest provider of monkeys in space.&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;media/style.css?v=1&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to Space Monkeys Inc.&lt;/h1&gt;
+&lt;p&gt;For years, we have been providing the best quality Space Monkeys known to man.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+        <aside>De kleuren hier maken niet deel uit van het document! Je past HTML aan met een gewone tekst-editor, dus niet Word, maar Notepad. Syntax coloring is enkel zodat je duidelijk onderscheid kan maken tussen de verschillende elementen van het document.</aside>
+    </section>
+
+    <section>
+        <h1>Hoe ziet HTML eruit?</h1>
+        <h2>Algemeen</h2>
+        <pre>
+&lt;tagname attribute="value"&gt;
+    content
+&lt;/tagname&gt;
+        </pre>
+        <h2>Voorbeeld</h2>
+        <pre>
+&lt;p id="footer" class="my-footer"&gt;
+    Copyright 2015.
+&lt;/p&gt;
+        </pre>
+        <aside>HTML bestaat uit "elementen". Elk element bestaat uit een open-tag met attributen. Een element kan inhoud hebben, en ook een sluit-tag. De open- en sluit-tag hebben dezelfde naam, alleen gebruik je voor de sluit-tag een slash. De inhoud-regio van een element kan een ander element bevatten. Ze zitten dan in elkaar genesteld. Zo maak je een boom, of hierarchie van elementen. Het voorbeeld toont een paragraaf-element. Het heeft een ID-attribuut en een class-attribuut. Deze worden gebruikt in CSS om elementen uit elkaar te halen, zodat je bijvoorbeeld speciale opmaak kunt instellen voor enkel de footer.</aside>
+    </section>
+
+
+    <section>
+        <h1>Geneste elementen</h1>
+        <pre>
+&lt;div id="content"&gt;
+    &lt;h2&gt;My Blog Post&lt;/h2&gt;
+    &lt;p&gt;Lorem ipsum...&lt;/p&gt;
+&lt;/div&gt;
+        </pre>
+        <aside>Hier is een voorbeeld van een genest stuk HTML. Het division (div)-element bevat een header (h2) en een paragraaf (p). Het h2-element en p-element zitten dus <strong>in</strong> het div-element.</aside>
+    </section>
+
+    <section>
+        <h1>Hoe HTML gebruiken?</h1>
+        <h2>De inhoud beschrijft de structuur.</h2>
+    </section>
+
+    <section>
+        <h1>Hoe HTML gebruiken?</h1>
+        <h2>Aanpak:</h2>
+        <ul>
+            <li>Eerst <strong>HTML</strong>: semantische structuur.</li>
+            <li>Dan <strong>CSS</strong>: opmaak.</li>
+        </ul>
+        <aside>De aanpak is om eerst de HTML te schrijven. Focus enkel op het kiezen van structuur-elementen die de betekenis van de inhoud bepalen. Als je daarna de CSS maakt, kan je beginnen nadenken over hoe de semantische structuur wordt opgemaakt. We gebruiken de term "semantische structuur" (semantic markup) om aan te duiden dat we focussen op de betekenis van de inhoud, niet op hoe het eruit ziet. Als je deze aanpak volgt kom je tot een stevige HTML-fundament.</aside>
+    </section>
+
+    <section>
+        <h1>Hoe HTML gebruiken?</h1>
+        <h2>Semantische Structuur</h2>
+        <ul>
+            <li>semantische elementen: form, table, img</li>
+            <li>niet semantische elementen: div span</li>
+        </ul>
+    </section>
+
+    <section>
+        <h1>HTML-elementen</h1>
+        <aside>
+            <p>Laten we eens kijken welke gereedschappen we hebben om de structuur te beschrijven.</p>
+            <p>Je hoeft die niet van buiten te kennen! Ik toon een website waarop je dit allemaal kan terugvinden.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h1>Hoofdingen</h1>
+        <h2>Code</h2>
+        <pre>
+&lt;h1&gt;Hoofding 1&lt;/h1&gt;
+&lt;h2&gt;Hoofding 2&lt;/h2&gt;
+...
+&lt;h6&gt;Hoofding 6&lt;/h6&gt;
+        </pre>
+        <h2>Resultaat</h2>
+        <h3 style="font-size: 120%">Hoofding 1</h1>
+        <h3 style="font-size: 110%">Hoofding 2</h1>
+        ...
+        <h6 style="font-size: 80%">Hoofding 6</h6>
+
+        <aside>Eerst hoofdingen. Deze hebben niveaus, van h1 tot h6. Denk aan hoofdingen alsof je een eindwerk schrijft. Je hebt de titel van je volledige eindwerk, dit is een h3. Dan heb je onderdelen, dat zijn h3's. Dan sub-onderdelen, dat zouden h3's worden, enzovoort. Hoofdingen bepalen een hierarchie van de verschillende onderdelen van je webpagina. Je zou geen h3 gebruiken zonder eerst een h3 en h3 te gebruiken, net zoals je geen sub-onderdeel hebt van een eindwerk zonder het onderdeel en de titel van het eindwerk. Denk niet aan hoe je hoofdingen wil in een groter of kleiner lettertype. Dat is opmaak en de taak van CSS. Denk nu enkel aan de structuur van het document.</aside>
+    </section>
+
+    <section>
+        <h1>Paragrafen</h1>
+        <h2>Code</h2>
+        <pre>
+&lt;p&gt;Lorem ipsum dolor sit amet...&lt;/p&gt;
+&lt;p&gt;Curabitur tristique, justo et semper...&lt;/p&gt;
+        </pre>
+        <h2>Resultaat</h2>
+        <p>Lorem ipsum dolor sit amet...</p>
+        <p>Curabitur tristique, justo et semper...</p>
+        <aside>Er zijn ook paragrafen. Deze bevatten een paragraaf met tekst. Merk op dat je ook hier geen lege paragraaf laat om meer plaats te hebben tussen paragrafen: dit is iets dat je in CSS bepaalt.</aside>
+    </section>
+
+    <section>
+        <h1>Beelden</h1>
+        <h2>Code</h2>
+        <pre>
+&lt;img src=&quot;img/flower.jpg&quot; alt=&quot;Yellow flower&quot;&gt;
+        </pre>
+        <h2>Resultaat</h2>
+        <img src="img/html/flower.jpg" alt="Yellow flower">
+
+        <aside>
+            <p>Om beelden in te voegen gebruik je de image tag. Ook hier kan je met CSS heel wat stylen, zoals de rand rond het beeld, de grootte, of de tekst errond moet wrappen, enz.</p>
+            <p>De "alt"-tekst, of beschrijving, is verplicht. Het staat voor "alternative", en bepaalt de tekst die in plaats van het beeld komt als het beeld niet kan worden getoond.</p>
+            <p>Zoekmachines gebruiken o.a. deze tekst wanneer je een beeld zoekt met sleutelwoorden.</p>
+        </aside>
+    </section>
+
+
+    <section>
+        <h1>Ongeordende lijsten</h1>
+        <h2>Code</h2>
+        <pre>
+&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+        </pre>
+        <h2>Resultaat</h2>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <aside>Dan zijn er lijsten. Er zijn twee varianten: ongeordende lijsten, en geordende lijsten. Een ongeordende lijst bestaat uit een ul-element met daarin meerdere li-elementen. Ongeordende lijsten gebruik je wanneer de volgorde van de lijst niet belangrijk is. Een voorbeeld is een winkellijstje: je moet alle items van het lijstje meebrengen van de winkel, ze zijn dus allemaal even belangrijk.</aside>
+    </section>
+
+    <section>
+        <h1>Geordende lijsten</h1>
+        <h2>Code</h2>
+        <pre>
+&lt;ol&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ol&gt;
+        </pre>
+        <h2>Resultaat</h2>
+        <ol>
+            <li>Item&nbsp;1</li>
+            <li>Item&nbsp;2</li>
+            <li>Item&nbsp;3</li>
+        </ol>
+
+        <aside>Geordende lijsten gebruik je wanneer de volgorde <strong>wel</strong> belangrijk is. Het enigste verschil is dat we "ol" gebruiken, voor ordered list, en niet "ul", voor unordered list. Een voorbeeld van geordende lijsten kan een recept zijn, waarin de stappen van het recept in de juiste volgorde moeten gebeuren.</aside>
+    </section>
+
+    <section>
+        <h1>Links</h1>
+        <h2>Code</h2>
+        <pre>
+&lt;a href="http://www.google.com/"&gt;Google&lt;/a&gt;
+        </pre>
+        <h2>Resultaat</h2>
+        <a href="#" style="text-decoration: underline; color: #559">Google</a>
+        <aside>Links maken het web tot wat het is. Wanneer de gebruiker klikt op de inhoud van de a-tag, zal de browser navigeren naar de link die staat opgegeven in het href-attribuut. In dit geval wordt de gebruiker dus doorverwezen naar de Google homepage.</aside>
+    </section>
+
+    <section>
+        <h1>Benadrukken</h1>
+        <h2>Code</h2>
+        <pre>
+Het eten is gewoonweg &lt;em&gt;verrukkelijk&lt;/em&gt;!
+Ik zou dit &lt;strong&gt;ten stelligste&lt;/strong&gt; afraden.
+        </pre>
+        <h2>Resultaat</h2>
+        <p>Het eten is gewoonweg <em>verrukkelijk</em>!</p>
+        <p>Ik zou dit <strong>ten stelligste</strong> afraden.</p>
+        <aside>Een benadruk-element, of "emphasis"-element, die bepaalt dat de inhoud meer moet benadrukt worden dan de omliggende inhoud. Standaard wordt de inhoud in een em-element schuin gezet. Als we een schermlezer gebruiken, een apparaat dat webpagina's luidoop voorleest (voor blinden of slechtzienden), zou de stem omhoog gaan in toon, wat dezelfde betekenis weergeeft. Een sterke nadruk-element, of "strong", bepaalt dat de inhoud nog sterker moet benadrukt worden dan een gewoon benadruk-element.</aside>
+    </section>
+
+    <section>
+        <h1>Tabellen</h1>
+        <h2>Code</h2>
+        <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Naam&lt;/th&gt;
+        &lt;th&gt;Leeftijd&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Danny&lt;/td&gt;
+        &lt;td&gt;54&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Lindsey&lt;/td&gt;
+        &lt;td&gt;37&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+        </pre>
+        <aside>Een tabel bestaat uit een hele lijst van geneste elementen. Eerst is er het table-element, dat rond de hele tabel staat. Dan zijn er rijen, aangegeven door het table-row (tr)-element. In elke rij zitten tabel-cellen (td) of voor de eerste rij, tabel-headers (th).</aside>
+    </section>
+
+    <section>
+        <h1>Tabellen</h1>
+        <h2>Resultaat</h2>
+        <table>
+            <tr>
+                <th>Naam</th>
+                <th>Leeftijd</th>
+            </tr>
+            <tr>
+                <td>Danny</td>
+                <td>54</td>
+            </tr>
+            <tr>
+                <td>Lindsey</td>
+                <td>37</td>
+            </tr>
+        </table>
+        <aside>Dit is een goede manier om een tabel te gebruiken: voor het tonen van tabulaire data. Een duidelijk teken dat dit een goede manier is, omdat er meerdere rijen zijn, met hoofdingen.</aside>
+    </section>
+
+    <section>
+        <h1>Tabellen: niet voor layout</h1>
+        <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Linkerkolom&lt;/td&gt;
+        &lt;td&gt;Middenkolom&lt;td/&gt;
+        &lt;td&gt;Rechterkolom&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+        </pre>
+        <aside>Hier is een slechte manier om tabellen te gebruiken. Er zijn geen hoofdingen, en enkel één rij. In plaats van tabellen te gebruiken voor tabulaire data, wordt hier een tabel gebruikt om een layout te maken met 3 kolommen. De maker van deze pagina misbruikt het feit dat cellen als vakken renderen van links naar rechts. Maar de layout wordt bepaald door de opmaak, en hoort dus niet thuis in HTML. De layout is de taak van CSS.</aside>
+    </section>
+
+    <section>
+        <h1>div</h1>
+        <p>div definieert een specifiek stuk in de pagina</p>
+        <div style="background-color: yellow;width: 300px;padding: 5px;">
+            <h2>Dit is een title element</h2>
+            <p>Dit een paragraaf.</p>
+        </div>
+        <pre>
+&lt;div id="mijnsectie"&gt;
+    &lt;h3>Dit is een title element&lt;/h3&gt;
+    &lt;p>Dit een paragraaf.&lt;/p&gt;
+&lt;/div&gt;</pre>
+    </section>
+
+   <section>
+       <h1>Video</h1>
+   </section>
+
+    <!-- Als we hier in de code echt autoplay gebruiken, start de video wanneer we de presentatie openen. -->
+    <!-- Daarom is er code die de CSS class slide-autoplay-video checkt, en de video start wanneer de slide wordt getoond. -->
+    <section class="slide-autoplay-video">
+        <h1>Video start automatisch</h1>
+        <video width="640" height="480">
+            <source src="img/html/mov_bbb.mp4" type="video/mp4">
+            <source src="img/html/mov_bbb.ogg" type="video/ogg">
+            Your browser does not support the video tag.
+        </video>
+        <pre style="font-size:16px">
+&lt;video width="640" height="480" autoplay&gt;
+&lt;source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"&gt;
+&lt;source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg"&gt;
+&lt;/video&gt;
+        </pre>
+   </section>
+
+
+    <section>
+        <h1>Video met controle</h1>
+        <video width="640" height="480" controls>
+            <source src="img/html/mov_bbb.mp4" type="video/mp4">
+            <source src="img/html/mov_bbb.ogg" type="video/ogg">
+            Your browser does not support the video tag.
+        </video>
+        <pre style="font-size:14px">
+&lt;video width="640" height="480" controls&gt;
+&lt;source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"&gt;
+&lt;source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg"&gt;
+Your browser does not support the video element.
+&lt;/video&gt;
+        </pre>
+    </section>
+
+    <section>
+        <h1>iframe : embedded object</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/0KCt2hAzeW0" style="border: none;" allowfullscreen></iframe>
+        <pre style="font-size:12px">
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/0KCt2hAzeW0" frameborder="0"&gt;
+&lt;/iframe&gt;
+        </pre>
+        <aside>embedded object: youtube, vimeo, nodebox</aside>
+    </section>
+
+    <section>
+        <h1>audio</h1>
+    </section>
+
+
+    <section>
+        <h1>Speel audio af</h1>
+        <audio controls>
+            <source src="img/html/horse.ogg" type="audio/ogg">
+            <source src="img/html/horse.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <pre style="font-size:16px">
+&lt;audio controls&gt;
+&lt;source src="http://www.w3schools.com/html/horse.ogg" type="audio/ogg"&gt;
+&lt;source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg"&gt;
+Your browser does not support the audio element.
+&lt;/audio&gt;
+        </pre>
+    </section>
+
+   <section>
+        <h1>Nesting</h1>
+    </section>
+
+    <section>
+        <h1>Geneste elementen</h1>
+        <h2 class="error">Slecht voorbeeld: doe dit niet!</h2>
+        <pre>
+&lt;p&gt;Bekijk de &lt;a href=&quot;...&quot;&gt;resultaten&lt;/p&gt;&lt;/a&gt;
+        </pre>
+        <aside>
+            <p>Kan je de fout vinden? De sluit-tags staan in de verkeerde volgorde.</p>
+            <p>Je browser zal niet crashen, maar zal zijn best doen om dit juist te tonen.</p>
+            <p>In ingewikkeldere structuren moet de browser soms "gokken" wat je bedoelt, en dat kan leiden tot onverwachte resultaten. Check altijd of je tags goed zijn afgesloten, en gebruik een validator om dit na te kijken.</p>
+        </aside>
+    </section>
+
+    <section>
+        <h1>Regels rond nesten</h1>
+        <h2 class="error">Slecht voorbeeld: doe dit niet!</h2>
+        <pre>
+&lt;ul&gt;
+&lt;p&gt;Paragraaf&lt;/p&gt;
+&lt;h1&gt;Hoofding&lt;/h1&gt;
+&lt;/ul&gt;
+        </pre>
+        <aside>Je kan niet eender welk element binnen eender welk ander element zetten. Binnen een ul en ol kan je bijvoorbeeld enkel li-elementen gebruiken. De browser ontploft niet als je dit toch doet. Hij zal z'n best doen om alles weer te geven, maar het kan leiden tot onverwachte resultaten en problemen die moeilijk op te sporen zijn.</aside>
+    </section>
+
+    <section>
+        <h1>Hoofdletters / kleine letters</h1>
+        <h2 class="error">Slecht voorbeeld: doe dit niet!</h2>
+        <pre>
+&lt;htML&gt;
+&lt;dIV ClAss=&quot;hEAdeR&quot;&gt;AnSwErS&lt;/DIV&gt;
+&lt;P&gt;wHaT tO dO If CaPS LoCK is BroKEN&lt;/p&gt;
+&lt;/HTml&gt;
+        </pre>
+        <aside>
+            <p>Het maakt niet uit of je hoofdletters of kleine letters gebruikt. Belangrijk is dat je consistent blijft, dus steeds dezelfde stijl gebruikt.</p>
+            <p>Bijna iedereen op het web gebruikt kleine letters, dus dat gebruik ik hier ook. Ik raad aan dat je dat ook doet.</p>
+            <p>De inhoud bepaal je natuurlijk zelf!</p>
+        </aside>
+    </section>
+
+    <section>
+        <h1>Witruimte</h1>
+        <h2 class="error">Slecht voorbeeld: doe dit niet!</h2>
+        <pre>
+&lt;  p  class =  "footer" &gt;Witruimte in de tags&lt;/p &gt;
+&lt;p&gt;Spatie     tussen      woorden&lt;/p&gt;
+        </pre>
+        <h2>Resultaat</h2>
+        <p>Witruimte in de tags</p>
+        <p>Spatie tussen woorden</p>
+
+        <aside>
+            <p>Witruimte is niet belangrijk, en HTML-tags negeren het gewoon.</p>
+            <p>Weeral, de stijl in de rest van de slides geniet de voorkeur.</p>
+            <p>In teksten moet je oppassen met meerdere spaties.</p>
+        </aside>
+    </section>
+
+
+    <section>
+        <h1>HTML elementen</h1>
+        <code style="font-size: 60%">
+&lt;!--&gt; &lt;!DOCTYPE&gt; &lt;a&gt; &lt;abbr&gt; &lt;acronym&gt; &lt;address&gt; &lt;applet&gt; &lt;area&gt; &lt;b&gt; &lt;base&gt; &lt;basefont&gt; &lt;bdo&gt; &lt;big&gt; &lt;blockquote&gt; &lt;body&gt; &lt;br&gt; &lt;button&gt; &lt;captio &gt; &lt;center&gt; &lt;cite&gt; &lt;code&gt; &lt;col&gt; &lt;colgroup&gt; &lt;dd&gt; &lt;del&gt; &lt;dfn&gt; &lt;dir&gt; &lt;div&gt; &lt;dl&gt; &lt;dt&gt; &lt;em&gt; &lt;fieldset&gt; &lt;font&gt; &lt;form&gt; &lt;frame&gt; &lt;frameset&gt; &lt; head&gt; &lt;h1&gt; - &lt;h6&gt; &lt;hr&gt; &lt;html&gt; &lt;i&gt; &lt;iframe&gt; &lt;img&gt; &lt;input&gt; &lt;ins&gt; &lt; kbd&gt; &lt;label&gt; &lt;legend&gt; &lt;li&gt; &lt;link&gt; &lt;map&gt; &lt;menu&gt; &lt;meta&gt; &lt;noframes&gt; &lt;noscript&gt; &lt;object&gt; &lt;ol&gt; &lt;optgroup&gt; &lt;option&gt; &lt;p&gt; &lt;param&gt; &lt;pre&gt; &lt;q&gt; &lt;s&gt; &lt;samp&gt; &lt;script&gt; &lt;select&gt; &lt;small&gt; &lt;span&gt; &lt;strike&gt; &lt;strong&gt; &lt;style&gt; &lt;sub&gt; &lt;sup&gt; &lt;table&gt; &lt;tbody&gt; &lt;td&gt; &lt;textarea&gt; &lt;tfoot&gt; &lt;th&gt; &lt;thead&gt; &lt;title&gt; &lt;tr&gt; &lt;tt&gt; &lt;u&gt; &lt;ul&gt; &lt;var&gt;
+
+        <aside>We hebben slechts een paar HTML-elementen gezien. Hier is een lijst van alle HTML-elementen uit HTML 4. Je kan meer informatie vinden over deze elementen online. Zie je hier elementen tussenstaan die enkel gaan over opmaak en niet over inhoud? Bijvoorbeeld de font-tag: dit element gaat enkel over de presentatie , het kiezen van een lettertype. Dit betekent niet dat we geen verschillende lettertypes mogen gebruiken! Enkel dat de keuze van een bepaald lettertype gekoppeld moet zijn aan de betekenis van een bepaald HTML-element. (of een bepaalde "class" van elementen, iets dat we later zullen zien.) Dit soort tags zijn "deprecated", verouderd, en worden in HTML 5 (de laatste versie) niet meer gebruikt. Een regeleinde-element (line-break, br) wordt gebruikt om te zeggen dat er een regeleinde moet zijn in de tekst-inhoud op dit punt. Hier is het aan jou, de HTML-designer, om te bepalen wanneer je dit element goed gebruikt. De br-tag <em>kan</em> gebruikt worden om betekenis over te dragen. Bijvoorbeeld, als je poëzie zou opmaken in HTML, zijn de breaks in het gedicht belangrijk als deel van de inhoud. Aan de andere kant, als je drie line breaks na elkaar gebruikt om wat meer ruimte tussen verschillende paragrafen te laten, gebruik je het element voor presentatie, niet voor inhoud. In plaats kan je de verschillende paragrafen meer marge geven in CSS.</aside>
+    </section>
+
+    <section>
+        <h1>Eigen elementen?</h1>
+        <h2>Kan ik zelf HTML elementen verzinnen?</h2>
+        <pre>&lt;pony&gt;
+&lt;eyes&gt;adorable&lt;/eyes&gt;
+&lt;tail&gt;cute&lt;/tail&gt;
+&lt;/pony&gt;
+</pre>
+        <aside>Je kan geen eigen HTML verzinnen. De browser zou immers niet weten wat hij ermee moet aanvangen. Als je een "smell"-element verzint, hoe moet de browser dan weten dat hij er geur aan moet koppelen? Wat je wel kan doen is elementen een class of id meegeven. XML (extendible markup language) laat wel toe om zelf tag te maken, maar dat valt buiten deze curus</aside>
+    </section>
+
+    <section>
+        <h1>Class Attribute</h1>
+        <pre>&lt;div class=&quot;nieuwsbericht&quot;&gt;
+    &lt;h2&gt;Nieuwe tienkoppige Elvis ontdekt&lt;/h2&gt;
+    &lt;p&gt;In de Amerikaanse staat Tennessee...&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+        <h2>Resultaat</h2>
+        <div style="background: #666; color: #fff; border: 2px solid #eee; padding: 5px; margin: 5px">
+            <h2 style="border-bottom:1px solid #333">Nieuwe tienkoppige Elvis ontdekt</h2>
+            <p style="font-size: 12px">In de Amerikaanse staat Tennessee...</p>
+        </div>
+
+        <aside>Zo wordt dit normaal gedaan: je duidt aan dat een bepaald blok een "nieuwsbericht" is. In CSS kan je dan helemaal bepalen hoe zo'n nieuwsbericht eruit ziet.</aside>
+    </section>
+
+    <section>
+        <h1>ID vs Class</h1>
+        <pre>
+&lt;div id=&quot;header&quot;&gt;
+    &lt;h1&gt;Eenwielers Peeters&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div id=&quot;content&quot;&gt;
+    &lt;div class=&quot;fiets&quot;&gt;
+        &lt;h2&gt;Model Alpha&lt;/h2&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;fiets&quot;&gt;
+        &lt;h2&gt;Model Omega&lt;/h2&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+        <aside>Wat is het verschil tussen een ID (identifier) en class? Een ID bepaalt de identiteit van één enkel element op de pagina. Een class, of klasse bepaalt een type van opmaak. Van een ID kan er maar één zijn, bijvoorbeeld één pagina-hoofding, navigatie, footer. Van een class kunnen er meerdere zijn, bv. verschillende fietsen, nieuwsberichten, ...</aside>
+    </section>
+
+
+
+    <section>
+        <h1>HTML 5 Doctype</h1>
+        <pre>&lt;!DOCTYPE html&gt;</pre>
+        <aside>Dit is de minimale HTML 5 doctype. Het is belangrijk omdat de aanwezigheid van de doctype bovenaan je HTML-code tegen browsers zegt dat ze je pagina moeten renderen in "standaard"-modus. Deze modus is de meest recente, en volgt de CSS-specificatie zo juist mogelijk. Als je geen doctype hebt zullen sommige browser je pagina renderen in "quirks"-mode (eigenaardigheden-modus). Deze modus volgt de CSS-specificatie niet en kan dus voor heel wat frustaties zorgen. Als je problemen hebt met het renderen van de pagina, is het eerste wat je moet nakijken of je een doctype hebt.</aside>
+    </section>
+
+    <section>
+        <h1>Validator</h1>
+        <img src="img/html/validator.png" class="screenshot" alt="HTML Validator">
+        <aside>
+            <p>Als er nog problemen zijn met het document, kan je een validator gebruiken om te kijken of er problemen zijn met de HTML.</p>
+            <p>Zijn tags goed gesloten?</p>
+            <p>Gebruik je de juiste attributen?</p>
+            <p>Zit er misschien een typfout in je tag?</p>
+        </aside>
+    </section>
+
+    <section>
+        <h1>Links</h1>
+        <ul>
+            <li><a href="http://www.w3schools.com/html5/">http://www.w3schools.com/html5/</a>
+            </li>
+            <li><a href="http://fundisom.com/live_preview.html">http://fundisom.com/live_preview.html</a>
+            </li>
+            <li><a href="http://validator.w3.org/">http://validator.w3.org/</a>
+            </li>
+        </ul>
+        <aside><p>Elke keer je over HTML iets opzoekt kom je op w3schools terecht. Goede referentie.</p>
+            <p>De live preview is handig: je kan code typen en onmiddellijk zien wat het resultaat is. Een goed editor (TextMate, Brackets) kan dit ook.</aside>
+    </section>
+
+    <section>
+        <h1>Tools</h1>
+    </section>
+
+    <section>
+        <h1>Visuele editors</h1>
+        <p>We raden af om Frontpage, Dreamweaver of Adobe Muse te gebruiken. De bottom up aanpak vereist een andere duidelijkere aanpak</p>
+    </section>
+
+    <section>
+        <h1>text code editor</h1>
+        <a href="http://brackets.io/">Brackets</a><br>
+        <a href="http://docs.emmet.io/cheat-sheet/">extensies zoals Emmet, JSHint</a>
+    </section>
+
+    <section>
+        <h1>inspector tools</h1>
+        <a href="https://developer.chrome.com/devtools">Chrome (recommended)</a><br>
+        <a href="https://developer.mozilla.org/nl/docs/Tools/Page_Inspector">Firefox</a><br>
+        <a href="https://developer.apple.com/library/mac/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html">Safari</a>
+    </section>
+
+</body>
+</html>

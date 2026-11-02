@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://nodebox.live/api/v1/ndbx.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+ <div id="wrap">
+  <h1>⚡RAGING REVOLVING DOOR⚡<br><br>Quinten De Meester<br><br>This animation displays a revolving door.<br> The objective is to allow as much characters as possible to pass through the door. <br>
+  In order to do so you can adjust the door-speed, the number of characters that are generated and their speed.<br><br></b> </h1>
+  <div id="controls">
+   
+  <div id="control">
+  <label id="lab" for="speed">motorspeed</label>
+  <input id="speed" type="range" min="0.01" max="3" step="0.01" value="0.5" oninput="changeMotorSpeed(this)">
+  </div>
+
+  <div id="control">
+ <label id="lab" for="peoplevel">people velocity</label>
+  <input id="peoplevel" type="range" min="5" max="100" step="0.01" value="10" oninput="changePeopleVel(this)">
+   </div>
+
+  
+ 
+   <div id="control">
+ <label id="lab" for="npeople">number of people</label>
+  <input id="npeople" type="range" min="0" max="100" oninput="changenPeople(this)">
+  <br>
+  </div>
+  
+  <br>
+  <canvas id="c" width="720" height="720"></canvas>
+  <script>
+    var options = {
+        userId: 'quintendm',
+        projectId: 'revolve',
+        canvasId: 'c',
+        autoplay: true
+    };
+    var player = ndbx.embed(options, function(err, player) {
+        window.player = player;
+    }); 
+    
+    function changeMotorSpeed(e) {
+        if (typeof player === 'undefined') return;
+        player.setValue('createWorld1', 'motorSpeed', parseFloat(e.value));
+        player.ndbx.clearState();
+    }
+        
+    function changePeopleVel(e) {
+        if (typeof player === 'undefined') return;
+        player.setValue('peopleVel', 'v', parseFloat(e.value));
+        player.ndbx.clearState();
+    }
+
+    function changenPeople(e) {
+        if (typeof player === 'undefined') return;
+        player.setValue('nPeople', 'v', parseFloat(e.value));
+        player.ndbx.clearState();
+    }
+      
+    </script>
+   
+   </div>
+    
+</body>
+</html>

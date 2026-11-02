@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Full Circle</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #222;
+  }
+  </style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script>
+  var canvas = document.querySelector('#c');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var ctx = canvas.getContext('2d');
+
+  var centerX = canvas.width / 2;
+  var centerY = canvas.height / 2;
+  var outerSize = Math.max(canvas.width, canvas.height);
+
+  ctx.strokeStyle = '#eee';
+
+  function onMouseMove(e) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    for (var i = 0; i < Math.PI * 2; i += 0.03) {
+      var x1 = centerX + Math.sin(i) * outerSize;
+      var y1 = centerY + Math.cos(i) * outerSize;
+      var x2 = e.clientX;
+      var y2 = e.clientY;
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+    }
+    ctx.stroke();
+  }
+
+  document.addEventListener('mousemove', onMouseMove);
+</script>
+</body>
+</html>

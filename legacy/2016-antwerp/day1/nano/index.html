@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .slideshow {
+            position: relative;
+        }
+        
+        .slideshow img {
+            position: absolute;
+            opacity: 0.1;
+            max-width: 100%;
+            transition: opacity 3s;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="slideshow">
+        <img src="17.jpg" />
+        <img src="16.jpg" />
+        <img src="15.jpg" />
+        <img src="14.jpg" />
+        <img src="13.jpg" />
+        <img src="12.jpg" />
+        <img src="11.jpg" />
+        <img src="10.jpg" />
+        <img src="9.jpg" />
+        <img src="8.jpg" />
+        <img src="7.jpg" />
+        <img src="6.jpg" />
+        <img src="5.jpg" />
+        <img src="4.jpg" />
+        <img src="3.jpg" />
+        <img src="2.jpg" />
+        <img src="1.jpg" />
+    </div>
+
+    <script>
+        var currentImage = 0;
+
+        var images = document.querySelectorAll('.slideshow img');
+
+        function nextImage() {
+            // Make current image invisble
+            images[currentImage].style.opacity = 0.1;
+            images[currentImage].style.zIndex = 0;
+            // Go to the next image
+            currentImage = currentImage + 1;
+            if (currentImage >= images.length) {
+                currentImage = 0;
+            }
+            // Make next image visible
+            images[currentImage].style.opacity = 0.8;
+            images[currentImage].style.zIndex = -10;
+        }
+
+        setInterval(nextImage, 3000);
+    </script>
+
+
+</body>
+
+</html>

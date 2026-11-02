@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bonus</title>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+    <script src="http://live.nodebox.net/static/js/bundle.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+
+
+<body>
+    <h1>Bonus</h1> seed
+    <input type="range" value="10" min="0" max="3000" oninput="changeSeed(this)">
+    <br> body width
+    <input type="range" value="15" min="10" max="100" oninput="changeBWidth(this)">
+    <br> body height
+    <input type="range" value="10" min="10" max="100" oninput="changeBHeight(this)">
+    <br> legs height
+    <input type="range" value="10" min="3" max="50" oninput="changeLegsHeight(this)">
+    <br> mimicry
+    <input type="range" value="10" min="0" max="120" oninput="changeMimicry(this)">
+    <br>
+    <canvas width="700" height="600" id="c"></canvas>
+
+    <script>
+        var player = app.embed({
+            userId: 'dedek',
+            projectId: 'createWorld',
+            canvasId: 'c',
+            functionId: 'bonus'
+        });
+        player.start();
+
+        function changeSeed(e) {
+            player.setValue('seed', 'v', parseFloat(e.value));
+        }
+
+        function changeBWidth(e) {
+            player.setValue('bodyWidth', 'v', parseFloat(e.value));
+        }
+
+        function changeBHeight(e) {
+            player.setValue('bodyHeight', 'v', parseFloat(e.value));
+        }
+
+        function changeLegsHeight(e) {
+            player.setValue('legsHeight', 'v', parseFloat(e.value));
+        }
+
+        function changeMimicry(e) {
+            player.setValue('mimicry', 'v', parseFloat(e.value));
+        }
+    </script>
+
+</body>
+
+</html>

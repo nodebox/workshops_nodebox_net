@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="normalize.css">
+    
+    <title>Set words free</title>
+    
+    <style>
+        body {
+            background-color:ghostwhite;
+            font-family: helvetica neue,helvetica,arial,sans-serif;
+            font-size: 13px;
+            line-height: 1;
+        }
+        h1 {
+            color:orangered;
+            margin-left: 100px;
+        }
+        h3 {
+            color:darkcyan;
+            margin-left: 100px;
+        }
+        h5 {
+            color:darkcyan;
+            margin-left: 100px;
+        }
+        .canvas {
+            width: 1000px;
+            height: 600px;
+            float: right;
+            margin-right: 50px;
+            margin-top: -635px;
+            padding-bottom: 0px;
+        }
+        .sliders {
+            font-weight: lighter;
+            margin: 0 0 0 0;
+            margin-left: 100px;
+            width: 200px;
+            height: 900;
+            padding-top: 30px;
+            padding-bottom: 120px;
+            color: orangered;
+        }
+        .header {
+            padding: 10px 0;
+            background-color: ghostwhite;
+            border-bottom: 1px solid #f95;
+        }
+        .footer {
+
+            padding: 20px;
+            background-color:ghostwhite;
+            color: #999;
+            border-top: 1px solid #f95;
+        }
+        .footerText{
+        margin-left: 100px;
+        color:darkcyan;
+        }
+        
+        
+    </style>
+
+</head>
+<body>
+
+    <div class="header">
+    <h1>Set words free</h1>
+    <h5>By Jolita Jurčiukonytė</h5>
+    <h3>Move sliders to see effects </h3>
+    </div>
+    
+    <div class="sliders">
+        
+        <p>Crack</p>
+        <input type="range" min="0" max="20" value="0" oninput="changeCrack(this)" >
+        <br>
+            <br>
+            <input type="text" value="hello" maxlength="6" oninput="changeText1(this)" >
+            <br>
+        
+        <p>Divide</p>
+        <input type="range" min="-215" max="50" value="-215" oninput="changeDivide(this)" >
+        <br>
+            <br>
+            <input type="text" value="hello" maxlength="6" oninput="changeText2(this)" >
+            <br>
+        
+        <p>Pour out</p>
+        <input type="range" min="0" max="15" value="0" oninput="changePourout(this)" >
+        <br>
+            <br>
+            <input type="text" value="hello" maxlength="6" oninput="changeText3(this)" >
+            <br>
+        
+        <p>Fade</p>
+        <input type="range" min="1" max="20" value="0" oninput="changeFade(this)" >
+        <br>
+            <br>
+            <input type="text" value="hello" maxlength="6" oninput="changeText4(this)" >
+            <br> 
+            
+        <p>Extrude</p>
+        <input type="range" min="0" max="80" value="0"  oninput="changeExtrude(this)" >
+        <br>
+        
+        <p>Colour</p>
+        <input type="range" min="120" max="375" value="120" oninput="changeColour(this)" >
+        <br>
+        
+        <!--
+        Enter your text 
+        <br>
+        <input type="text" value="hello" maxlength="5" oninput="changeText(this)" >
+        <br>  -->  
+
+    </div>
+    
+    <div class="canvas">
+        <canvas width="1000" height="600" id="c"></canvas>
+        <script src="http://live.nodebox.net/static/js/bundle.js"></script>
+    </div>
+
+
+       <script>
+        
+           var player = app.embed({userId: 'Jolita', projectId: 'embedTest' , canvasId: 'c'}); 
+           player.start();
+    
+           function changeDivide(e) {
+               player.setValue('makePoint1', 'y', parseFloat(e.value));
+           }
+    
+           function changeText(e) {
+               player.setValue('theText', 's', e.value);
+           }
+           function changeText1(e) {
+               player.setValue('textPath2', 'text', e.value);
+           }
+           function changeText2(e) {
+               player.setValue('textPath1', 'text', e.value);
+           }
+           function changeText3(e) {
+               player.setValue('textPath4', 'text', e.value);
+           }
+           function changeText4(e) {
+               player.setValue('textPath5', 'text', e.value);
+           }
+           
+           function changeCrack(e) {
+           
+           player.setValue('makePoint2', 'x', parseFloat(e.value));
+           
+           }
+           
+           function changeExtrude(e) {
+           
+           player.setValue('number3', 'v', parseFloat(e.value));
+           
+           }
+           
+           function changePourout(e) {
+           
+           player.setValue('number1', 'v', parseFloat(e.value));
+           
+           }
+           
+           function changeFade(e) {
+           
+           player.setValue('number2', 'v', parseFloat(e.value));
+           
+           }
+           
+           function changeColour(e) {
+           
+           player.setValue('number4', 'v', parseFloat(e.value));
+           
+           }
+
+        
+    </script>
+    
+    
+    <div class="footer">
+        <div class="footerText">
+            <p>Copyright &copy; 2015</p>
+        </div>
+    </div>
+    
+</body>
+
+</html>

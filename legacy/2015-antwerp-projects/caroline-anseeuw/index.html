@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Average consumption</title>
+    <script src="http://live.nodebox.net/static/js/bundle.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+  <div id="wrap">
+  
+  <div id="header">
+   <h1>Average Consumption</h1>
+
+  <div id="controls">
+   <button onclick="onSwitch(0)">2 WEEKS</button>
+   <button onclick="onSwitch(1)">EVERYDAY</button>
+   <button onclick="onSwitch(2)">DIFFERENT DRINKS</button>
+   </div>
+   
+</div>
+  <div class="clear"></div>
+   
+   
+   <canvas id="c" width="1100" height="700"></canvas>
+
+      <h2>About</h2>
+        <p>These 3 different visualizations show a representation of my drinking behavior of 2 weeks. Every image is created from the same data, but put in a different order. The repeated rectangles represent the duration and amount of each drink and the speed of consumption. 
+By creating a mix node that connects each form, you can now see the animation linked in-between the visualizations.     </p>
+        <p>
+            
+        </p>
+        <br>
+        
+        
+<img src="tabel.png" alt="">         
+    </div>
+    
+    
+    
+       <script>
+        
+       
+       var player = app.embed({userId: 'carolineanseeuw', projectId: 'consumption', functionId: 'visual', canvasId: 'c'});
+           
+       
+       var t = 0.0;
+       var currentVisual = 0;
+       var newVisual = 0;
+       
+       function animate() {
+           console.log(t, currentVisual, newVisual);
+           player.setValue('mix1', 't', t);
+           player.draw();
+           t += 2;
+           if (t <= 100.0) {
+               window.requestAnimationFrame(animate);
+           } else {
+               currentVisual = newVisual;
+           }
+       }
+       
+       function onSwitch(index) {
+               newVisual = index;
+               player.setValue('switch1', 'index', currentVisual);
+               player.setValue('switch2', 'index', newVisual);
+               t = 0.0;
+               animate();
+       }
+    
+    
+    
+    </script>
+</body>
+</html>

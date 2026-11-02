@@ -1,0 +1,161 @@
+body {
+    background: white;
+    color: black;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 24px;
+}
+
+.css-slideshow {
+    position: relative;
+    max-width: 495px;
+    height: 370px;
+    margin: 5em auto .5em auto;
+}
+
+.css-slideshow figure {
+    margin: 0;
+    position: absolute;
+}
+
+.css-slideshow figcaption {
+    position: absolute;
+    top: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, .3);
+    font-size: .8em;
+    padding: 8px 12px;
+    opacity: 0;
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+.css-slideshow:hover figure figcaption {
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
+    opacity: 1;
+}
+
+.css-slideshow figure {
+    opacity: 0.1;
+}
+
+figure:nth-child(1) {
+    -webkit-animation: xfade 102s 96s infinite;
+    animation: xfade 102s 96s infinite;
+}
+
+figure:nth-child(2) {
+    -webkit-animation: xfade 102s 90s infinite;
+    animation: xfade 102s 90s infinite;
+}
+
+figure:nth-child(3) {
+    -webkit-animation: xfade 102s 84s infinite;
+    animation: xfade 102s 84s infinite;
+}
+
+figure:nth-child(4) {
+    -webkit-animation: xfade 102s 78s infinite;
+    animation: xfade 102s 78s infinite;
+}
+
+figure:nth-child(5) {
+    -webkit-animation: xfade 102s 72s infinite;
+    animation: xfade 102s 72s infinite;
+}
+
+figure:nth-child(6) {
+    -webkit-animation: xfade 102s 66s infinite;
+    animation: xfade 102s 66s infinite;
+}
+
+figure:nth-child(7) {
+    -webkit-animation: xfade 102s 60s infinite;
+    animation: xfade 102s 60s infinite;
+}
+
+figure:nth-child(8) {
+    -webkit-animation: xfade 102s 54s infinite;
+    animation: xfade 102s 54s infinite;
+}
+
+figure:nth-child(9) {
+    -webkit-animation: xfade 102s 48s infinite;
+    animation: xfade 102s 48s infinite;
+}
+
+figure:nth-child(10) {
+    -webkit-animation: xfade 102s 42s infinite;
+    animation: xfade 102s 42s infinite;
+}
+
+figure:nth-child(11) {
+    -webkit-animation: xfade 102s 36s infinite;
+    animation: xfade 102s 36s infinite;
+}
+
+figure:nth-child(12) {
+    -webkit-animation: xfade 102s 30s infinite;
+    animation: xfade 102s 30s infinite;
+}
+
+figure:nth-child(13) {
+    -webkit-animation: xfade 102s 24s infinite;
+    animation: xfade 102s 24s infinite;
+}
+
+figure:nth-child(14) {
+    -webkit-animation: xfade 102s 18s infinite;
+    animation: xfade 102s 18s infinite;
+}
+
+figure:nth-child(15) {
+    -webkit-animation: xfade 102s 12s infinite;
+    animation: xfade 102s 12s infinite;
+}
+
+figure:nth-child(16) {
+    -webkit-animation: xfade 102s 6s infinite;
+    animation: xfade 102s 6s infinite;
+}
+
+figure:nth-child(17) {
+    -webkit-animation: xfade 102s 0s infinite;
+    animation: xfade 102s 0s infinite;
+}
+
+@-webkit-keyframes xfade {
+    0% {
+        opacity: 0.95;
+    }
+    10.5% {
+        opacity: 0.95;
+    }
+    12.5% {
+        opacity: 0.1;
+    }
+    98% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0.95;
+    }
+}
+
+@keyframes xfade {
+    0% {
+        opacity: 0.95;
+    }
+    10.5% {
+        opacity: 0.95;
+    }
+    12.5% {
+        opacity: 0.1;
+    }
+    98% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0.95;
+    }
+}

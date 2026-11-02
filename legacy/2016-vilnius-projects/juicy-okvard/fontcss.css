@@ -1,0 +1,135 @@
+body{
+background-color: rgba(248, 248, 255, 0.67);
+}
+@font-face {
+    font-family: Viga;
+    src: url(Viga-Regular.ttf);
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url(Gilroy-Semibold.otf);
+}
+
+@font-face {
+    font-family: Gilroy-Bold;
+    src: url(Gilroy-Bold.otf);
+}
+
+@font-face {
+    font-family: Gilroy-Regular;
+    src: url(Gilroy-Regular.otf);
+}
+.trigger{
+	font-family: Gilroy;
+	font-weight: bolder;
+	color: #818181;
+	position: absolute;
+	right: 100px;
+	top: 36px;
+	font-size: 20pt;
+	z-index: 9000;
+}
+.trigger:hover{
+	font-family: Gilroy;
+/*	color: deeppink;*/
+	position: absolute;
+	text-decoration: underline;
+	right: 100px;
+	top: 36px;
+	font-size: 20pt;
+	cursor: pointer;
+}
+.about {
+    display: none;
+    background-color: #818181;
+    position: fixed;
+    left: 0px;
+    top: 100px;
+    z-index: 110000;
+    font-family: Gilroy-Regular;
+    font-size: 18pt;
+    color: white;
+    text-align: center;
+    padding-left: 200px;
+	padding-right: 200px;
+    padding-top: 120px;
+    width: 1080px;
+    height: 400px;
+/*    line-height: 1%;*/
+}
+.pirmas{
+	font-family: Gilroy;
+
+}
+.linkas{
+	color:white;
+	align-content: center;
+	text-decoration: none;
+	font-weight: bold;
+
+}
+.linkas:hover{
+	color:white;
+	align-content: center;
+	text-decoration: underline;
+
+}
+.slider {
+	position: absolute;
+	left: 550px;
+	top: 25px;
+	list-style-type: none;
+	font-family: Gilroy;
+}
+#mycanvas{
+	position: absolute;
+	top:100px;
+	left: 510px;
+	z-index: 1000;
+}
+body {
+    padding: 30px;
+}
+input[type=range] {
+    -webkit-appearance: none;
+
+    /*fix for FF unable to apply focus style bug */
+    width: 250px;
+
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 200px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #ff4667;
+    margin-top: -6px;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ddd;
+}
+input[text=range] {
+    -webkit-appearance: none;
+
+    /*fix for FF unable to apply focus style bug */
+    border: none;
+    height: 15px;
+    width: 250px;
+	font-family: Gilroy;
+	font-weight: 300;
+	color: #818181;
+
+
+}

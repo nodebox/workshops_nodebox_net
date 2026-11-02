@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Test Pagina</title>
+  <style>
+    html, body {
+      overflow: hidden;
+    }
+
+    body {
+      background: #333;
+      color: #ddd;
+      font: 18px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      text-align: center;
+      margin: 100px 0;
+    }
+
+    .container {
+      width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.8);
+    }
+
+    #toast {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      background: orange;
+      padding: 20px 10px;
+      text-align: center;
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+      opacity: 0.0;
+      transition: opacity 500ms ease-in-out;
+      pointer-events: none;
+    }
+
+    #car {
+      position: absolute;
+      top: -100px;
+      left: -50px;
+    }
+
+    .blinky {
+      -webkit-animation: blinky 2s infinite;
+      animation: blinky 2s linear infinite;
+    }
+
+    @keyframes blinky {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @-webkit-keyframes blinky {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>JavaScript Test Pagina</h1>
+  <p>Open de Developer Tools Console met ⌥-⌘-J</p>
+</div>
+<div id="toast">Hello there</div>
+<audio id="song">
+  <source src="audio/happy-birthday.mp3">
+</audio>
+<img src="img/car.png" id="car">
+<div class="hidden">
+</div>
+<script>
+  /* jshint unused: false */
+  /* global alert, console */
+  'use strict';
+
+  // Utility function to show a message.
+  function showMessage(message) {
+    var toast = document.querySelector('#toast');
+    toast.innerHTML = message;
+    toast.style.opacity = 1.0;
+    setTimeout(function() {
+      toast.style.opacity = 0.0;
+    }, 3000);
+  }
+
+  // Shopping cart object.
+  function Cart() {
+  }
+
+  Cart.prototype.add = function() {
+    showMessage('Product toegevoegd aan winkelmandje.');
+  };
+
+  function Car() {
+    this.element = document.querySelector('#car');
+    this.animating = false;
+  }
+
+  Car.prototype.animate = function() {
+    this.animating = true;
+    this.element.style.left = this.x + 'px';
+    this.element.style.top = this.y + 'px';
+    this.x += 2;
+    this.y += 1;
+    window.requestAnimationFrame(this.animate.bind(this));
+  };
+
+  Car.prototype.drive = function() {
+    this.x = -100;
+    this.y = -50;
+    if (!this.animating) {
+      window.requestAnimationFrame(this.animate.bind(this));
+    }
+  };
+
+  function doSomething() {
+    alert('STOP MET KLIKKEN!');
+  }
+
+  function randomColor() {
+    return 'hsl(' + Math.random() * 360 + ', 80%, 50%)';
+  }
+
+  // Globals
+  window.shoppingCart = new Cart();
+  window.product = 'Rozijnen';
+  window.song = document.querySelector('#song');
+  window.car = new Car();
+  window.jouwVerjaardag = true;
+
+  console.log('%cWelkom!', 'font-size: 24px; color: #333;');
+  console.log('%cAchter het %c› %cpijltje kan je code typen. Druk op ENTER om uit te voeren.',
+    'color: #666;', 'color: blue; font-weight: bold;font-size: 18px;', 'color: #666;');
+  console.log('%cTyp nu %c5 + 3 %cen druk op ENTER.',
+    'color: #669;', 'color: #339; font-weight: bold;', 'color: #669;');
+
+
+</script>
+
+</body>
+</html>

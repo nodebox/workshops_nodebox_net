@@ -1,0 +1,89 @@
+/*** BEGIN: General elements ***/
+.form_item_container {
+    margin: 0 0 12px;
+}
+
+.form_item_label {
+    float: left;
+    width: 260px;
+}
+
+.form_item_input input[type=text], .form_item_input input[type=password] {
+   width: 200px;
+}
+
+.form_item_input {
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.info_overlay {
+	cursor: pointer; 
+	margin-left: 6px;
+}
+/*** END: General elements ***/
+
+
+/*** BEGIN: Validation ***/
+.error {
+    color: red;
+}
+
+input.error , select.error {
+    border: 1px solid red;
+}
+
+.errorContainer {
+    width: 400px;
+    margin: 10px 0px;
+}
+
+
+/*
+* jQuery UI CSS Framework
+* Copyright (c) 2009 AUTHORS.txt (http://jqueryui.com/about)
+* Dual licensed under the MIT (MIT-LICENSE.txt) and GPL (GPL-LICENSE.txt) licenses.
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?ctl=themeroller
+*/
+
+
+/* Component containers
+----------------------------------*/
+.ui-widget { font-family: Verdana,Arial,sans-serif; font-size: 1.1em; }
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Verdana,Arial,sans-serif; font-size: 1em; }
+
+
+/* Interaction Cues
+----------------------------------*/
+/* .ui-state-highlight, .ui-widget-content .ui-state-highlight {font-size: 12px; border: 1px solid #fcefa1; background: #fbf9ee url(images/state_highlight.png|0|0|55) 50% 50% repeat-x; color: #363636; } */
+.ui-state-highlight, .ui-widget-content .ui-state-highlight {font-size: 12px; border: 1px solid #fcefa1; background: #fbf9ee 50% 50% repeat-x; color: #363636; }
+.ui-state-highlight a, .ui-widget-content .ui-state-highlight a { color: #363636; }
+/* .ui-state-error, .ui-widget-content .ui-state-error {font-size: 12px; border: 1px solid #cd0a0a; background: #fef1ec url(images/state_error.png|0|0|95) 50% bottom repeat-x; color: #cd0a0a; }  */
+.ui-state-error, .ui-widget-content .ui-state-error {font-size: 12px; border: 1px solid #cd0a0a; background: #fef1ec 50% bottom repeat-x; color: #cd0a0a; }
+.ui-state-error a, .ui-widget-content .ui-state-error a { color: #cd0a0a; }
+.ui-state-error-text, .ui-widget-content .ui-state-error-text { color: #cd0a0a; }
+
+
+/* Icons
+----------------------------------*/
+/* states and images */
+.ui-icon { width: 16px; height: 16px; background-image: url(images/icons.png); float: left; margin-right: 0.3em;}
+.ui-state-highlight .ui-icon {background-image: url(images/icons_highlight.png); }
+.ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url(images/icons_error.png); }
+
+/* positioning */
+.ui-icon-alert { background-position: 0 -144px; }
+.ui-icon-info { background-position: -16px -144px; }
+
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.ui-corner-all { -moz-border-radius: 4px; -webkit-border-radius: 4px; padding: 0 0.7em;}
+
+/*** END: Validation ***/

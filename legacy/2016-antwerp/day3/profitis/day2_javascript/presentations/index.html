@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Slides</title>
+  <link rel="stylesheet" type="text/css" href="css/slides.css">
+  <script src="js/slides.js"></script>
+</head>
+<body>
+
+        <section>
+            <h1>JavaScript</h1>
+
+            <aside>
+                JavaScript is de laatste van de drie talen die we gebruiken in web development.
+
+                We hebben HTML geleerd om de inhoud en structuur te bepalen, en CSS om de vormgeving ervan aan te passen. JavaScript bepaalt het gedrag van de pagina.
+            </aside>
+        </section>
+
+        <section>
+            <h1>JavaScript</h1>
+            <h3>JavaScript maakt pagina's <em>interactief</em></h3>
+
+            <aside>
+                Maar wat bedoelen we juist met het gedrag?
+            </aside>
+        </section>
+
+        <section>
+            <h1>Voorbeeld</h1>
+            <br>
+            <p><a href="#">+ Toon menu</a></p>
+            <br>
+            <p><a href="#">- Verberg menu</a><br>- Item 1<br>- Item 2<br>- Item 3</p>
+            <aside>
+                Een eenvoudig voorbeeld is waar we JavaScript gebruiken om een stuk van de pagina te tonen of te verbergen, zoals een uitklapbaar menu.
+            </aside>
+        </section>
+
+        <section>
+            <h1>Voorbeeld</h1>
+            <h4>Validatie</h4>
+            <p><input type="text" value="correct@mailadres.be" style="font-size: 24px; width: 14rem;">&nbsp;&nbsp;&check;</p>
+            <aside>
+                Een ander voorbeeld is de validatie van velden op een formulier, bijvoorbeeld het formaat van een e-mail adres of kredietkaart.
+            </aside>
+        </section>
+
+        <section>
+            <h1>Canvas</h1>
+            <canvas id="c" width="640" height="480"></canvas>
+            <script>
+                'use strict';
+                var canvas = document.querySelector('#c');
+                var ctx = canvas.getContext('2d');
+                ctx.lineWidth = 5;
+                for (var i = 0; i < 100; i++) {
+                    ctx.strokeStyle = 'hsl(' + Math.random() * 360 + ',80%,50%)';
+                    ctx.strokeRect(Math.random() * canvas.width - 50, Math.random() * canvas.height - 50, 100, 100);
+                }
+            </script>
+            <aside>
+                Interessant is ook dat we een canvas-element (tag) hebben, waarop we kunnen tekenen. Die kunnen we gebruiken voor 2D...
+            </aside>
+        </section>
+
+        <section>
+            <h1>Canvas (WebGL)</h1>
+            <img src="img/javascript/webgl.png">
+            <aside>
+                En ook voor 3D, via WebGL. Het interessante is dat dit overal werkt: op de desktop, op tablets en smartphones.
+            </aside>
+        </section>
+
+        <section>
+            <h1>Hoe linken?</h1>
+            <h3>3 manieren om JavaScript te linken:</h3>
+            <ul>
+                <li>In het element (Inline)</li>
+                <li>Ingebed (Embedded)</li>
+                <li>Extern (External)</li>
+            </ul>
+            <br><br><br>
+            <h4>Vergelijkbaar met CSS!</h4>
+            <aside>
+                Hoe krijg ik JavaScript op mijn pagina? Net zoals CSS zijn er 3 manieren, van "makkelijker" naar "beter".
+            </aside>
+        </section>
+
+        <section>
+            <h1>Inline JavaScript (BAD)</h1>
+            <pre>
+&lt;a href=&quot;javascript: doSomething()&quot;&gt;Klik mij!&lt;/a&gt;
+&lt;a href=&quot;#&quot; onclick=&quot;doSomething()&quot;&gt;Mij ook!&lt;/a&gt;
+            </pre>
+            <aside>
+                JavaScript kan mee in de HTML code worden gestoken. Ofwel via een pseudo-link (merk op dat de link niet begint met "http" maar met "javascript").
+                De andere manier is via een onclick attribuut op de link.
+                Net zoals bij CSS raden we dit af. Het linkt de elementen rechtstreeks met het gedrag. Net zoals bij CSS zullen we zien dat we dit ook hier best via selectors kunnen doen.
+            </aside>
+        </section>
+
+        <section>
+            <h1>Embedded JavaScript (OK)</h1>
+            <pre>
+&lt;body&gt;
+
+  ...
+
+  &lt;script&gt;
+    doSomething();
+  &lt;/script&gt;
+&lt;/body&gt;
+            </pre>
+            <aside>
+                We kunnen een script-element in de pagina steken. In dit script-element typen we dan de code. Die code wordt uitgevoerd wanneer de browser de script-tag tegenkomt.
+
+                Dit is een OK methode, zeker als de JavaScript-code maar op één pagina gebruikt zal worden. We hebben dit al gebruikt in het single socks project, waar we een beetje JavaScript hadden geschreven om de gallerij en de flip-cards in gang te zetten.
+            </aside>
+        </section>
+
+        <section>
+            <h1>Externe JavaScript (Goed!)</h1>
+            <pre>
+
+
+  ...
+
+  &lt;script src=&quot;myscript.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+            <aside>
+                Bij de laatste methode maken we, net zoals bij CSS, een apart bestand dat alle externe code bevat. We linken dan naar dit bestand vanuit onze HTML pagina.
+
+                Dit is nuttig wanneer de code in het bestand op meerdere plaatsen in onze site moet gebruikt worden. Bijvoorbeeld code voor een navigatie-menu dat op alle pagina's in onze site wordt gebruikt steken we in een apart document.
+
+                Net zoals bij CSS is deze methode ook interessant qua snelheid: de browser moet het bestand namelijk maar één keer downloaden en kan het voor de volgende pagina's herbruiken.
+
+                Merk op dat we het script helemaal onderaan de pagina zetten.
+            </aside>
+        </section>
+
+        <section>
+            <h2>JavaScript is een programmeertaal</h2>
+            <aside>
+                Over HTML en CSS kunnen we zeggen dat het *opmaaktalen* zijn. JavaScript is een echte programmeertaal. We kunnen dus heel wat doen. Het zorgt er ook voor dat het de moeilijkste is van de drie.
+            </aside>
+        </section>
+
+        <section>
+            <h2>JavaScript ≠ Java</h2>
+            <aside>
+                Misschien heb je al wel eens van "Java" gehoord.
+
+                Ondanks de naam zijn JavaScript en Java twee verschillende programmeertalen.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Overzicht</h2>
+            <aside>
+                We willen nu een snel overzicht geven van de standaard mogelijkheden van een programmeertaal. Deze zullen in het begin verwarrend zijn; geen paniek. We gaan ze allemaal één voor één gebruiken in de oefening achteraf.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Developer Tools</h2>
+            <img src="img/javascript/devtools.png">
+            <aside>
+                Het makkelijkste is om mee te volgen. Open de pagina excercises\javascript\index.html in Chrome. Dan druk je op alt-command-j om de developer tools console open te doen.
+
+                Hieronder gaan we code typen. Probeer al eens 5 + 3 te typen, en dan ENTER.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Operatoren</h2>
+            <pre>
+(3 * 2) + 4;
+            </pre>
+            <aside>
+                Operatoren ken je uit de wiskunde. Het zijn dingen zoals +, -, maal en gedeeld door, die we gebruiken om berekeningen mee te doen.
+
+                Hier vermenigvuldigen 3 en 2, en tellen we daar 4 bij op.
+
+                Probeer deze soms eens te typen in de developer tools console.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Variabelen</h2>
+            <pre>
+                var favorieteKleur = 'rood';
+            </pre>
+            <aside>
+                We beginnen met variabelen. Variabelen laten ons toe om een waarde op te slaan onder een bepaalde naam, zodat we er achteraf naar kunnen verwijzen.
+
+                Probeer deze regel te typen. Merk op dat er geen resultaat komt. Het resultaat wordt namelijk opgeslagen in een variabele, niet teruggeven.
+
+                Typ daaronder favorieteKleur en druk op ENTER. Nu zie je de waarde van de variabele.
+
+                Probeer een andere waarde op te slaan, bv. "var favorieteKleur = 'blauw' ". Typ daarna nog een favorieteKleur + ENTER.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Variabelen</h2>
+            <pre>
+var favorieteKleur = 'rood';
+
+hoofding.style.color = favorieteKleur;
+footer.style.color = favorieteKleur;
+            </pre>
+            <aside>
+                We kunnen dit gebruiken als we een bepaalde waarde op meerdere plaatsen nodig hebben. Als we later een andere favoriete kleur hebben, dan moeten we die maar op één plaats veranderen.
+            </aside>
+        </section>
+
+
+        <section>
+            <h2>Operatoren + Variabelen</h2>
+            <pre>
+var eenheidsPrijs = 5;
+var aantal = 3;
+var vervoerskosten = 6;
+
+var totaal = (aantal * eenheidsPrijs) + vervoerskosten;
+            </pre>
+            <aside>
+                Operatoren zijn uiteraard handig in combinatie met variabelen.
+
+                In dit voorbeeld verkopen we bloemen. Elke bloem kost hetzelfde: dit slaan we op in de eenheidsprijs. We houden ook het aantal verkochte bloemen bij, en de vervoerskosten.
+
+                In dit geval hebben we dus een prijs van 21: 3 bloemen aan 5 euro per stuk + 6 euro vervoerskosten.
+
+                Probeer dit over te typen. Als je daarna totaal + ENTER typt, zou je de waarde 21 moeten terugkrijgen.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Strings (Tekst)</h2>
+            <pre>
+var voornaam = 'Linus';
+            </pre>
+            <aside>
+                JavaScript kent ook "strings". Hier is geen goed Nederlands woord voor, dus ik gebruik meestal "stukje tekst" als synoniem.
+
+                Een string is een reeks van tekens, of letters, achter elkaar. Strings gebruiken we als we met tekst willen werken.
+
+                Een string staat altijd tussen aanhalingstekens. Zo kan JavaScript het onderscheid maken tussen een string ("Linus") en een variabele (voornaam).
+            </aside>
+        </section>
+
+        <section>
+            <h2>Strings (Tekst)</h2>
+            <pre>
+var voornaam = 'Linus';
+
+var begroeting = 'Hallo ' + voornaam + '!';
+
+alert(begroeting);
+            </pre>
+            <h2>Resultaat</h2>
+            <table class="bordered">
+                <tr><td><code>voornaam</code></td><td>'Linus'</td></tr>
+                <tr><td><code>begroeting</code></td><td>'Hallo Linus!'</td></tr>
+            </table>
+            <aside>
+                Strings kan je ook aan elkaar plakken via de "+" operator. Zo kan je verschillende stukjes tekst combineren. In dit geval combineren we drie stukjes: het woord "Hallo", de waarde van de variabele "voornaam", en het uitroepteken.
+
+                In het geheugen van de browser zijn nu twee variabelen opgeslagen. De variabele voornaam is gelijk aan Linus. De variabele begroeting is gelijk aan "Hallo Linus!"
+
+                Probeer dit eens. Verander "Linus" door je eigen voornaam.
+                Probeer dan "alert(begroeting)".
+            </aside>
+        </section>
+
+        <section>
+            <h2>Commentaar</h2>
+            <pre>
+// Deze lijn wordt niet uitgevoerd.
+
+// Commentaar wordt vaak gebruikt om dingen te verduidelijken.
+            </pre>
+            <aside>
+                Vaak is het handig om in JavaScript uitleg te geven over wat je aan het doen bent.
+
+                Dit is handig als jij iets maakt voor andere mensen, of andere mensen voor jou. Maar dikwijls is commentaar ook voor jezelf, als je een script na een aantal maanden terug opendoet.
+
+                Je gebruikt twee dubbele schuine strepen aan het begin van een lijn commentaar. Commentaar wordt door de browser volledig genegeerd.
+
+                Probeer de tekst hamburger eerst gewoon in de console te typen. Merk op dat de browser een fout geeft: Uncaught ReferenceError.
+
+                Zet er nu twee schuine strepen voor. De browser negeert nu je invoer en zal gewoon doorgaan.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Code in Commentaar</h2>
+            <pre>
+// De code hieronder wordt ook niet uitgevoerd.
+
+// var voornaam = 'Test';
+            </pre>
+            <aside>
+                Commentaar wordt ook gebruikt om stukjes code tijdelijk "uit te schakelen". Je kan ze zo laten staan, zonder dat ze worden uitgevoerd.
+
+                In Brackets en andere editors kan je een heel blok code in commentaar zetten via een sneltoets (Command-/).
+            </aside>
+        </section>
+
+        <section>
+            <h2>console.log</h2>
+            <pre>
+console.log('mijn bericht');
+            </pre>
+            <aside>
+                Een andere handige feature van JavaScript is de console. We kunnen in de developer console gaan zien of er iets misloopt (er komt dan een rode foutboodschap).
+
+                We kunnen de console ook gebruiken om er berichten in te schrijven. Dit is handig wanneer we willen verifiëren dat het verwachte resultaat ook daadwerkelijk klopt.
+
+                Probeer nu console.log('hallo') en console.log(5 + 3).
+            </aside>
+        </section>
+
+        <section>
+            <h2>Lijsten (arrays)</h2>
+            <pre>
+var winnendeLottoNummers = [3, 10, 14, 17, 20, 28];
+
+var kleuren = ['rood', 'groen', 'blauw', 'geel'];
+            </pre>
+            <aside>
+                JavaScript heeft ook lijsten, in het engels "arrays" genoemd.
+
+                In een lijst kan je zowel nummers als strings bewaren (en ook nog andere dingen, die zien we later).
+
+                Lijsten zijn een enorm krachtig concept, en de basis van bijna elk programma.
+
+                Als je een computerspelletje zou maken zou je bijvoorbeeld een lijst van monsters op het scherm kunnen bijhouden.
+
+                Als je een interactief boek maakt kan je een lijst maken van de plaatsen waarop je kan klikken.
+
+                Of je kan een lijst bijhouden van de filmpjes die je na elkaar wil afspelen, een "playlist".
+
+                In JavaScript zijn er heel wat mogelijkheden om de elementen van een lijst te behandelen, elementen bij in een lijst te zetten en eruit te halen, een lijst te sorteren, en nog veel meer.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Functies</h2>
+            <pre>
+function optellen(a, b) {
+    return a + b;
+}
+
+var resultaat = optellen(5, 3);
+            </pre>
+            <aside>
+                JavaScript heeft ook functies. Dit zijn blokjes met code met een naam die we kunnen uitvoeren. Dit is handig als we een stukje code op meerdere plaatsen willen gebruiken.
+
+                Hier maken we onze eigen functie "optellen", die we achteraf kunnen aanroepen met bepaalde waarden. De "a" en "b" worden dan vervangen door de waarden 5 en 3, in dit geval. Dit geeft het resultaat 8, die we bewaren in de variabele resultaat.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Condities</h2>
+            <pre>
+if (jouwVerjaardag) {
+    alert('Gelukkige verjaardag!');
+}
+            </pre>
+            <aside>
+                JavaScript heeft ook condities. Die zorgen dat we bepaalde stukken code enkel uitvoeren als we aan een bepaalde voorwaarde voldoen.
+
+                In dit geval houden we in de variabele "jouwVerjaardag" bij of het vandaag jouw verjaardag is. Als dat zo is (en *enkel* als dat zo is), tonen we de boodschap "Gelukkige verjaardag!" op het scherm (de ingebouwde alert-functie toont een kadertje op onze pagina.)
+            </aside>
+        </section>
+
+        <section>
+            <h2>Lussen (loops)</h2>
+            <pre>
+console.log('Ik tel van 1 tot 5...');
+for (var i = 1; i &lt;= 5; i++) {
+    console.log(i);
+}
+            </pre>
+            <h2>Resultaat</h2>
+            <pre>
+Ik tel van 1 tot 5...
+1
+2
+3
+4
+5
+            </pre>
+            <aside>
+                Ten slotte hebben we ook lussen. Hier kunnen we hetzelfde stuk code meerdere keren laten uitvoeren.
+
+                Probeer dit stuk code eens over te nemen.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Objecten</h2>
+            <pre>
+var president = {
+    voornaam: 'Barack',
+    achternaam: 'Obama',
+    leeftijd: 54
+}
+
+alert(president.achternaam); // 'Obama'
+            </pre>
+            <aside>
+                JavaScript kent ook objecten. Dit is een filosofie van programmeren die lijkt op objecten in de echte wereld. In dit geval heeft een president een voornaam, achternaam en leeftijd.
+
+                Een object kan vanalles zijn: als je een web-winkel kan een product een object zijn, maar ook een klant is een object, en het virtuele winkelkarretje is een object.
+
+                Een object heeft eigenschappen (engels: properties). Een eigenschap is zoals een variabele die vastplakt aan een object.
+
+                Je kan aan de eigenschap van een object aan via het puntje. In dit geval vragen we de achternaam van de president door te schrijven "president.achternaam".
+
+                Probeer dit eens. Maak jezelf president, en typ je eigen voornaam, achternaam en leeftijd.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Objecten: functies</h2>
+            <pre>
+// Voeg het product toe aan het winkelkarretje.
+shoppingCart.add(product);
+
+// Zeg het auto-object dat het moet beginnen rijden.
+car.drive();
+
+if (jouwVerjaardag) {
+    // Speel het geluid af als het jouw verjaardag is.
+    song.play();
+}
+
+// De console is ook een object. "log" is een functie op dit object.
+console.log(42);
+
+
+            </pre>
+            <aside>
+                Aan een object kunnen we ook functies hangen.
+
+                Zo kunnen we een shoppingCart-object hebben, waar we een product aan kunnen toevoegen.
+
+                Of als we een virtueel autootje hebben, kunnen we een functie "drive" maken die het autootje laat rijden.
+
+                We kunnen dit uiteraard ook combineren met condities: als het jouw verjaardag is, spelen we het "happy birthday" liedje af.
+
+                De browser heeft een aantal ingebouwde objecten, zoals de console. "log" is een functie op dit object.
+
+                Probeer al deze voorbeeldjes eens uit!
+            </aside>
+        </section>
+
+        <section>
+            <h1>JavaScript op de pagina</h1>
+            <h3>De DOM</h3>
+            <h4>(Document Object Model)</h4>
+            <img src="img/javascript/dom.png">
+            <aside>
+                JavaScript zit in alle browsers en het kan interreageren met elementen op de pagina, en ze ook veranderen. Maar hoe doet het dat?
+
+                JavaScript werkt met de pagina door iets dat het Document Object Model heet, of de DOM. Het is een boomstructuur aan elementen op de pagina.
+
+                Je kan het het beste voorstellen als de boomstructuur die we in de inspector tools hebben gezien. Elk element (tag) is ook een object in JavaScript waar je aan kan. Die objecten hebben ook eigenschappen en functies waarmee de inhoud ervan kunnen aanpassen.
+
+                Je kan de DOM zien als de hendels, of haken die je kan gebruiken om delen van de pagina te pakken en aan te passen. Dat is net zoals CSS! We gebruiken een selector om aan een element te komen, dan kunnen we de eigenschappen veranderen, of functies op dat object uitvoeren.
+            </aside>
+        </section>
+
+        <section>
+            <h1>JavaScript op de pagina</h1>
+            <h3>HTML</h3>
+            <pre>&lt;h1&gt;Naam: <span id="naam">onbekend</span>&lt;/h1&gt;</pre>
+            <h3>JavaScript</h3>
+            <pre>
+// Gebruik de querySelector method.
+// We gebruiken dezelfde soort selector als in CSS.
+var naam = document.querySelector('#naam');
+
+// Verander de inhoud via de eigenschap innerHTML.
+naam.innerHTML = 'Linus';
+            </pre>
+
+            <aside>
+                Hoe geraak ik dan aan elementen op de pagina? Er zijn verschillende manieren, maar wij gaan er maar één zien: querySelector. Het is een functie die aan het document object hangt, en die je op dezelfde manier gebruikt als in CSS.
+
+                Het enige verschil is dat je hier ook aanhalingstekens moet gebruiken, omdat het om een string gaat.
+            </aside>
+        </section>
+
+        <section>
+            <h1>JavaScript op de pagina</h1>
+            <h3>Probeer het!</h3>
+            <pre>
+// Selecteer de hoofding (h1)
+var hoofding = document.querySelector('h1');
+
+// Verander de inhoud via de eigenschap innerHTML.
+hoofding.innerHTML = 'Hallo wereld!';
+            </pre>
+
+            <aside>
+                Probeer de hoofding op de test-pagina aan te passen. Selecteer eerst de hoofding via de h1 query (net zoals in CSS!).
+
+                Verander dan de inhoud via innerHTML.
+            </aside>
+        </section>
+
+        <section>
+            <h1>Wanneer draait mijn JS?</h1>
+            <pre>
+&lt;html&gt;
+&lt;head&gt;
+    &lt;script&gt;
+        var mijnKnop = document.querySelector('#mijn-knop');
+        mijnKnop.addEventListener('click', ...);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;button id=&quot;mijn-knop&quot;&gt;Klik mij!&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+            <aside>
+                Het is belangrijk te begrijpen *wanneer* de JavaScript-code wordt uitgevoerd.
+
+                De eerste en belangrijkste regel is: de code wordt uitgevoerd wanneer de browser je script-tag tegenkomt.
+
+                Dit heeft belangrijke gevolgen voor hoe je de pagina opbouwt.
+
+                Hier is een voorbeeld: we willen reageren als er op een knop wordt geklikt. Echter, het script staat bovenaan de pagina, en wordt uitgevoerd op het moment dat de browser het script tegenkomt.
+            </aside>
+        </section>
+
+        <section>
+            <h1>Wanneer draait mijn JS?</h1>
+            <pre>
+&lt;html&gt;
+&lt;head&gt;
+    &lt;script&gt;
+        var mijnKnop = document.querySelector('#mijn-knop');
+        mijnKnop.addEventListener('click', ...);
+    &lt;/script&gt;
+
+    ... Alles hieronder bestaat nog niet!
+            </pre>
+            <aside>
+                Dat wil zeggen dat wanneer het script wordt uitgevoerd, de knop nog niet bestaat! Het script zal dus *niet* werken.
+            </aside>
+        </section>
+
+        <section>
+            <h1>Wanneer draait mijn JS?</h1>
+            <pre>
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;button id=&quot;mijn-knop&quot;&gt;Klik mij!&lt;/button&gt;
+
+    ...
+
+    &lt;script&gt;
+        var mijnKnop = document.querySelector('#mijn-knop');
+        mijnKnop.addEventListener('click', ...);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+            <aside>
+                Hoe lossen we dit dan op? Door het script onderaan de pagina te zetten, vlak voor de body-sluit tag.
+            </aside>
+        </section>
+
+        <section>
+            <h1>Interactiviteit</h1>
+            <h3>Events</h3>
+            <p><em>Events</em> gebeuren wanneer er een actie plaatsvindt op de pagina.</p>
+
+            <aside>
+                Om de pagina interactief te maken, moeten we iets doen met "events" (gebeurtenissen). Events gebeuren wanneer er een actie plaatsvindt op de pagina.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Events</h2>
+            <ul>
+                <li><code>click</code></li>
+                <li><code>mouseover</code></li>
+                <li><code>mouseout</code></li>
+                <li><code>mousedown</code></li>
+                <li><code>mouseup</code></li>
+                <li><code>mousemove</code></li>
+                <li><code>focus</code></li>
+                <li><code>change</code></li>
+                <li><code>blur</code></li>
+                <li><code>load</code></li>
+            </ul>
+
+            <aside>
+                Dit zijn een aantal veelvoorkomende gebeurtenissen op een pagina: als er op een element wordt geklikt, als de muis erover gaat, of weggaat van een element. Als de muisknop naar beneden is gegaan, of net naar boven is gegaan; als de muis is bewogen.
+
+                Focus, change en blur zijn events op tekstvelden. Focus is als je in een tekstveld gaat staan. Change is als je het aanpast, blur is als je het veld terug verlaat. Ze worden bijvoorbeeld gebruikt voor validatie.
+
+                Load is een event dat op de pagina staat en dat gebeurd wanneer de volledige pagina, inclusief alle beelden, is geladen.
+
+                Er zijn er nog meer, maar dit zijn de meest voorkomende.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Events</h2>
+            <p>Je kan een <em>listener</em> functie aan een event op een element hangen.</p>
+            <p>Gebruik <em>addEventListener</em> op het element.</p>
+
+            <pre>
+// Selecteer eerst het element, zoals voorheen.
+var hoofding = document.querySelector('h1');
+
+// Gebruik addEventListener met de naam van het event en een functie.
+hoofding.addEventListener('click', doSomething);
+            </pre>
+
+            <aside>
+                Om te reageren op events hangen we een listener, een functie, aan een gebeurtenis op een specifiek element. Als het event gebeurd, wordt de listener functie aangeroepen.
+            </aside>
+        </section>
+
+        <section>
+            <h1>Events</h1>
+            <p>OK, ik kan een listener vasthangen aan een element. Wat kan ik er mee doen?</p>
+
+            <h3>Alles!</h3>
+
+            <aside>
+                Eens we weten hoe we een element hebben, kunnen we heel wat doen.
+
+                We kunnen de stijl veranderen.
+                Om te reageren op events hangen we een listener, een functie, aan een gebeurtenis op een specifiek element. Als het event gebeurd, wordt de listener functie aangeroepen.
+            </aside>
+        </section>
+
+        <section>
+            <h1>Events</h1>
+            <h3>Stijl aanpassen</h3>
+
+            <pre>
+// Maak eerst een functie die de kleur van het element aanpast.
+function changeColor() {
+    this.style.color = randomColor();
+}
+
+// Selecteer het element.
+var hoofding = document.querySelector('h1');
+
+// Gebruik addEventListener met onze functie.
+hoofding.addEventListener('mousemove', changeColor);
+            </pre>
+
+
+            <aside>
+                We kunnen de stijl veranderen.
+
+                Om dit te proberen, herlaad eerst de pagina. Dat zorgt ervoor dat de vorige event listener niet meer op de H1 hangt. Anders zouden er twee events gebeuren.
+
+                NOOT: om meerdere lijnen in de console te typen, zoals bij de functie, moet je SHIFT+ENTER gebruiken.
+
+                Merk op dat style.color gelijk is aan de CSS color eigenschap. Dat komt omdat je aan alle dingen die je in CSS kan zetten, je ook in JavaScript kan.
+
+                Heb je trouwens het woord "this" gezien? Dit verwijst naar het huidige element. Als we op een element klikken, zet de browser het woord "this" naar hetgene waar we net op geklikt hebben.
+            </aside>
+        </section>
+
+        <section>
+            <h1>Events</h1>
+            <h3>Stijl aanpassen: classes</h3>
+
+            <pre>
+// Selecteer het element.
+var hoofding = document.querySelector('h1');
+
+// Gebruik classList.add om een klasse toe te voegen.
+hoofding.classList.add('blinky');
+
+// Gebruik classList.remove om een klasse te verwijderen.
+hoofding.classList.remove('blinky');
+            </pre>
+
+
+            <aside>
+                Als we te veel van die stijl-dingen opgeven, gaan we het gedrag van de pagina beginnen mengen met de vormgeving van de pagina. Het is handiger van dit in CSS te doen.
+
+                We kunnen een class aan een element hangen of verwijderen. Zo kunnen we de stijl in CSS later aanpassen. In dit geval gebruiken we CSS animations (die we nog niet gezien hebben) om een element te laten animeren.
+            </aside>
+        </section>
+
+        <section>
+            <h2>Canvas</h2>
+
+            <img src="img/javascript/canvas.png">
+
+            <aside>
+                In de volgende voorbeelden gaan we werken met de canvas-tag.
+
+                De canvas is een plek waar we zelf op kunnen tekenen. We kunnen werken met vector-elementen, zoals lijnen en paden, en we kunnen ook werken met beelden.
+            </aside>
+        </section>
+</body>

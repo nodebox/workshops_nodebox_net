@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+
+<body>
+    <canvas id="c" style="border: 1px solid black"></canvas>
+    <script>
+        var canvas = document.querySelector('#c');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerWidth;
+        var ctx = canvas.getContext('2d');
+
+        var x = 10;
+        var y = 20;
+        var dx = 6;
+        var dy = 9;
+
+        // ctx.fillStyle = 'blue';
+        //ctx.fillRect(10, 20, 100, 40);
+
+
+        // ctx.fillStyle = 'red';
+        //ctx.font = '72px helvetica';
+        //    ctx.fillText('hello', 10, 100)
+
+        //   ctx.fillStyle = 'blue';
+        //   ctx.fillRect(10, 20, 100, 100);
+
+        function draw(e) {
+            var fontSize = Math.random() * 100;
+
+
+            ctx.fillStyle = 'red';
+            ctx.font = fontSize + 'px helvetica';
+            //ctx.fillText('+', e.clientX, e.clientY)
+            //ctx.strokeText('+', e.clientX, e.clientY);
+
+        }
+
+        function animate() {
+            ctx.fillStyle = 'hsl( ' + Math.random() * 360 + ', 100%, 50%)';
+
+            ctx.font = '15px helvetica';
+            ctx.fillText('HUMANS', x, y);
+
+            x = x + dx;
+            y = y + dy;
+
+            if (x > canvas.width) {
+                dx = -dx;
+
+            }
+            
+            if (x< 0){
+                dx = -dx;
+            }
+            
+
+            if (y > canvas.height) {
+                dy = -dy;
+
+            }
+            
+             if (y < 0){
+                dy = -dy;
+            }
+            
+
+            
+            
+            
+            
+            
+            window.requestAnimationFrame(animate);
+
+
+        }
+
+        animate();
+
+        window.addEventListener('mousemove', draw);
+    </script>
+
+
+
+</body>
+
+</html>

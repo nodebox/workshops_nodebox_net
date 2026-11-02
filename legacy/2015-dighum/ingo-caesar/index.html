@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Salamantine Authors Moving on a Map</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://dighum.herokuapp.com/static/js/bundle.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Salamantine Authors Moving on a Map (1483-1650)</h1>
+            <h2>By Ingo Caesar</h2>
+            <p>Places of their Education, Teaching, Birth and Death</p>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="container">
+            <label for="sizeSlider">Slide to move forward in time</label>
+            <input id="sizeSlider" type="range" min="0" max="168" style="width: 100%;" value="0" oninput="changeRange(this)">
+            <br>
+			<!--  <label for="sizeSlider">Zoom in/out</label>
+            <input id="sizeSlider" type="range" min="0" max="168" style="width: 100%;" value="0" oninput="changeByPlay(this)"> -->
+            <br>
+            <button onclick="player.start()">Start</button>
+            <button onclick="player.stop()">Stop</button>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="container">
+            <canvas width="1000" height="800" id="c"></canvas>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2015</p>
+        </div>
+    </div>
+</body>
+</html>

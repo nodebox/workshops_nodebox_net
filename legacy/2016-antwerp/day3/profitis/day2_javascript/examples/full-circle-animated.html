@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Full Circle Animated</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #222;
+  }
+  </style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script>
+  var canvas = document.querySelector('#c');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var ctx = canvas.getContext('2d');
+
+  var centerX = canvas.width / 2;
+  var centerY = canvas.height / 2;
+  var outerSize = Math.max(canvas.width, canvas.height);
+
+  var angle = 0.0;
+  var innerSize = 300;
+
+  ctx.strokeStyle = '#eee';
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    for (var i = 0; i < Math.PI * 2; i += 0.02) {
+      var x1 = centerX + Math.sin(i) * outerSize;
+      var y1 = centerY + Math.cos(i) * outerSize;
+      var x2 = centerX + Math.sin(angle) * innerSize;
+      var y2 = centerY + Math.cos(angle) * innerSize;
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+    }
+    ctx.stroke();
+    angle += 0.05;
+    window.requestAnimationFrame(animate);
+  }
+
+  window.requestAnimationFrame(animate);
+</script>
+</body>
+</html>

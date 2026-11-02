@@ -1,0 +1,9 @@
+---
+title: Progress on 'Friday' Dashboard Animation
+author: sarunpinyarat
+assets:
+ - filename: Dashboard_2-01.png
+   type: image
+---
+Now I'm done with the layout of the Dashboard.
+I will start animating tomorrow...

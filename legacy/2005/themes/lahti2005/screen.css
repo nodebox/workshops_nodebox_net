@@ -1,0 +1,65 @@
+body{text-align:center}
+body{font-family:verdana,sans-serif;background:white;color:black;font-size:8pt}
+.b{width:755px;text-align:center;margin:20px auto 0 auto;font-size:7pt;color:black;border:4px solid black}
+a img{border:0}
+#header{background: white;width:755px;cursor:pointer;cursor:hand;border-bottom:4px solid black;position:relative;text-align:left}
+#nav{list-style-type:none;color:#444;float:left;width:60px;font-size:8pt;margin:0 0 0 10px;padding:0;text-align:left}
+#nav li {list-style-type:none;margin:0;padding:0}
+#nav a{color:#666;text-decoration:none;border:0;line-height:22px}
+#nav a:hover{color:#666}
+#content{padding:20px 20px 20px 20px;font-size:8pt;color:#222;text-align:left;background:white}
+h1{font-size:9pt;margin:0 0 0.8em 0;padding:0}
+h2{font-size:10pt;font-weight:normal;margin:0 0 0.3em 0;padding:0}
+h3{font-size:8pt;font-weight:bold;margin:0 0 0.3em 0;padding:0;color:#444}
+p {margin:0 0 1em 0;width:40em}
+a,.w,a.w,.w a {color:#222;text-decoration:underline;}
+a:hover,.fl:hover{color:#444}
+.thumbs a{float:left;border:0;margin:2px}
+ul{list-style-type: square;color:#222}
+ul li{margin-bottom:5px;color:#222;
+	}
+table, tr, td{margin:0;padding:0}
+.sf textarea{font-family:Courier;mono;width:550px}
+.ft{font-size:7pt;text-align:center;margin-top:3em;color:#666;padding-top:1.5em;border-top:1px solid #ddd}
+.hldot{position:absolute;left:0;padding-top:6px}
+.media{}
+
+a img{border:0;text-decoration:none}
+#footer{padding:2px 20px 5px 20px;font-size:8pt;text-align:right;margin:0;color:#ccc;font-size:10px;background:black;border-top:4px solid black}
+#footer a {color:#aaa;text-decoration:none;}
+#footer a:hover {color:#aaa;text-decoration:underline;}
+
+#contact {float:left;}
+
+#links {text-align:right;}
+
+
+#copyright{width:755px;text-align:center;margin:5px auto 0 auto;font-size:7pt;color:#949390}
+
+ul#days {
+list-style-type:none;
+text-align:left;
+padding:0;
+margin:8px 0 0 0;
+padding:0 0 0 20px;
+border-bottom:4px solid black;
+}
+ul#days li.week ul {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+}
+ul#days li.week li {
+display:inline;margin-right:10px;font-size:9px
+;
+}
+
+#intro {
+color:black;
+text-align:center;
+padding:10px 20px 5px 20px;
+font-size:7pt;
+border-bottom:1px solid #ddd;
+}
+
+.bd {border:1px solid black;}

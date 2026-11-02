@@ -8,7 +8,8 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  min-width: 960px;
+  min-width: 0;
+  text-align: left;
 }
 
 #shopbar * {
@@ -50,6 +51,8 @@
   border-top: none;
   float: none;
   width: 200px;
+  max-height: calc(100vh - 28px);
+  overflow-y: auto;
 }
 
 #shopbar .popup:hover ul {
@@ -94,4 +97,85 @@
 
 #shopbar a > span {
   line-height: 28px;
+}
+
+/* Burger menu on narrow screens: the checkbox holds the open state. */
+#shopbar .shopbar-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+#shopbar .shopbar-burger {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #shopbar .shopbar-burger {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48px;
+    height: 28px;
+    cursor: pointer;
+  }
+
+  #shopbar .shopbar-burger span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    margin: 4px auto 0;
+    background: #ddd;
+    transition: transform 0.15s;
+  }
+
+  #shopbar .shopbar-burger span:first-child {
+    margin-top: 7px;
+  }
+
+  #shopbar .shopbar-toggle:focus-visible + .shopbar-burger {
+    outline: 2px solid #fff;
+    outline-offset: -4px;
+  }
+
+  #shopbar .shopbar-toggle:checked + .shopbar-burger span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  #shopbar .shopbar-toggle:checked + .shopbar-burger span:nth-child(2) {
+    transform: scaleX(0);
+  }
+
+  #shopbar .shopbar-toggle:checked + .shopbar-burger span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  #shopbar .popup:hover ul {
+    display: none;
+  }
+
+  #shopbar .shopbar-toggle:checked ~ ul .popup ul {
+    display: block;
+    position: fixed;
+    top: 28px;
+    left: 0;
+    right: 0;
+    width: auto;
+    max-height: calc(100vh - 28px);
+    max-height: calc(100dvh - 28px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: #fff;
+    box-sizing: border-box;
+  }
+
+  #shopbar .popup li a {
+    height: 44px;
+    font-size: 15px;
+    line-height: 44px;
+    padding: 0 16px;
+    border-top: 1px solid #eee;
+  }
 }
