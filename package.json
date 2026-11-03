@@ -8,6 +8,6 @@
     "thumbs": "node thumbs.mjs"
   },
   "dependencies": {
-    "sharp": "^0.34.0"
+    "sharp": "^0.35.5"
   }
 }
