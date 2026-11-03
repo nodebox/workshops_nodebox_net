@@ -21,9 +21,8 @@ const PORT = Number(process.env.PORT || 8000);
 
 // Where _r2/ is published. Post media lives under <MEDIA_URL>media/<slug>/.
 const MEDIA_URL = SERVE ? "/_r2/" : process.env.MEDIA_URL || "https://workshops-media.nodebox.net/";
-// Thumbnails are resized on the fly; the prefix takes an absolute image URL.
-const THUMB_URL = SERVE ? "" : process.env.THUMB_URL ?? "https://res.cloudinary.com/dgunfvbce/image/fetch/w_440/";
-const SITE_URL = "https://workshops.nodebox.net";
+// Media images with a thumbnail in <MEDIA_URL>thumbs/<path>.webp, made by thumbs.mjs.
+const THUMBS = new Set(fs.existsSync(path.join(ROOT, "thumbs.txt")) ? fs.readFileSync(path.join(ROOT, "thumbs.txt"), "utf8").split("\n").filter(Boolean) : []);
 
 // --- Utilities --------------------------------------------------------------
 
@@ -45,13 +44,12 @@ function* walk(dir, rel = "") {
 }
 
 const mediaUrl = (rel) => MEDIA_URL + "media/" + encodePath(rel);
-const absolute = (u) => (/^https?:/.test(u) ? u : SITE_URL + u);
 function thumbUrl(src) {
   // src is either a site path ("/static/thumbs/x.jpg", already small and
-  // deployed with the site) or a media path ("2008-helsinki/x.jpg", resized
-  // by THUMB_URL from the media bucket).
+  // deployed with the site) or a media path ("2008-helsinki/x.jpg"), which
+  // uses its thumbnail when thumbs.mjs made one and the original otherwise.
   if (src.startsWith("/")) return encodePath(src);
-  return THUMB_URL ? THUMB_URL + absolute(mediaUrl(src)) : mediaUrl(src);
+  return THUMBS.has(src) ? MEDIA_URL + "thumbs/" + encodePath(src + ".webp") : mediaUrl(src);
 }
 const formatDate = (d) => d.toLocaleDateString("en-US", { month: "short", day: "2-digit", year: "numeric", timeZone: "UTC" });
 
@@ -384,7 +382,8 @@ const r2Files = new Set(
     .map((f) => "/" + f),
 );
 
-const RUFFLE = "https://unpkg.com/@ruffle-rs/ruffle@0.8.0-nightly.2026.10.15/ruffle.js";
+// Ruffle 0.8.0-nightly.2026.10.15 from npm (@ruffle-rs/ruffle), kept local so the archive works on its own.
+const RUFFLE = "/static/ruffle/ruffle.js";
 const legacyFileExists = (p) => r2Files.has(p) || fs.existsSync(path.join(ROOT, "legacy", p));
 
 // QuickTime plugin embeds become <video> when a transcoded .mp4 sits next to the movie.
@@ -485,7 +484,7 @@ function build() {
 
 // --- Dev server -------------------------------------------------------------
 
-const TYPES = { html: "text/html; charset=utf-8", css: "text/css", js: "text/javascript", json: "application/json", png: "image/png", jpg: "image/jpeg", jpeg: "image/jpeg", gif: "image/gif", svg: "image/svg+xml", pdf: "application/pdf", mov: "video/quicktime", mp4: "video/mp4", mp3: "audio/mpeg", swf: "application/x-shockwave-flash", txt: "text/plain; charset=utf-8" };
+const TYPES = { html: "text/html; charset=utf-8", css: "text/css", js: "text/javascript", json: "application/json", png: "image/png", jpg: "image/jpeg", jpeg: "image/jpeg", gif: "image/gif", webp: "image/webp", svg: "image/svg+xml", pdf: "application/pdf", mov: "video/quicktime", mp4: "video/mp4", mp3: "audio/mpeg", swf: "application/x-shockwave-flash", wasm: "application/wasm", txt: "text/plain; charset=utf-8" };
 
 function serve() {
   http

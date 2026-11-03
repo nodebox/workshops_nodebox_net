@@ -1,0 +1,13 @@
+{
+  "name": "workshops-nodebox-net",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node build.mjs serve",
+    "thumbs": "node thumbs.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.34.0"
+  }
+}

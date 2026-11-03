@@ -18,7 +18,7 @@ const DONE = path.join(SRC, ".uploaded");
 const DRY = process.argv.includes("--dry-run");
 
 const TYPES = {
-  jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png", gif: "image/gif", svg: "image/svg+xml", bmp: "image/bmp", tif: "image/tiff", tiff: "image/tiff", ico: "image/x-icon",
+  jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png", gif: "image/gif", webp: "image/webp", svg: "image/svg+xml", bmp: "image/bmp", tif: "image/tiff", tiff: "image/tiff", ico: "image/x-icon",
   mp4: "video/mp4", mov: "video/quicktime", avi: "video/x-msvideo", mpg: "video/mpeg", mpeg: "video/mpeg", m4v: "video/x-m4v", flv: "video/x-flv", wmv: "video/x-ms-wmv",
   mp3: "audio/mpeg", wav: "audio/wav", aif: "audio/aiff", aiff: "audio/aiff",
   pdf: "application/pdf", zip: "application/zip", swf: "application/x-shockwave-flash", dcr: "application/x-director",

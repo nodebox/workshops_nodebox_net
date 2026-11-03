@@ -4,3 +4,5 @@ _site/
 _gather/
 _r2/
 .playwright-mcp/
+tmp/
+node_modules/
