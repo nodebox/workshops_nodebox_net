@@ -11,4 +11,4 @@ assets:
  - filename: DATAVIZ_LEC_poster2.jpg
    type: image
 ---
-The final poster, with the main three parts of it exploded.<a href="http://workshops.nodebox.net/2011-torino/assets_c/2011/12/1-1642.html" onclick="window.open('http://workshops.nodebox.net/2011-torino/assets_c/2011/12/1-1642.html','popup','width=910,height=480,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false"><br /></a>
+The final poster, with the main three parts of it exploded.<a href="/media/2011-torino/1.jpg"><br /></a>

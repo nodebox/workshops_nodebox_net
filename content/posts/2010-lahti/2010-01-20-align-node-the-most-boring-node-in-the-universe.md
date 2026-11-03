@@ -4,7 +4,7 @@ author: Frederik De Bleser
 ---
 Well, apart from the null node. Align is possible very useful: it aligns an object to a given X/Y value.
 
-Download: <a href="http://workshops.nodebox.net/2010/wp-content/uploads/align-1.0.zip">align-1.0.zip</a>
+Download: <a href="/media/2010-lahti/align-1.0.zip">align-1.0.zip</a>
 
 Obligatory, but very boring, screenshot:
 

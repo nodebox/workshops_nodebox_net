@@ -18,7 +18,6 @@ http://workshops.nodebox.net/2010/wp-content/uploads/Screen-shot-2010-01-19-at-1
 http://workshops.nodebox.net/2010/wp-content/uploads/Screen-shot-2010-01-19-at-16.16.23.png
 http://workshops.nodebox.net/2010/wp-content/uploads/a_lot_of_heys.pdf
 http://workshops.nodebox.net/2010/wp-content/uploads/actions.pdf
-http://workshops.nodebox.net/2010/wp-content/uploads/align-1.0.zip
 http://workshops.nodebox.net/2010/wp-content/uploads/begin.jpg
 http://workshops.nodebox.net/2010/wp-content/uploads/blue_background_sky.pdf
 http://workshops.nodebox.net/2010/wp-content/uploads/carpet1.pdf
@@ -66,6 +65,4 @@ http://workshops.nodebox.net/2010/wp-content/uploads/vaarinkalsari1.gif
 http://workshops.nodebox.net/2010/wp-content/uploads/vaarinkalsari2.gif
 http://workshops.nodebox.net/2010/wp-content/uploads/voronoi-0.1.zip
 http://workshops.nodebox.net/2010/wp-content/uploads/zefrank-300x211.jpg
-http://workshops.nodebox.net/2011-torino/assets_c/2011/12/1-1642.html
-https://workshops.nodebox.net/media/2011-antwerp/SCAN.jpeg
 https://workshops.nodebox.net/media/2015-liege/Capture.png
